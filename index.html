@@ -143,17 +143,25 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .modhead h2{margin-bottom:10px}
 .thesis{font-size:1.1rem;color:var(--ink-2);max-width:var(--measure);border-left:3px solid var(--accent);padding-left:16px}
 
-/* cartão de identidade */
-.idcard{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;margin:22px 0}
-.idcell{background:var(--surface);padding:12px 14px}
-.idcell dt{font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
-.idcell dd{margin:0;font-family:var(--sans);font-weight:600;font-size:.92rem;color:var(--ink);line-height:1.3}
-.idcell dd small{display:block;font-family:var(--serif);font-weight:400;font-size:.8rem;color:var(--ink-3);margin-top:2px;line-height:1.35}
-
 /* blocos de teoria */
 .topic{border:1px solid var(--line);border-radius:var(--r-m);background:var(--surface);overflow:hidden}
 .topic+.topic{margin-top:12px}
-.topic>.head{padding:15px 17px 3px}
+.topic>.head{padding:15px 17px 4px}
+.sum>.why:last-child{margin-bottom:11px}
+/* faixa de orientação da estação */
+.orient{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;margin:20px 0}
+.ocell{background:var(--surface);padding:14px 15px}
+.ocell dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.ocell dd{margin:0;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+.ocell dd strong{color:var(--ink)}
+.ocell dd em{font-style:italic}
+/* caixa por quê */
+.why{position:relative;border:1px solid var(--accent);border-radius:var(--r-m);background:var(--accent-soft);padding:14px 16px 14px 54px;margin-top:14px}
+.why::before{content:"?";position:absolute;left:16px;top:13px;width:25px;height:25px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.92rem;display:flex;align-items:center;justify-content:center;line-height:1}
+.why h5{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 5px;font-weight:500}
+.why p{font-size:.92rem;color:var(--ink-2)}
+.why p+p{margin-top:8px}
+.why strong{color:var(--ink)}
 .topic h3{margin-bottom:8px}
 .topic .sum{color:var(--ink-2);font-size:.97rem;max-width:var(--measure)}
 .topic .sum p+p{margin-top:9px}
@@ -362,17 +370,17 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <div class="wrap"><div class="shell">
 <aside class="side" id="side">
   <nav id="nav">
-    <div class="navgroup">Fundamentos</div>
+    <div class="navgroup">Antes de começar</div>
     <div class="nav">
       <a href="#logica"><b>01</b>A lógica das plantas terrestres</a>
       <a href="#bancada"><b>02</b>Bancada e microscopia</a>
     </div>
-    <div class="navgroup">Os quatro grupos</div>
+    <div class="navgroup">A prática, estação por estação</div>
     <div class="nav">
-      <a href="#briofitas" data-g="b"><b>03</b>Briófitas</a>
-      <a href="#pteridofitas" data-g="p"><b>04</b>Pteridófitas</a>
-      <a href="#gimnospermas" data-g="g"><b>05</b>Gimnospermas</a>
-      <a href="#angiospermas" data-g="a"><b>06</b>Angiospermas</a>
+      <a href="#briofitas" data-g="b"><b>03</b>Estação 1 · Musgo</a>
+      <a href="#pteridofitas" data-g="p"><b>04</b>Estação 2 · Samambaia</a>
+      <a href="#gimnospermas" data-g="g"><b>05</b>Estação 3 · Pinheiro</a>
+      <a href="#angiospermas" data-g="a"><b>06</b>Estação 4 · Hibisco</a>
     </div>
     <div class="navgroup">Fechamento</div>
     <div class="nav">
@@ -396,14 +404,14 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ HERO ============ -->
 <section class="hero" id="topo">
   <h1><span>Aula prática · Morfologia Vegetal</span>Como as plantas saíram da água</h1>
-  <p class="lead">Briófitas, pteridófitas, gimnospermas e angiospermas não são quatro assuntos soltos — são quatro etapas de um problema só. Este guia ensina a matéria nessa ordem, com as lâminas que você vai ver no microscópio, e só no fim usa a prática do ano passado para calibrar o estilo de cobrança do professor.</p>
+  <p class="lead">Este guia cobre <strong>uma prática específica</strong>: quatro estações — musgo, samambaia, pinheiro e hibisco — com as lâminas nº 40, nº 41 e nº 44. Não é um curso de botânica. É o conteúdo dessas quatro bancadas, ensinado na ordem em que você vai encontrá-las, com uma caixa de <strong>“por quê”</strong> sempre que houver uma razão por trás do fato.</p>
   <div class="chips">
     <span class="chip b">Briófitas</span><span class="chip p">Pteridófitas</span>
     <span class="chip g">Gimnospermas</span><span class="chip a">Angiospermas</span>
     <span class="chip">14 lâminas</span><span class="chip">4 ciclos</span><span class="chip">18 questões</span>
   </div>
   <div class="note" style="margin-top:24px;max-width:var(--measure)">
-    <b>Como usar.</b> Os módulos <strong>03 a 06</strong> são a matéria: cada um traz o resumo, o botão <em>aprofundar</em> para a explicação completa, o ciclo de vida navegável, as lâminas do grupo e as questões correspondentes. Feche um grupo antes de passar ao seguinte. Depois vá para <strong>07</strong> (comparações), <strong>08</strong> (o padrão dele) e <strong>09</strong> (treino cronometrado).
+    <b>Como usar.</b> As seções <strong>03 a 06</strong> são as quatro estações da prática, na ordem em que você vai encontrá-las na bancada. Cada uma abre dizendo <em>o que estará na sua frente</em>, <em>o que ele vai pedir</em> e <em>o que você precisa saber para responder</em> — e só depois entra na teoria. Feche uma estação antes de ir para a próxima. As seções <strong>07</strong> a <strong>09</strong> são revisão e treino.
   </div>
 </section>
 
@@ -469,25 +477,40 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 
   <div class="topic">
     <div class="head">
-      <h3>Alternância de gerações: a regra que vale para os quatro</h3>
+      <h3>Por que as plantas saíram da água?</h3>
       <div class="sum">
-        <p>Toda planta alterna duas fases <strong>pluricelulares</strong>: o <strong>gametófito</strong> <span class="ploidia n1">n</span>, que produz gametas, e o <strong>esporófito</strong> <span class="ploidia n2">2n</span>, que produz esporos. Isso se chama ciclo <strong>haplodiplobionte</strong> (ou metagênese).</p>
-        <p>A consequência mais cobrada é esta: <strong>em planta, a meiose nunca produz gameta.</strong> Ela produz <strong>esporo</strong>. O gameta vem depois, de uma <strong>mitose</strong> dentro do gametófito — que já é haploide e portanto não precisa reduzir mais nada.</p>
+        <p>Vale começar por aqui, porque a resposta organiza toda a prática. Debaixo d'água a planta tem o problema resolvido: não seca, não precisa se sustentar e recebe água por toda a superfície. Fora d'água ela ganha duas coisas que valem o risco — <strong>luz sem filtro</strong> e <strong>CO₂ muito mais disponível</strong>.</p>
+        <p>Em troca, herda três problemas: <strong>secar</strong>, <strong>ficar de pé</strong> e <strong>reproduzir-se sem que o gameta possa nadar</strong>. As quatro estações desta prática são quatro estágios de solução desses três problemas.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>A água absorve luz rapidamente — a poucos metros de profundidade já sobrou pouco do espectro útil para a fotossíntese. E o <strong>CO₂ se difunde cerca de dez mil vezes mais devagar na água do que no ar</strong>: uma alga vive num halo de água empobrecida em carbono que ela mesma criou.</p>
+          <p>Em terra firme, luz e CO₂ são praticamente ilimitados. O que era escasso na água virou abundante, e o que era gratuito na água (sustentação e hidratação) virou caro. <strong>Toda a evolução das plantas terrestres é o pagamento dessa conta</strong> — cutícula e estômato contra a dessecação, lignina e xilema contra a gravidade, pólen e semente contra a dependência de água na reprodução.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar</summary><div class="body">
-      <p>Compare com o seu próprio ciclo. No ser humano, a meiose acontece na gônada e o produto <em>já é</em> o gameta: ciclo <strong>diplobionte</strong>, com <strong>meiose gamética</strong>. Não existe uma fase haploide pluricelular — o espermatozoide é uma célula solta.</p>
-      <p>Na planta, o produto da meiose é o <strong>esporo</strong>, e a diferença prática é enorme: <strong>o esporo germina sozinho</strong> e vira um organismo pluricelular haploide. O gameta não faz isso — ele só existe para se fundir com outro. Por isso a meiose vegetal se chama <strong>espórica</strong> ou <strong>intermediária</strong>.</p>
-      <h4>Onde ficam meiose e fecundação em cada grupo</h4>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>Alternância de gerações: a regra que vale nas quatro estações</h3>
+      <div class="sum">
+        <p>Toda planta alterna duas fases <strong>pluricelulares</strong>: o <strong>gametófito</strong> <span class="ploidia n1">n</span>, que produz gametas, e o <strong>esporófito</strong> <span class="ploidia n2">2n</span>, que produz esporos. É o ciclo <strong>haplodiplobionte</strong>.</p>
+        <p>A consequência mais cobrada: <strong>em planta, a meiose nunca produz gameta.</strong> Ela produz <strong>esporo</strong>. O gameta vem de uma <strong>mitose</strong> dentro do gametófito, que já é haploide e não tem o que reduzir.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Nas algas ancestrais, o zigoto sofria meiose <em>imediatamente</em>: uma fecundação gerava quatro células e acabava. O esporófito surgiu quando o zigoto passou a se dividir por <strong>mitose antes</strong> de entrar em meiose.</p>
+          <p>O efeito é aritmético e enorme. Se o zigoto vira um corpo com milhares de células e só então cada uma faz meiose, <strong>uma única fecundação rende milhões de esporos em vez de quatro</strong>. Em terra, onde a fecundação é rara porque depende de água, multiplicar o retorno de cada fecundação bem-sucedida é uma vantagem decisiva. É por isso que o esporófito existe — e por isso ele foi ficando cada vez maior nos grupos seguintes.</p>
+        </div>
+      </div>
+    </div>
+    <details class="deep"><summary>Aprofundar — onde ficam a meiose e a fecundação em cada estação</summary><div class="body">
       <ul>
         <li><strong>Musgo:</strong> meiose na cápsula do esporófito; fecundação dentro do arquegônio, com o anterozoide nadando.</li>
         <li><strong>Samambaia:</strong> meiose no esporângio, dentro do soro; fecundação no protalo, também com natação.</li>
         <li><strong>Pinheiro:</strong> duas meioses — no microsporângio e no nucelo do óvulo; fecundação dentro do óvulo, via tubo polínico.</li>
-        <li><strong>Angiosperma:</strong> duas meioses — na antera e no óvulo; <strong>dupla</strong> fecundação dentro do saco embrionário.</li>
+        <li><strong>Hibisco:</strong> duas meioses — na antera e no óvulo; <strong>dupla</strong> fecundação dentro do saco embrionário.</li>
       </ul>
-      <h4>A tendência que amarra tudo</h4>
-      <p>Ao longo dos quatro grupos, o <strong>gametófito encolhe</strong> e o <strong>esporófito domina</strong>. No musgo o gametófito é a planta verde inteira; na samambaia já é só um protalo de poucos milímetros; no pinheiro e no hibisco, resta um punhado de células dentro do grão de pólen e do óvulo. O ganho é duplo: o gametófito passa a ser <strong>protegido</strong> dentro do esporófito, e a fecundação deixa de depender de <strong>água livre</strong>.</p>
-      <p>Se ele pedir “qual a tendência evolutiva observada nos grupos estudados?”, é isto — e vale escrever exatamente nesses termos.</p>
+      <p>E a tendência que amarra as quatro: o <strong>gametófito encolhe</strong> e o <strong>esporófito domina</strong>. No musgo o gametófito é a planta verde inteira; na samambaia já é só um protalo de milímetros; no pinheiro e no hibisco resta um punhado de células dentro do grão de pólen e do óvulo. Se ele pedir “qual a tendência evolutiva observada?”, é isto.</p>
     </div></details>
   </div>
 
@@ -496,38 +519,17 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
       <h3>Quem é <span class="ploidia n1">n</span> e quem é <span class="ploidia n2">2n</span></h3>
       <div class="sum">
         <p><strong>Haploide (n):</strong> esporo, gametófito (protonema, protalo, grão de pólen, saco embrionário), gametângio (anterídio, arquegônio), gameta (anterozoide, oosfera, núcleo espermático) e o endosperma da gimnosperma.</p>
-        <p><strong>Diploide (2n):</strong> zigoto, embrião, esporófito, célula-mãe de esporo e todos os tecidos do corpo da samambaia, do pinheiro e do hibisco. <strong>Triploide (3n):</strong> só o endosperma da angiosperma.</p>
+        <p><strong>Diploide (2n):</strong> zigoto, embrião, esporófito, célula-mãe de esporo e todo o corpo da samambaia, do pinheiro e do hibisco. <strong>Triploide (3n):</strong> só o endosperma da angiosperma.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Quatro trocas custam a questão inteira, e todas têm a mesma origem: confundir <strong>fase do ciclo</strong> com <strong>idade do indivíduo</strong>.</p>
+          <p>O <strong>protalo não é a samambaia jovem</strong> — é a outra geração. O <strong>grão de pólen não é o gameta</strong> — é um gametófito inteiro, com poucas células, e o gameta é o núcleo espermático que ele carrega. A <strong>caliptra do musgo é haploide</strong>, porque é o resto do arquegônio esticado sobre um esporófito diploide. E o <strong>endosperma muda de ploidia entre os grupos</strong>: <span class="ploidia n1">n</span> na gimnosperma (formado antes da fecundação), <span class="ploidia n3">3n</span> na angiosperma (formado depois).</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — os quatro casos que derrubam gente</summary><div class="body">
-      <ul>
-        <li><strong>A caliptra do musgo é <span class="ploidia n1">n</span>.</strong> Ela é o resto do arquegônio, esticado pelo crescimento do esporófito. Ou seja: tecido haploide do gametófito recobrindo um corpo diploide. Detalhe fino que quase ninguém escreve.</li>
-        <li><strong>O grão de pólen não é gameta.</strong> É o <strong>microgametófito</strong> — um gametófito inteiro, com 2 ou 3 células. O gameta é o núcleo espermático que ele transporta. Dizer “o pólen é o gameta masculino” é erro de conceito, não de detalhe.</li>
-        <li><strong>O protalo não é a samambaia jovem.</strong> É o gametófito <span class="ploidia n1">n</span>, cordiforme, de poucos milímetros. A samambaia que você vê é o esporófito <span class="ploidia n2">2n</span>. São gerações diferentes, não idades diferentes.</li>
-        <li><strong>Endosperma muda de ploidia entre os grupos.</strong> Na gimnosperma é o megagametófito: <span class="ploidia n1">n</span>, formado <em>antes</em> da fecundação. Na angiosperma é <span class="ploidia n3">3n</span>, formado <em>depois</em>, na dupla fecundação. Trocar isso custa a questão inteira.</li>
-      </ul>
-    </div></details>
-  </div>
-
-  <div class="topic">
-    <div class="head">
-      <h3>As inovações, uma a uma</h3>
-      <div class="sum">
-        <p>Quatro conjuntos de novidades, em ordem: <strong>cutícula e estômatos</strong> (todas as plantas terrestres); <strong>tecido vascular e lignina</strong> (a partir das pteridófitas); <strong>grão de pólen e semente</strong> (a partir das gimnospermas); <strong>flor, fruto e dupla fecundação</strong> (só nas angiospermas).</p>
-      </div>
-    </div>
-    <details class="deep"><summary>Aprofundar — o que cada uma resolve</summary><div class="body">
-      <h4>Cutícula, estômatos e esporo com esporopolenina</h4>
-      <p>Estão presentes já nas briófitas e são a definição de “planta terrestre” (embriófita). A <strong>cutícula</strong> impermeabiliza; os <strong>estômatos</strong> permitem trocar gases apesar dela; a <strong>esporopolenina</strong> torna o esporo resistente à dessecação, permitindo dispersão pelo ar. Some-se a isso o <strong>embrião retido e nutrido pela planta-mãe</strong> — o caráter que dá o nome do grupo: <em>Embryophyta</em>.</p>
-      <h4>Tecido vascular e lignina</h4>
-      <p>O <strong>xilema</strong> conduz água e sais das raízes às folhas; o <strong>floema</strong> distribui a seiva orgânica. A <strong>lignina</strong> reforça as paredes e permite ficar de pé. Sem isso, a briófita depende de difusão e capilaridade — e é por isso que ela é pequena, vive em lugar úmido e sombreado, e cresce em tapete. É a mesma explicação para três perguntas diferentes.</p>
-      <h4>Grão de pólen, tubo polínico e semente</h4>
-      <p>O <strong>pólen</strong> embala o gametófito masculino numa parede resistente e o entrega ao óvulo pelo <strong>tubo polínico</strong> (sifonogamia). O gameta deixa de nadar: a água líquida sai da equação. Já a <strong>semente</strong> reúne embrião, reserva e tegumento — permitindo <strong>dormência</strong>, proteção contra a seca e dispersão com alimento embarcado. É a combinação que domina os ambientes secos.</p>
-      <h4>Flor, ovário, dupla fecundação e fruto</h4>
-      <p>A <strong>flor</strong> concentra os órgãos reprodutivos e recruta animais como transportadores, o que torna a polinização muito mais precisa que o vento. O <strong>ovário</strong> protege os óvulos e, depois da fecundação, vira <strong>fruto</strong>, uma estrutura de dispersão. A <strong>dupla fecundação</strong> adia o investimento em reserva: o endosperma <span class="ploidia n3">3n</span> só se forma se houve fecundação — economia que a gimnosperma, com endosperma pré-formado, não tem.</p>
-    </div></details>
   </div>
 </section>
+
 
 <!-- ============ 02 BANCADA ============ -->
 <section id="bancada">
@@ -572,137 +574,137 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   </div>
 </section>
 
-<!-- ============ 03 BRIÓFITAS ============ -->
+<!-- ============ ESTAÇÃO 1 · MUSGO ============ -->
 <section id="briofitas" data-g="b">
   <div class="modhead">
-    <div class="kicker"><span class="no">03</span><span class="taxon">Bryophyta · Marchantiophyta · Anthocerotophyta</span></div>
-    <h2>Briófitas</h2>
-    <p class="thesis">As primeiras plantas terrestres — e as únicas em que a planta que você vê é o <strong>gametófito</strong>. Sem vasos condutores, sem lignina e com um gameta que ainda precisa nadar, elas ficaram pequenas e presas ao lugar úmido. Tudo o que se cobra sobre briófita sai dessas três limitações.</p>
+    <div class="kicker"><span class="no">03</span><span class="taxon">Estação 1 · Briófita · Bryophyta</span></div>
+    <h2>Musgo</h2>
+    <p class="thesis">A única estação em que a planta que você vê no estereoscópico é o <strong>gametófito</strong> — a fase haploide. Sem vasos, sem lignina e com um gameta que ainda precisa nadar, o musgo ficou pequeno e preso ao lugar úmido. Todas as perguntas desta bancada saem dessas três limitações.</p>
   </div>
 
-  <dl class="idcard">
-    <div class="idcell"><dt>Fase duradoura</dt><dd>Gametófito <span class="ploidia n1">n</span><small>a plantinha verde do tufo</small></dd></div>
-    <div class="idcell"><dt>Tecido vascular</dt><dd>Ausente<small>avasculares — condução por difusão</small></dd></div>
-    <div class="idcell"><dt>Fecundação</dt><dd>Depende de água<small>anterozoide biflagelado nada</small></dd></div>
-    <div class="idcell"><dt>Esporófito</dt><dd>Dependente<small>preso e nutrido pelo gametófito</small></dd></div>
-    <div class="idcell"><dt>Semente e fruto</dt><dd>Ausentes<small>dispersão por esporos</small></dd></div>
-    <div class="idcell"><dt>Representantes</dt><dd>Musgo, hepática, antócero<small>o da prática costuma ser musgo</small></dd></div>
+  <dl class="orient">
+    <div class="ocell"><dt>Na bancada</dt><dd>Um tufo de <strong>musgo fresco</strong> no <strong>estereoscópico</strong>. Você separa um raminho masculino, um feminino e, se houver, um com o esporófito já formado.</dd></div>
+    <div class="ocell"><dt>Ele vai pedir</dt><dd><strong>Esquematizar com legendas</strong>: gametófito ♂ e anterídio, gametófito ♀ e arquegônio, e o esporófito. Depois, explicar <em>por que nos gametófitos femininos molhados surgem os esporófitos</em>.</dd></div>
+    <div class="ocell"><dt>Para responder você precisa</dt><dd>Os nomes das partes — filoide, cauloide, rizoide, anterídio, arquegônio, cápsula, seta, caliptra — e a cadeia <strong>água → anterozoide → arquegônio → zigoto → esporófito</strong>.</dd></div>
   </dl>
 
   <div class="topic">
     <div class="head">
       <h3>O corpo: por que não se diz folha, caule nem raiz</h3>
       <div class="sum">
-        <p>O gametófito do musgo tem <strong>filoides</strong> (expansões laminares fotossintetizantes, em geral com uma só camada de células), <strong>cauloide</strong> (eixo de sustentação) e <strong>rizoides</strong> (filamentos de fixação). Os nomes mudam porque falta o critério que define folha, caule e raiz verdadeiros: <strong>tecido vascular</strong>.</p>
-        <p>Sem xilema, a água sobe por <strong>capilaridade e difusão</strong> — e é absorvida por toda a superfície do corpo, não pelos rizoides. Sem lignina, não há sustentação. Daí o porte de poucos centímetros, o crescimento em tapete e a exigência de ambiente úmido e sombreado.</p>
+        <p>O gametófito tem <strong>filoides</strong> (expansões laminares fotossintetizantes, em geral com uma só camada de células), <strong>cauloide</strong> (eixo de sustentação) e <strong>rizoides</strong> (filamentos de fixação). Os nomes mudam porque falta o que define folha, caule e raiz verdadeiros: <strong>tecido vascular</strong>.</p>
+        <p>Sem xilema, a água sobe por <strong>capilaridade e difusão</strong> — e entra por toda a superfície do corpo, não pelos rizoides. Escrever “folha do musgo” ou “o rizoide absorve como uma raiz” é X barato de levar.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Duas coisas travam o tamanho, e é preciso citar as duas. A primeira é a <strong>lignina</strong>: sem ela a parede celular não resiste à compressão, e a planta não consegue se manter ereta contra a gravidade. A segunda é a <strong>difusão</strong>: mover água por difusão e capilaridade funciona em escala de milímetros, não de metros — não existe bomba, só o molhado subindo entre as células.</p>
+          <p>Por isso o musgo cresce em <strong>tapete</strong>, e não em haste isolada: os indivíduos encostados uns nos outros seguram água por capilaridade entre eles. O tufo é a solução coletiva para um problema que o indivíduo não resolve.</p>
+        </div>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Um musgo ressecado até virar palha volta a ficar verde minutos depois de molhado. Isso se chama <strong>poiquiloidria</strong>: em vez de gastar energia para <em>não secar</em>, ele simplesmente <strong>tolera secar</strong> — desliga o metabolismo e espera.</p>
+          <p>É a estratégia oposta à das plantas vasculares, que investem em cutícula espessa, estômato controlado e raiz profunda para manter a hidratação constante. E é também o motivo de o musgo ser um bom <strong>bioindicador de poluição do ar</strong>: como absorve por toda a superfície e não filtra nada, ele acumula o que estiver no ar e na chuva.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — os três grupos, condução e ecologia</summary><div class="body">
-      <h4>Como distinguir os três grupos na lupa</h4>
+    <details class="deep"><summary>Aprofundar — se ele trocar o musgo por uma hepática</summary><div class="body">
       <ul>
-        <li><strong>Musgos (Bryophyta):</strong> gametófito <em>folhoso</em> — eixo ereto com filoides dispostos em espiral. Esporófito com seta longa e cápsula com <strong>opérculo e peristômio</strong>.</li>
-        <li><strong>Hepáticas (Marchantiophyta):</strong> gametófito em geral <em>talóide</em> — uma fita verde achatada, dicotomicamente ramificada, colada ao substrato, com <strong>poros e câmaras aeríferas</strong> visíveis como um padrão de losangos. Muitas têm <strong>conceptáculos</strong> (cúpulas) com propágulos, e gametângios erguidos em hastes (anteridióforo e arquegonióforo).</li>
-        <li><strong>Antóceros (Anthocerotophyta):</strong> talo em roseta e esporófito em forma de <strong>chifre</strong>, que cresce continuamente a partir da base e tem estômatos.</li>
+        <li><strong>Musgo:</strong> gametófito <em>folhoso</em> — eixo ereto com filoides em espiral. Esporófito com seta longa e cápsula com <strong>opérculo e peristômio</strong>.</li>
+        <li><strong>Hepática</strong> (<em>Marchantia</em>): gametófito <em>talóide</em> — uma fita verde achatada, colada ao substrato, com <strong>poros e câmaras aeríferas</strong> visíveis como um padrão de losangos. Tem <strong>conceptáculos</strong> (cúpulas) com propágulos, e gametângios erguidos em hastes: <strong>anteridióforo</strong> (disco achatado) e <strong>arquegonióforo</strong> (guarda-chuva com raios). Há uma lâmina dela aqui embaixo.</li>
       </ul>
-      <h4>Elas conduzem alguma coisa?</h4>
-      <p>Alguns musgos têm <strong>hidroides</strong> (células alongadas mortas que conduzem água) e <strong>leptoides</strong> (para a seiva orgânica). Não são xilema nem floema: <strong>não têm lignina</strong> e não sustentam. Se ele perguntar “briófitas conduzem?”, a resposta precisa é: possuem condutores simples, mas são <strong>avasculares</strong>.</p>
-      <h4>Reprodução assexuada</h4>
-      <p>Muito comum e frequentemente cobrada: <strong>fragmentação</strong> do gametófito, e <strong>propágulos (gemas)</strong> produzidos em conceptáculos — as cúpulas de <em>Marchantia</em> são o exemplo clássico. Cada gema desprendida gera um novo gametófito geneticamente idêntico.</p>
-      <h4>Por que elas importam</h4>
-      <p>São <strong>colonizadoras pioneiras</strong>: instalam-se em rocha nua, retêm umidade e iniciam a formação de solo. São <strong>bioindicadoras de poluição do ar</strong>, porque absorvem água e gases por toda a superfície e não têm cutícula espessa para filtrar nada. E o <em>Sphagnum</em> forma turfeiras, que armazenam quantidades enormes de carbono.</p>
-      <h4>Poiquiloidria</h4>
-      <p>Muitas briófitas <strong>toleram a dessecação</strong>: secam completamente, param o metabolismo e voltam a funcionar em minutos quando reidratadas. É a estratégia oposta à das plantas vasculares, que investem em impermeabilização para não secar.</p>
+      <p>Um detalhe que às vezes cai: alguns musgos têm <strong>hidroides</strong> (conduzem água) e <strong>leptoides</strong> (seiva orgânica). Não são xilema nem floema — <strong>não têm lignina</strong> e não sustentam. A resposta precisa é: possuem condutores simples, mas o grupo é <strong>avascular</strong>.</p>
+      <p>Reprodução assexuada é comum e cai: <strong>fragmentação</strong> do gametófito e <strong>propágulos (gemas)</strong> nos conceptáculos.</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>Reprodução sexuada: os gametângios e a água</h3>
+      <h3>Gametângios e a dependência de água</h3>
       <div class="sum">
-        <p>Os musgos são em geral <strong>dioicos</strong>: gametófitos masculinos e femininos separados. No ápice do masculino formam-se <strong>anterídios</strong> (em clava, protegidos por uma roseta de filoides chamada <strong>perigônio</strong>), que produzem por <strong>mitose</strong> milhares de <strong>anterozoides biflagelados</strong>. No ápice do feminino formam-se <strong>arquegônios</strong>, em forma de garrafa, com <strong>colo</strong> e <strong>ventre</strong>, cada um com uma única <strong>oosfera</strong>.</p>
-        <p>A fecundação só acontece com o gametófito <strong>molhado</strong>: o anterozoide nada pela película de água até o colo do arquegônio, atraído por <strong>quimiotaxia</strong>, e fecunda a oosfera. Resultado: <strong>zigoto</strong> <span class="ploidia n2">2n</span>, dentro do ventre.</p>
+        <p>Musgos são em geral <strong>dioicos</strong>. No ápice do gametófito masculino formam-se <strong>anterídios</strong> (em clava, dentro de uma roseta de filoides chamada <strong>perigônio</strong>), que produzem por <strong>mitose</strong> milhares de <strong>anterozoides biflagelados</strong>. No feminino formam-se <strong>arquegônios</strong>, em forma de garrafa, com <strong>colo</strong> e <strong>ventre</strong>, cada um com uma <strong>oosfera</strong>.</p>
+        <p>Com o gametófito molhado, o anterozoide nada pela película de água até o colo do arquegônio, atraído por <strong>quimiotaxia</strong>, e fecunda a oosfera → <strong>zigoto</strong> <span class="ploidia n2">2n</span>, dentro do ventre. É esta cadeia, inteira, que responde à pergunta do professor.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Um anterozoide nada uns poucos centímetros antes de esgotar sua reserva — o que praticamente inviabilizaria a fecundação entre plantas dioicas. O que resolve isso é o formato: o <strong>perigônio é achatado como uma taça</strong>.</p>
+          <p>Quando uma gota de chuva bate no centro dessa taça, ela <strong>espirra</strong> e arremessa os anterozoides a dezenas de centímetros — uma ordem de grandeza a mais do que a natação alcançaria. A chuva não é só o meio em que o gameta nada: é o <strong>veículo balístico</strong> que o leva até perto do alvo. A natação só cobre o último trecho.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — o percurso do anterozoide e como distinguir ♂ de ♀</summary><div class="body">
-      <p>Na lupa, o gametófito <strong>masculino</strong> tem o ápice achatado e aberto, como uma rosetinha (o perigônio); o <strong>feminino</strong> é mais fechado e alongado (o periquécio, envolvendo os arquegônios). Entre os gametângios há <strong>parafises</strong>, filamentos estéreis que ajudam a reter água.</p>
-      <p>O anterozoide nada apenas alguns centímetros. O que amplia esse alcance é o <strong>respingo da chuva</strong>: a gota que bate na roseta masculina espalha os anterozoides a dezenas de centímetros. Por isso o perigônio é achatado — funciona como uma taça de respingo. Esse é o tipo de detalhe que transforma uma resposta correta numa resposta que se destaca.</p>
-      <p>A <strong>quimiotaxia</strong> é real e específica: as células do canal do colo se desfazem em mucilagem e liberam substâncias (açúcares e ácidos orgânicos) que orientam o anterozoide para dentro. Sem essa mucilagem, nadar não adiantaria.</p>
-      <p>Existem musgos <strong>monoicos</strong>, com anterídios e arquegônios no mesmo gametófito. Se a prática mostrar os dois no mesmo indivíduo, não é erro seu — mencione que a espécie é monoica.</p>
+    <details class="deep"><summary>Aprofundar — como distinguir ♂ de ♀ na lupa</summary><div class="body">
+      <p>O gametófito <strong>masculino</strong> tem o ápice achatado e aberto, como uma rosetinha; o <strong>feminino</strong> é mais fechado e alongado (o <strong>periquécio</strong>, envolvendo os arquegônios). Entre os gametângios há <strong>parafises</strong>, filamentos estéreis que retêm água.</p>
+      <p>A <strong>quimiotaxia</strong> é concreta: as células do canal do colo se desfazem em mucilagem e liberam açúcares e ácidos orgânicos que orientam o anterozoide para dentro. Sem essa mucilagem, nadar não adiantaria — ele não saberia para onde ir.</p>
+      <p>Existem musgos <strong>monoicos</strong>. Se a prática mostrar anterídio e arquegônio no mesmo indivíduo, não é erro seu: mencione que a espécie é monoica.</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>O esporófito: o único 2n dependente do reino vegetal</h3>
+      <h3>O esporófito: o único 2n dependente</h3>
       <div class="sum">
-        <p>O zigoto sofre <strong>mitoses</strong> dentro do ventre do arquegônio e forma o esporófito: <strong>pé</strong> (haustório embebido no gametófito), <strong>seta</strong> (haste que ergue a cápsula) e <strong>cápsula</strong> ou esporângio, coberta pela <strong>caliptra</strong> e fechada pelo <strong>opérculo</strong>.</p>
-        <p>Dentro da cápsula, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> e formam os <strong>esporos</strong> <span class="ploidia n1">n</span>. O esporófito <strong>nunca se solta</strong>: permanece preso e nutrido pelo gametófito (matrotrofia). É a única situação, em todo o reino, em que a fase diploide depende da haploide.</p>
+        <p>O zigoto sofre <strong>mitoses</strong> dentro do ventre e forma o esporófito: <strong>pé</strong> (haustório embebido no gametófito), <strong>seta</strong> (ergue a cápsula) e <strong>cápsula</strong>, coberta pela <strong>caliptra</strong> e fechada pelo <strong>opérculo</strong>, com o <strong>peristômio</strong> na boca.</p>
+        <p>Dentro da cápsula, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> e formam os <strong>esporos</strong> <span class="ploidia n1">n</span>. O esporófito <strong>nunca se solta</strong>: permanece preso e nutrido pelo gametófito — <strong>matrotrofia</strong>.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Nos outros três grupos o esporófito ganhou independência. Aqui não — e a razão é que <strong>ser independente exigiria raiz e vaso condutor</strong>, que o musgo não tem. Um esporófito solto no chão não conseguiria se alimentar nem se sustentar.</p>
+          <p>Então ele virou outra coisa: essencialmente um <strong>órgão produtor de esporos da planta-mãe</strong>, que se ergue no alto de uma haste para lançar os esporos mais longe e é abastecido por baixo. A dependência não é uma falha — é a única configuração viável para quem não tem xilema.</p>
+        </div>
       </div>
     </div>
     <details class="deep"><summary>Aprofundar — peristômio, protonema e o que a caliptra revela</summary><div class="body">
-      <p>O <strong>peristômio</strong> é o anel de dentes na boca da cápsula, sob o opérculo. Os dentes são <strong>higroscópicos</strong>: curvam-se conforme a umidade do ar, abrindo-se quando está <strong>seco</strong> e fechando-se quando está úmido. É um dosador de liberação — solta esporos só quando há chance de o ar carregá-los. Guarde o paralelo: <strong>o mesmo princípio do ânulo da samambaia e do endotécio da antera</strong>. Três estruturas diferentes, uma única física: perder água move a peça.</p>
-      <p>O esporo germina e forma o <strong>protonema</strong>, um filamento verde ramificado parecido com uma alga filamentosa. Dele brotam as gemas que originam os gametófitos folhosos. O protonema é etapa obrigatória e costuma ser esquecido no esquema do ciclo.</p>
-      <p>A <strong>caliptra</strong> merece atenção: ela é o resto do arquegônio, dilatado pelo crescimento do esporófito. Portanto é <strong>tecido haploide do gametófito</strong> cobrindo um corpo diploide. Escrever isso mostra que você entendeu quem é quem no ciclo.</p>
-      <p>A cápsula do esporófito <strong>tem estômatos e clorofila</strong> quando jovem — ela fotossintetiza um pouco. Mas isso não a torna independente: água e nutrientes minerais continuam vindo do gametófito, pelo pé.</p>
+      <p>O <strong>peristômio</strong> é o anel de dentes na boca da cápsula. Os dentes são <strong>higroscópicos</strong>: curvam-se conforme a umidade, abrindo-se com o <strong>ar seco</strong> e fechando-se com umidade. Guarde o paralelo, porque ele reaparece nas estações 2 e 4: <strong>peristômio</strong> (musgo), <strong>ânulo</strong> (samambaia) e <strong>endotécio</strong> (antera) abrem todos por <strong>perda de água</strong>. Três estruturas, uma só física.</p>
+      <p>O esporo germina e forma o <strong>protonema</strong>, um filamento verde ramificado parecido com uma alga. Dele brotam as gemas que originam os gametófitos folhosos. É etapa obrigatória do ciclo e quase sempre esquecida no esquema.</p>
+      <p>A <strong>caliptra</strong> é o resto do arquegônio, esticado pelo crescimento do esporófito. Ou seja: <strong>tecido haploide do gametófito cobrindo um corpo diploide</strong>. Escrever isso mostra que você entendeu quem é quem no ciclo.</p>
     </div></details>
   </div>
 
   <h3 style="margin:30px 0 0">Ciclo de vida do musgo</h3>
   <div data-mount="ciclo" data-id="musgo"></div>
 
-  <h3 style="margin:34px 0 0">Lâminas e material fresco</h3>
-  <p class="lead" style="margin-top:8px">Clique num pino para ler o que é a estrutura e como escrevê-la na prova. O botão de rótulos esconde os nomes, para autoteste.</p>
+  <h3 style="margin:34px 0 0">O que você vai ver na bancada</h3>
+  <p class="lead" style="margin-top:8px">Clique num pino para ler a estrutura e como escrevê-la na prova. O botão de rótulos esconde os nomes, para autoteste.</p>
   <div data-mount="laminas" data-g="b"></div>
 
   <h3 style="margin:34px 0 12px">O que costuma ser cobrado</h3>
   <div class="grid g2">
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Por que os esporófitos só aparecem depois da chuva?”</strong></p><p>Cadeia completa: água líquida → anterozoide nada por quimiotaxia → arquegônio → fecunda a oosfera → <strong>zigoto (2n)</strong> → mitoses → esporófito preso ao gametófito. Pular o zigoto é perder o meio da cadeia.</p></div>
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Por que as briófitas são pequenas e vivem em lugares úmidos?”</strong></p><p>Uma resposta, duas causas: <strong>ausência de tecido vascular e de lignina</strong> (não sustenta nem conduz a distância) e <strong>fecundação dependente de água líquida</strong>.</p></div>
-    <div class="card"><span class="tag">Armadilha</span><p>Chamar filoide de folha, ou dizer que o rizoide absorve água como uma raiz.</p><p>O rizoide <strong>fixa</strong>; a absorção é por toda a superfície do corpo.</p></div>
-    <div class="card"><span class="tag">Variação provável</span><p>Trocar o musgo por uma <strong>hepática</strong> (<em>Marchantia</em>).</p><p>Reconheça: talo achatado em fita, poros em losango, cúpulas com propágulos, e gametângios erguidos em hastes (anteridióforo em disco, arquegonióforo em guarda-chuva).</p></div>
+    <div class="card"><span class="tag">Pergunta do ano passado</span><p><strong>“Expliquem por que nos gametófitos femininos molhados surgem os esporófitos.”</strong></p><p>Água líquida → anterozoide nada por quimiotaxia → arquegônio → fecunda a oosfera → <strong>zigoto (2n)</strong> → mitoses → esporófito preso ao gametófito. Pular o zigoto é perder o meio da cadeia — foi exatamente o que ele anotou na margem.</p></div>
+    <div class="card"><span class="tag">Variante provável</span><p><strong>“Por que as briófitas são pequenas e vivem em lugares úmidos?”</strong></p><p>Duas causas numa resposta: <strong>ausência de lignina e de tecido vascular</strong>, e <strong>fecundação dependente de água líquida</strong>.</p></div>
+    <div class="card"><span class="tag">Armadilha</span><p>Chamar filoide de folha; dizer que o rizoide absorve água; dizer que o esporófito é independente.</p><p>São três X clássicos, e todos evitáveis com uma palavra certa.</p></div>
+    <div class="card"><span class="tag">Se a lâmina mudar</span><p>Hepática (<em>Marchantia</em>) no lugar do musgo.</p><p>Talo achatado, poros em losango, cúpulas com propágulos, gametângios em hastes. O resto da resposta — gametófito duradouro, água, esporófito dependente — não muda.</p></div>
   </div>
 
-  <h3 style="margin:30px 0 12px">Questões de briófitas</h3>
+  <h3 style="margin:30px 0 12px">Questões desta estação</h3>
   <div data-mount="questoes" data-g="b"></div>
 </section>
 
-<!-- ============ 04 PTERIDÓFITAS ============ -->
+<!-- ============ ESTAÇÃO 2 · SAMAMBAIA ============ -->
 <section id="pteridofitas" data-g="p">
   <div class="modhead">
-    <div class="kicker"><span class="no">04</span><span class="taxon">Lycopodiophyta · Polypodiopsida</span></div>
-    <h2>Pteridófitas</h2>
-    <p class="thesis">As primeiras <strong>traqueófitas</strong>: com xilema, floema e lignina, a planta finalmente fica de pé e cresce metros. O esporófito assume o papel principal e o gametófito encolhe até virar um protalo de poucos milímetros. Mas a fecundação <strong>ainda depende de água</strong> — e é essa contradição que a prova adora explorar.</p>
+    <div class="kicker"><span class="no">04</span><span class="taxon">Estação 2 · Pteridófita · Polypodiopsida</span></div>
+    <h2>Samambaia</h2>
+    <p class="thesis">Aqui a planta ganha <strong>xilema, floema e lignina</strong>, fica de pé e cresce metros — e o esporófito assume o papel principal. Mas a fecundação <strong>ainda depende de água</strong>, num gametófito de poucos milímetros que quase ninguém lembra que existe. Essa contradição é o que a prova explora.</p>
   </div>
 
-  <dl class="idcard">
-    <div class="idcell"><dt>Fase duradoura</dt><dd>Esporófito <span class="ploidia n2">2n</span><small>a samambaia que você vê</small></dd></div>
-    <div class="idcell"><dt>Tecido vascular</dt><dd>Xilema e floema<small>primeira linhagem vascular</small></dd></div>
-    <div class="idcell"><dt>Fecundação</dt><dd>Ainda depende de água<small>anterozoide multiflagelado</small></dd></div>
-    <div class="idcell"><dt>Gametófito</dt><dd>Protalo <span class="ploidia n1">n</span><small>cordiforme, poucos milímetros</small></dd></div>
-    <div class="idcell"><dt>Semente e fruto</dt><dd>Ausentes<small>dispersão por esporos</small></dd></div>
-    <div class="idcell"><dt>Representantes</dt><dd>Samambaia, avenca, cavalinha<small>samambaia-açu, licopódio, salvínia</small></dd></div>
+  <dl class="orient">
+    <div class="ocell"><dt>Na bancada</dt><dd>Uma <strong>fronde de samambaia</strong> no <strong>estereoscópico</strong>, virada para você ver a face de baixo — é lá que estão os <strong>soros</strong>. Pode haver também uma lâmina de corte do soro no óptico.</dd></div>
+    <div class="ocell"><dt>Ele vai pedir</dt><dd><strong>Esquematizar os soros</strong> e responder três coisas de uma vez: <em>que estruturas eles originam</em>, <em>por meio de qual processo</em> e <em>que condição ambiental provoca sua ruptura</em>.</dd></div>
+    <div class="ocell"><dt>Para responder você precisa</dt><dd>A escada <strong>soro → esporângio → esporo</strong>; o processo é <strong>meiose</strong>; e a condição é o <strong>ressecamento — ar seco</strong>, pelo mecanismo do ânulo. Essa terceira parte é onde o vermelho caiu no ano passado.</dd></div>
   </dl>
 
   <div class="topic">
     <div class="head">
       <h3>O corpo do esporófito: agora com órgãos verdadeiros</h3>
       <div class="sum">
-        <p>A samambaia tem <strong>raiz</strong> (adventícia), <strong>caule</strong> (em geral um <strong>rizoma</strong> subterrâneo) e <strong>folha</strong> (a <strong>fronde</strong>) — todos verdadeiros, porque agora há tecido vascular. A fronde jovem vem enrolada em <strong>báculo</strong> (prefoliação circinada), e se divide em <strong>pinas</strong>.</p>
-        <p>As frondes que carregam soros são <strong>esporófilos</strong> (folhas férteis); as demais são <strong>trofófilos</strong>. Em muitas espécies a mesma fronde faz as duas coisas.</p>
+        <p>A samambaia tem <strong>raiz</strong> (adventícia), <strong>caule</strong> (em geral um <strong>rizoma</strong> subterrâneo) e <strong>folha</strong> (a <strong>fronde</strong>) — todos verdadeiros, porque agora há tecido vascular. A fronde jovem vem enrolada em <strong>báculo</strong> e se divide em <strong>pinas</strong>. As frondes que carregam soros são <strong>esporófilos</strong>; as demais, <strong>trofófilos</strong>.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>A fronde vem enrolada porque a <strong>ponta é a parte mais frágil</strong> — é ali que fica o meristema, e é ali que a folha ainda está se construindo. Enrolar coloca o tecido novo no <strong>centro da espiral</strong>, protegido, enquanto a parte de fora, já endurecida, é a que abre caminho pela serrapilheira.</p>
+          <p>O desenrolar é <strong>crescimento diferencial</strong>: as células da face externa da curva se alongam mais rápido que as da interna, e a espiral se abre sozinha. É o mesmo princípio de uma tira de bimetal — nenhuma articulação, só duas velocidades de crescimento.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — os dois grandes grupos, o Carbonífero e a heterosporia</summary><div class="body">
-      <h4>Licófitas e monilófitas</h4>
-      <p>“Pteridófita” hoje não é um grupo natural: reúne duas linhagens.</p>
-      <ul>
-        <li><strong>Licófitas</strong> (<em>Lycopodium</em>, <em>Selaginella</em>): folhas pequenas com uma única nervura (<strong>micrófilos</strong>); esporângios reunidos em <strong>estróbilos</strong>.</li>
-        <li><strong>Monilófitas</strong> (samambaias e cavalinhas): folhas grandes e ramificadamente nervuradas (<strong>megáfilos</strong>) — as frondes. As cavalinhas (<em>Equisetum</em>) têm caule articulado com sílica e estróbilo terminal.</li>
-      </ul>
-      <p>Se ele mostrar um estróbilo e você estiver esperando um soro, é licófita ou cavalinha — não gimnosperma. O critério é o resto da planta.</p>
-      <h4>Homosporia e heterosporia</h4>
-      <p>A maioria das samambaias é <strong>homosporada</strong>: um só tipo de esporo, que gera um protalo monoico. Mas existem pteridófitas <strong>heterosporadas</strong> — <em>Selaginella</em>, <em>Salvinia</em>, <em>Marsilea</em> — com micrósporos e megásporos separados. Isso importa porque a heterosporia é o <strong>pré-requisito evolutivo da semente</strong>: ela já aparece aqui, antes das gimnospermas.</p>
-      <h4>Por que elas dominaram o Carbonífero</h4>
-      <p>Há cerca de 350 milhões de anos, licófitas arbóreas formavam florestas inteiras. Sem organismos capazes de degradar lignina em escala, essa biomassa se acumulou e virou as <strong>jazidas de carvão mineral</strong>. É a resposta pronta para “qual a importância econômica das pteridófitas?”.</p>
+    <details class="deep"><summary>Aprofundar — o carvão mineral saiu daqui</summary><div class="body">
+      <p>Há cerca de 350 milhões de anos, no <strong>Carbonífero</strong>, licófitas arbóreas de trinta metros formavam florestas inteiras. Elas tinham acabado de inventar a <strong>lignina</strong> — e praticamente <strong>nenhum organismo sabia degradá-la</strong>: os fungos capazes disso só apareceriam depois.</p>
+      <p>O resultado é que os troncos caíam e simplesmente <strong>não apodreciam</strong>. Foram soterrados, comprimidos e viraram as <strong>jazidas de carvão mineral</strong> que movimentaram a Revolução Industrial. É uma das poucas vezes em que um atraso evolutivo de um grupo (os decompositores) deixou uma marca geológica global.</p>
+      <p>Se ele perguntar “qual a importância das pteridófitas?”, essa é a resposta que ninguém dá.</p>
     </div></details>
   </div>
 
@@ -710,15 +712,19 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
     <div class="head">
       <h3>Soros, esporângios e o mecanismo do ânulo</h3>
       <div class="sum">
-        <p>Na face <strong>abaxial</strong> (inferior) da fronde fértil formam-se os <strong>soros</strong>: <strong>aglomerados de esporângios</strong>, muitas vezes protegidos pelo <strong>indúsio</strong>. Três níveis, nesta ordem: <strong>soro → esporângio → esporo</strong>.</p>
-        <p>Dentro de cada esporângio, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> (esporogênese) e produzem esporos <span class="ploidia n1">n</span>. A abertura é mecânica: o <strong>ânulo</strong>, um arco de células com paredes desigualmente espessadas, perde água quando o <strong>ar está seco</strong>, curva-se para trás rompendo o esporângio no <strong>estômio</strong>, e depois volta bruscamente — <strong>catapultando</strong> os esporos.</p>
-        <p class="note red" style="margin-top:12px"><span class="h">O erro clássico</span>Responder que a <em>umidade</em> rompe o esporângio. É o contrário: umidade alta o mantém fechado. O gatilho é o <strong>ressecamento</strong>.</p>
+        <p>Na face <strong>abaxial</strong> da fronde fértil formam-se os <strong>soros</strong>: <strong>aglomerados de esporângios</strong>, muitas vezes cobertos pelo <strong>indúsio</strong>. São três níveis, nesta ordem — <strong>soro → esporângio → esporo</strong>. Dentro de cada esporângio, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> e produzem esporos <span class="ploidia n1">n</span>.</p>
+        <p>A abertura é mecânica. O <strong>ânulo</strong> — um arco de células com paredes finas por fora e muito espessas por dentro — perde água quando o <strong>ar está seco</strong>, curva-se para trás rompendo o esporângio no <strong>estômio</strong>, e depois volta bruscamente, <strong>catapultando</strong> os esporos.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>A pergunta natural é: por que abrir no <strong>seco</strong>, se a samambaia precisa de umidade para tudo o mais? Porque quem abre o esporângio não está pensando em germinar — está pensando em <strong>viajar</strong>.</p>
+          <p>Esporo lançado em ar úmido absorve água, fica pesado e cai a poucos centímetros da planta-mãe, onde vai competir com ela por luz e espaço. Em ar seco, ele fica leve, permanece em suspensão e é levado pelo vento. Além disso, ar seco costuma vir com <strong>vento e sol</strong> — as condições que efetivamente transportam. <strong>A física do ânulo serve à ecologia da dispersão:</strong> o gatilho é a desidratação justamente porque a desidratação sinaliza o melhor momento para lançar.</p>
+        </div>
+        <p class="note red" style="margin-top:14px"><span class="h">O erro clássico</span>Responder que a <em>umidade</em> rompe o esporângio. É o contrário: umidade alta o mantém fechado.</p>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — a física da catapulta</summary><div class="body">
-      <p>As células do ânulo têm paredes <strong>finas por fora e muito espessas nas faces internas</strong>. Quando a água do interior evapora, a <strong>coesão</strong> entre as moléculas mantém a coluna líquida sob tensão e puxa as paredes finas para dentro. Como só um lado cede, o arco inteiro se endireita e se curva para trás, arrancando a metade do esporângio no estômio.</p>
-      <p>Em algum ponto a tensão fica alta demais e a água <strong>cavita</strong> — forma bolha de vapor de repente. A tensão desaparece num instante e o ânulo volta à posição original numa velocidade altíssima, lançando os esporos a alguns centímetros. É um dos movimentos mais rápidos conhecidos em plantas.</p>
-      <p>Repare que isso liga três estruturas da matéria: <strong>ânulo</strong> (samambaia), <strong>peristômio</strong> (musgo) e <strong>endotécio</strong> (antera de angiosperma). Todas abrem por <strong>desidratação</strong>. Se você escrever essa ponte numa resposta, mostra domínio, não memorização.</p>
+    <details class="deep"><summary>Aprofundar — a física da catapulta, passo a passo</summary><div class="body">
+      <p>Quando a água do interior das células do ânulo evapora, a <strong>coesão</strong> entre as moléculas mantém a coluna líquida sob tensão e puxa as paredes finas para dentro. Como só um lado das células cede, o arco inteiro se endireita e se curva para trás, arrancando a metade do esporângio no estômio.</p>
+      <p>A tensão continua subindo até que a água <strong>cavita</strong> — forma bolha de vapor de repente. A tensão desaparece num instante, o ânulo volta à posição original em microssegundos e lança os esporos a alguns centímetros. É um dos movimentos mais rápidos conhecidos em plantas, e não gasta nenhuma energia metabólica: <strong>é evaporação virando trabalho mecânico</strong>.</p>
     </div></details>
   </div>
 
@@ -726,243 +732,245 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
     <div class="head">
       <h3>O protalo: a geração que quase todo mundo esquece</h3>
       <div class="sum">
-        <p>O esporo germina e forma o <strong>protalo</strong>: o <strong>gametófito</strong> <span class="ploidia n1">n</span>, uma lâmina verde <strong>cordiforme</strong> de poucos milímetros, autotrófica, presa ao solo por rizoides. Nele se formam <strong>anterídios</strong> e <strong>arquegônios</strong> — em geral no mesmo indivíduo, portanto <strong>monoico</strong>.</p>
-        <p>A fecundação continua <strong>dependente de água</strong>: o anterozoide multiflagelado nada até o arquegônio. Do zigoto <span class="ploidia n2">2n</span> nasce o novo esporófito, que cresce sobre o protalo e depois o substitui — o protalo morre.</p>
+        <p>O esporo germina e forma o <strong>protalo</strong>: o <strong>gametófito</strong> <span class="ploidia n1">n</span>, uma lâmina verde <strong>cordiforme</strong> de poucos milímetros, autotrófica, presa por rizoides. Nele se formam <strong>anterídios</strong> e <strong>arquegônios</strong> — no mesmo indivíduo, portanto <strong>monoico</strong>.</p>
+        <p>A fecundação continua <strong>dependente de água</strong>: o anterozoide multiflagelado nada até o arquegônio. Do zigoto <span class="ploidia n2">2n</span> nasce o esporófito, que cresce sobre o protalo e depois o substitui.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Se a samambaia é vascular, tem raiz e chega a metros, <strong>por que ela ainda só vive em lugar úmido e sombreado?</strong> A resposta é que o gargalo não está na planta que você vê.</p>
+          <p>Está no <strong>protalo</strong>: milímetros, sem cutícula espessa, sem vasos, e com um gameta que precisa nadar. Uma vez a cada geração, o ciclo inteiro passa obrigatoriamente por essa fase frágil. <strong>O esporófito conquistou o ambiente seco; o ciclo não.</strong> É exatamente esse gargalo que o grão de pólen elimina na estação seguinte — e é por isso que a gimnosperma pôde ocupar terrenos que a samambaia nunca ocupou.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — por que o protalo é a prova de que a água ainda manda</summary><div class="body">
-      <p>O protalo é minúsculo, sem cutícula espessa e sem vasos: ele só sobrevive em solo úmido e sombreado. Ou seja, <strong>a samambaia adulta conquistou o ambiente seco, mas o ciclo dela não</strong>. Existe um gargalo úmido obrigatório entre uma geração e outra.</p>
-        <p>Essa é a resposta completa para “se a samambaia é vascular, por que ainda vive em lugar úmido?”. Não é o esporófito que exige umidade — é o protalo e a natação do anterozoide.</p>
-      <p>No protalo, anterídios e arquegônios costumam amadurecer em <strong>épocas diferentes</strong> (protandria), o que favorece a fecundação cruzada entre protalos vizinhos, apesar de o indivíduo ser monoico.</p>
-      <p>Detalhe anatômico útil: os <strong>arquegônios</strong> ficam perto do <strong>chanfro apical</strong> (a reentrância do coração) e os <strong>anterídios</strong> na região mais estreita, entre os rizoides. Se a lâmina for de protalo, é isso que se procura.</p>
+    <details class="deep"><summary>Aprofundar — onde ficam as estruturas no protalo</summary><div class="body">
+      <p>Os <strong>arquegônios</strong> ficam perto do <strong>chanfro apical</strong> (a reentrância do coração); os <strong>anterídios</strong> ficam na região mais estreita, entre os rizoides. Se a lâmina for de protalo, é isso que se procura — e há uma aqui embaixo.</p>
+      <p>Apesar de monoico, o protalo costuma amadurecer anterídios e arquegônios em <strong>épocas diferentes</strong>, o que favorece a fecundação cruzada entre protalos vizinhos em vez da autofecundação.</p>
     </div></details>
   </div>
 
   <h3 style="margin:30px 0 0">Ciclo de vida da samambaia</h3>
   <div data-mount="ciclo" data-id="samambaia"></div>
 
-  <h3 style="margin:34px 0 0">Lâminas e material fresco</h3>
+  <h3 style="margin:34px 0 0">O que você vai ver na bancada</h3>
   <div data-mount="laminas" data-g="p"></div>
 
   <h3 style="margin:34px 0 12px">O que costuma ser cobrado</h3>
   <div class="grid g2">
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Que estruturas os soros originam, por qual processo, e o que provoca sua ruptura?”</strong></p><p>Três respostas: <strong>esporângios → esporos</strong>; por <strong>meiose</strong> (esporogênese); e a ruptura vem do <strong>ressecamento do ar</strong>, pelo mecanismo do ânulo.</p></div>
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Compare briófitas e pteridófitas.”</strong></p><p>Diferem em <strong>tecido vascular</strong>, <strong>porte</strong>, <strong>órgãos verdadeiros</strong> e <strong>fase duradoura</strong>. São <strong>iguais</strong> na dependência de água para fecundar — e é justamente aí que a maioria erra.</p></div>
+    <div class="card"><span class="tag">Pergunta do ano passado</span><p><strong>“Que estruturas eles originam? Por meio de qual processo? Que condição ambiental é responsável pela sua ruptura?”</strong></p><p><strong>Esporângios → esporos</strong>; por <strong>meiose</strong> (esporogênese); e <strong>ressecamento do ar</strong>, pelo mecanismo do ânulo. Três respostas — responder duas já derruba o item.</p></div>
+    <div class="card"><span class="tag">Variante provável</span><p><strong>“Compare briófitas e pteridófitas.”</strong></p><p>Diferem em <strong>vaso, lignina, porte, órgãos verdadeiros e fase duradoura</strong>. São <strong>iguais</strong> na dependência de água para fecundar — e é aí que a maioria erra.</p></div>
     <div class="card"><span class="tag">Armadilha</span><p>Dizer que o soro é o esporo, ou que o protalo é “a samambaia jovem”.</p><p>Soro é conjunto de esporângios; protalo é a <strong>outra geração</strong>, haploide.</p></div>
-    <div class="card"><span class="tag">Variação provável</span><p>Lâmina de <strong>protalo</strong>, corte de <strong>rizoma</strong>, fronde em <strong>báculo</strong>, ou uma <strong>cavalinha</strong> com estróbilo.</p><p>Se aparecer estróbilo numa planta sem semente, pense em licófita ou <em>Equisetum</em> — não em gimnosperma.</p></div>
+    <div class="card"><span class="tag">Se a lâmina mudar</span><p>Lâmina de <strong>protalo</strong>, corte de <strong>rizoma</strong> ou uma <strong>cavalinha</strong> com estróbilo.</p><p>Estróbilo numa planta sem semente é licófita ou <em>Equisetum</em> — não gimnosperma.</p></div>
   </div>
 
-  <h3 style="margin:30px 0 12px">Questões de pteridófitas</h3>
+  <h3 style="margin:30px 0 12px">Questões desta estação</h3>
   <div data-mount="questoes" data-g="p"></div>
 </section>
 
-<!-- ============ 05 GIMNOSPERMAS ============ -->
+<!-- ============ ESTAÇÃO 3 · PINHEIRO ============ -->
 <section id="gimnospermas" data-g="g">
   <div class="modhead">
-    <div class="kicker"><span class="no">05</span><span class="taxon">Cycadophyta · Ginkgophyta · Coniferophyta · Gnetophyta</span></div>
-    <h2>Gimnospermas</h2>
-    <p class="thesis">Aqui a planta se solta da água: o gameta masculino deixa de nadar e passa a ser <strong>entregue</strong> pelo tubo polínico. Surge a <strong>semente</strong> — mas ela amadurece <strong>nua</strong>, exposta sobre a escama, porque ainda não existe ovário. <em>Gymnos</em> = nu, <em>sperma</em> = semente: o nome do grupo <strong>é</strong> a resposta da questão mais cobrada.</p>
+    <div class="kicker"><span class="no">05</span><span class="taxon">Estação 3 · Gimnosperma · <em>Pinus</em></span></div>
+    <h2>Pinheiro</h2>
+    <p class="thesis">A estação em que a planta se solta da água: o gameta masculino deixa de nadar e passa a ser <strong>entregue</strong> pelo tubo polínico. Surge a <strong>semente</strong> — mas ela amadurece <strong>nua</strong>, sobre a escama, porque ainda não existe ovário. <em>Gymnos</em> = nu, <em>sperma</em> = semente: o nome do grupo <strong>é</strong> a resposta da pergunta desta bancada.</p>
   </div>
 
-  <dl class="idcard">
-    <div class="idcell"><dt>Fase duradoura</dt><dd>Esporófito <span class="ploidia n2">2n</span><small>a árvore</small></dd></div>
-    <div class="idcell"><dt>Estrutura reprodutiva</dt><dd>Estróbilo<small>micro (♂) e mega (♀), unissexuados</small></dd></div>
-    <div class="idcell"><dt>Fecundação</dt><dd>Tubo polínico<small>sifonogamia — sem água</small></dd></div>
-    <div class="idcell"><dt>Óvulo</dt><dd>Nu<small>sobre a escama, sem ovário</small></dd></div>
-    <div class="idcell"><dt>Flor e fruto</dt><dd>Ausentes<small>a pinha é estróbilo, não fruto</small></dd></div>
-    <div class="idcell"><dt>Endosperma</dt><dd><span class="ploidia n1">n</span>, pré-fecundação<small>é o próprio megagametófito</small></dd></div>
+  <dl class="orient">
+    <div class="ocell"><dt>Na bancada</dt><dd><strong>Pinhas inteiras</strong> (estróbilos) no estereoscópico, e duas lâminas permanentes no óptico: <strong>nº 40 — microstróbilo</strong> e <strong>nº 41 — megastróbilo</strong>, na objetiva de 40×. Anote <span class="mono">400×</span> no desenho.</dd></div>
+    <div class="ocell"><dt>Ele vai pedir</dt><dd><strong>Esquematizar as duas lâminas</strong> com as principais estruturas legendadas e, depois, justificar <em>por que as estruturas observadas são típicas de uma gimnosperma</em>.</dd></div>
+    <div class="ocell"><dt>Para responder você precisa</dt><dd>Na nº 40: microsporófilo, microsporângio, grão de pólen com sacos aéreos. Na nº 41: escama ovulífera, <strong>óvulo nu</strong>, tegumento, micrópila, nucelo. E começar a justificativa por <strong>óvulo nu</strong> — foi aí que a nota caiu no ano passado.</dd></div>
   </dl>
 
   <div class="topic">
     <div class="head">
       <h3>Óvulo nu: o caráter que define o grupo</h3>
       <div class="sum">
-        <p>No megastróbilo, os óvulos ficam apoiados <strong>descobertos sobre a face superior da escama ovulífera</strong>. Não há carpelo fechado em volta deles — e, portanto, não há ovário. Sem ovário não pode haver <strong>fruto</strong>, porque fruto é ovário desenvolvido. A semente amadurece exposta.</p>
+        <p>No megastróbilo, os óvulos ficam apoiados <strong>descobertos sobre a face superior da escama ovulífera</strong>. Não há carpelo fechado em volta deles e, portanto, não há ovário. Sem ovário não pode haver <strong>fruto</strong>, porque fruto é ovário desenvolvido — a semente amadurece exposta.</p>
         <p>Por isso a <strong>pinha</strong> não é fruto: é o megastróbilo com as escamas lignificadas, que se abrem em tempo seco e soltam as sementes. O <strong>pinhão</strong> é a semente.</p>
-        <p class="note gold" style="margin-top:12px"><span class="h">Como justificar sem circularidade</span>Comece por <strong>“os óvulos estão nus, sem ovário ao redor”</strong>. Depois some os complementos: planta <strong>monoica</strong> com <strong>estróbilos unissexuados separados</strong>, <strong>heterosporia</strong>, e <strong>pólen com sacos aéreos</strong> adaptado à anemofilia. Definir estróbilo com estróbilo não responde nada.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Vale entender o que o ovário resolve, para ver o que a gimnosperma <em>não</em> tem. Fechar o óvulo dentro de uma câmara traz três coisas: <strong>proteção física</strong> contra quem come óvulo, um <strong>filtro</strong> — o estigma pode “escolher” qual pólen germina, o que permite rejeitar espécie errada e pólen do próprio indivíduo — e, depois da fecundação, uma <strong>parede pronta para virar fruto</strong> e comprar transporte com animais.</p>
+          <p>A gimnosperma abre mão dos três. Em compensação, seu óvulo fica diretamente exposto ao ar, o que torna possível capturar pólen do vento com uma simples <strong>gota de polinização</strong> na micrópila — coisa que uma flor de ovário fechado não pode fazer. Não é uma versão “inacabada” da angiosperma: é outra aposta, e ela domina até hoje as florestas frias e secas, onde não há animal polinizador suficiente.</p>
+        </div>
+        <p class="note gold" style="margin-top:14px"><span class="h">Como justificar sem circularidade</span>Comece por <strong>“os óvulos estão nus, sem ovário ao redor”</strong>. Depois some: planta <strong>monoica</strong> com <strong>estróbilos unissexuados separados</strong>, <strong>heterosporia</strong>, e <strong>pólen com sacos aéreos</strong> adaptado à anemofilia. Definir estróbilo com estróbilo não responde nada — foi esse o X do ano passado.</p>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — os quatro grupos vivos e o que muda entre eles</summary><div class="body">
-      <ul>
-        <li><strong>Coníferas</strong> (pinheiro, araucária, cipreste, sequoia): as mais numerosas; folhas em <strong>acícula</strong> ou escama, canais resiníferos, estróbilos lenhosos. É de onde vêm quase todas as lâminas de prática.</li>
-        <li><strong>Cicadáceas</strong> (<em>Cycas</em>): aspecto de palmeira, <strong>dioicas</strong>, estróbilos enormes; ainda produzem <strong>anterozoides ciliados</strong> — um fóssil vivo do tempo em que o gameta nadava.</li>
-        <li><strong>Ginkgo</strong> (<em>Ginkgo biloba</em>): uma única espécie viva, folhas em leque com nervação dicotômica, dioica, também com gametas ciliados.</li>
-        <li><strong>Gnetófitas</strong> (<em>Ephedra</em>, <em>Gnetum</em>, <em>Welwitschia</em>): as únicas gimnospermas com <strong>elementos de vaso</strong> no xilema, e algumas com uma forma de dupla fecundação — convergências com as angiospermas.</li>
-      </ul>
-      <h4>No Brasil</h4>
-      <p>A <em>Araucaria angustifolia</em> (pinheiro-do-paraná) é a gimnosperma brasileira mais provável de aparecer numa prática. Ela é <strong>dioica</strong> (diferente do <em>Pinus</em>, que é monoico) e o “pinhão” que se come é a <strong>semente</strong>. Se ele trocar <em>Pinus</em> por araucária, a única coisa que muda na sua resposta é a monoicia.</p>
-      <h4>O detalhe que impressiona</h4>
-      <p>Em <em>Pinus</em>, passa cerca de <strong>um ano</strong> entre a polinização e a fecundação: o pólen chega, o tubo polínico começa a crescer, o processo hiberna, e só na estação seguinte o megagametófito termina de se formar. A pinha leva dois anos para amadurecer.</p>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>Dois estróbilos, duas meioses</h3>
+      <div class="sum">
+        <p><strong>Microstróbilo (nº 40):</strong> eixo com <strong>microsporófilos</strong>, cada um com dois <strong>microsporângios</strong> (sacos polínicos). Neles, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> → micrósporos <span class="ploidia n1">n</span> → por mitoses, <strong>grãos de pólen</strong> com dois <strong>sacos aéreos</strong>.</p>
+        <p><strong>Megastróbilo (nº 41):</strong> eixo com pares de <strong>bráctea + escama ovulífera</strong>, cada escama com dois <strong>óvulos</strong>. No <strong>nucelo</strong> (megasporângio) do óvulo, a célula-mãe <span class="ploidia n2">2n</span> sofre <strong>meiose</strong> → 4 megásporos, <strong>3 degeneram</strong>, e o funcional forma o <strong>megagametófito</strong> com arquegônios e oosferas.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Repare numa coisa estranha: o tecido de reserva da semente de pinheiro é o próprio megagametófito — <strong>haploide, e formado antes da fecundação</strong>. A planta enche o óvulo de reserva sem saber ainda se haverá embrião. Se o pólen não chegar, tudo aquilo é desperdiçado.</p>
+          <p>Por que ela faz isso? Porque não tem escolha: o megagametófito <em>é</em> a geração haploide, e ela precisa se desenvolver para produzir a oosfera. A reserva é um efeito colateral de ter um gametófito ainda relativamente grande.</p>
+          <p>Guarde esse desperdício, porque é exatamente o problema que a <strong>dupla fecundação</strong> da angiosperma resolve na próxima estação — lá, o tecido de reserva só começa a se formar <em>depois</em> que a fecundação aconteceu. Uma pergunta comparativa sobre endosperma está pedindo isto.</p>
+        </div>
+      </div>
+    </div>
+    <details class="deep"><summary>Aprofundar — micro e mega não se referem ao tamanho do estróbilo</summary><div class="body">
+      <p>Os prefixos falam do <strong>esporo e do gametófito</strong>, não do cone: o microgametófito (o pólen) é minúsculo; o megagametófito ocupa quase todo o interior do óvulo. Na prática o megastróbilo é mesmo o maior — mas o motivo do nome é outro, e ele pode cobrar isso.</p>
+      <p>Outro ponto: a gimnosperma <strong>ainda tem arquegônios</strong>, reduzidos, dentro do megagametófito. Nas angiospermas eles somem por completo. É mais um passo da redução progressiva do gametófito.</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>Heterosporia: dois estróbilos, duas meioses</h3>
+      <h3>Anemofilia e o tubo polínico</h3>
       <div class="sum">
-        <p><strong>Microstróbilo</strong> (♂, pequeno e agrupado): eixo com <strong>microsporófilos</strong>, cada um com dois <strong>microsporângios</strong> (sacos polínicos). Dentro deles, células-mãe <span class="ploidia n2">2n</span> sofrem <strong>meiose</strong> → micrósporos <span class="ploidia n1">n</span> → por mitoses, <strong>grãos de pólen</strong> com dois <strong>sacos aéreos</strong>.</p>
-        <p><strong>Megastróbilo</strong> (♀, a pinha): eixo com pares de <strong>bráctea + escama ovulífera</strong>, cada escama com dois <strong>óvulos</strong>. Dentro do óvulo, o <strong>nucelo</strong> (megasporângio) tem a célula-mãe <span class="ploidia n2">2n</span>, que por <strong>meiose</strong> gera 4 megásporos — <strong>3 degeneram</strong> e 1 forma o <strong>megagametófito</strong>, com <strong>arquegônios</strong> e oosferas.</p>
+        <p>Os <strong>sacos aéreos</strong> reduzem a densidade do grão e o mantêm em suspensão: adaptação direta à <strong>anemofilia</strong>. O vento leva o pólen até a <strong>micrópila</strong>, onde uma <strong>gota de polinização</strong> o captura e, ao secar, o puxa para dentro.</p>
+        <p>O grão germina e emite o <strong>tubo polínico</strong>, que leva o núcleo espermático até a oosfera — <strong>sifonogamia</strong>. Nenhum gameta nada; a água líquida sai da equação. A fecundação é <strong>simples</strong>.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Por que dois balões de ar, e não simplesmente um grão menor? Porque encolher o grão significaria <strong>encolher o conteúdo</strong> — e ele carrega um gametófito inteiro mais a reserva para germinar o tubo. Os sacos aéreos resolvem o problema pelo outro lado: <strong>aumentam o volume sem aumentar a massa</strong>, e assim derrubam a densidade. É flutuação, não miniaturização.</p>
+          <p>E há uma segunda função, quase sempre esquecida: dentro da gota de polinização, os sacos fazem o grão <strong>boiar e girar</strong>, orientando o lado germinativo para o nucelo. Eles não servem só para voar — servem também para o grão pousar do jeito certo.</p>
+          <p>O preço da anemofilia é o desperdício: o vento é cego, e a compensação é quantidade. Um pinheiro solta bilhões de grãos, e em regiões de conífera é comum ver uma camada amarela de pólen sobre lagos e carros na primavera.</p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — micro e mega, e o endosperma que confunde</summary><div class="body">
-      <p>Os prefixos <strong>não se referem ao tamanho do estróbilo</strong>, e sim ao do esporo e do gametófito que ele gera: o microgametófito (pólen) é minúsculo; o megagametófito ocupa quase todo o interior do óvulo. Na prática, o megastróbilo é o maior — mas o motivo do nome é outro.</p>
-      <h4>O endosperma da gimnosperma</h4>
-      <p>Este é um dos pontos mais cobrados em prova comparativa. O tecido de reserva da semente de pinheiro <strong>é o próprio megagametófito</strong>: haploide <span class="ploidia n1">n</span> e formado <strong>antes</strong> da fecundação. A planta investe reserva sem saber ainda se haverá embrião.</p>
-      <p>Na angiosperma é o oposto: o endosperma <span class="ploidia n3">3n</span> se forma <strong>depois</strong>, na dupla fecundação. Só se investe reserva quando o embrião já está garantido — uma economia que ajuda a explicar o sucesso do grupo.</p>
-      <h4>O arquegônio sobrevive aqui</h4>
-      <p>A gimnosperma ainda tem <strong>arquegônios</strong>, reduzidos, dentro do megagametófito. Nas angiospermas eles desaparecem por completo — o saco embrionário não tem gametângio nenhum. É mais um passo da redução progressiva do gametófito.</p>
-    </div></details>
-  </div>
-
-  <div class="topic">
-    <div class="head">
-      <h3>Polinização pelo vento e o tubo polínico</h3>
-      <div class="sum">
-        <p>Os <strong>sacos aéreos</strong> reduzem a densidade do grão e o mantêm em suspensão: adaptação direta à <strong>anemofilia</strong>. O vento leva o pólen até a <strong>micrópila</strong> do óvulo, onde uma <strong>gota de polinização</strong> o captura e, ao secar, o puxa para dentro.</p>
-        <p>O grão germina e emite o <strong>tubo polínico</strong>, que leva o núcleo espermático diretamente à oosfera — <strong>sifonogamia</strong>. Nenhum gameta nada; a água líquida deixa de ser necessária. A fecundação é <strong>simples</strong>: um núcleo, um zigoto.</p>
-      </div>
-    </div>
-    <details class="deep"><summary>Aprofundar — por que anemofilia exige desperdício</summary><div class="body">
-      <p>O vento é um transportador cego: a chance de um grão específico alcançar um óvulo específico é baixíssima. A compensação é <strong>quantidade</strong> — um único pinheiro libera bilhões de grãos, e em regiões de conífera é comum ver uma camada amarela de pólen sobre lagos e carros na primavera.</p>
-      <p>Por isso o pólen anemófilo é <strong>pequeno, liso, seco e leve</strong>, sem ornamentação aderente e sem pollenkitt: tudo o que o faria grudar em algo atrapalharia o voo. Guarde esse contraste — ele é metade da resposta sobre síndromes de polinização nas angiospermas.</p>
-      <p>Os sacos aéreos têm ainda uma segunda função, pouco lembrada: dentro da gota de polinização eles fazem o grão <strong>flutuar e girar</strong>, orientando o lado germinativo para o nucelo.</p>
+    <details class="deep"><summary>Aprofundar — e se ele usar araucária</summary><div class="body">
+      <p>A <em>Araucaria angustifolia</em> é a gimnosperma brasileira mais provável de aparecer numa prática. A única coisa que muda na sua resposta é que ela é <strong>dioica</strong> — micro e megastróbilos em indivíduos diferentes —, enquanto o <em>Pinus</em> é <strong>monoico</strong>. Óvulo nu, ausência de fruto, anemofilia e endosperma <span class="ploidia n1">n</span> continuam valendo. O “pinhão” que se come é a <strong>semente</strong>.</p>
+      <p>Curiosidade que costuma impressionar: em <em>Pinus</em> passa cerca de <strong>um ano</strong> entre a polinização e a fecundação. O pólen chega, o tubo começa a crescer, o processo hiberna, e só na estação seguinte o megagametófito termina de se formar. A pinha leva dois anos para amadurecer — o que você segura na mão é uma estrutura de duas estações.</p>
     </div></details>
   </div>
 
   <h3 style="margin:30px 0 0">Ciclo de vida do pinheiro</h3>
   <div data-mount="ciclo" data-id="pinheiro"></div>
 
-  <h3 style="margin:34px 0 0">Lâminas</h3>
+  <h3 style="margin:34px 0 0">As lâminas nº 40 e nº 41</h3>
   <div data-mount="laminas" data-g="g"></div>
 
   <h3 style="margin:34px 0 12px">O que costuma ser cobrado</h3>
   <div class="grid g2">
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Por que essas estruturas são típicas de uma gimnosperma?”</strong></p><p>Óvulo <strong>nu</strong> sobre a escama, sem ovário e sem fruto; estróbilos unissexuados; heterosporia; pólen com sacos aéreos. Nessa ordem.</p></div>
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Compare o endosperma da gimnosperma com o da angiosperma.”</strong></p><p><span class="ploidia n1">n</span> e pré-fecundação (é o megagametófito) contra <span class="ploidia n3">3n</span> e pós-fecundação (vem da dupla fecundação).</p></div>
-    <div class="card"><span class="tag">Armadilha</span><p>Chamar a pinha de fruto, ou dizer que o grão de pólen é o gameta masculino.</p><p>Pinha = megastróbilo; pólen = <strong>microgametófito</strong>. O gameta é o núcleo espermático.</p></div>
-    <div class="card"><span class="tag">Variação provável</span><p>Usar <strong>araucária</strong> em vez de <em>Pinus</em>, pedir corte de <strong>acícula</strong>, ou o <strong>óvulo em detalhe</strong>.</p><p>Araucária é <strong>dioica</strong>; o resto da resposta não muda.</p></div>
+    <div class="card"><span class="tag">Pergunta do ano passado</span><p><strong>“Por que as estruturas observadas são típicas de uma gimnosperma?”</strong></p><p>Óvulo <strong>nu</strong> sobre a escama, sem ovário e sem fruto. Depois: estróbilos unissexuados separados, heterosporia, pólen com sacos aéreos. Nessa ordem.</p></div>
+    <div class="card"><span class="tag">Variante provável</span><p><strong>“Compare o endosperma da gimnosperma com o da angiosperma.”</strong></p><p><span class="ploidia n1">n</span> e pré-fecundação (é o megagametófito) contra <span class="ploidia n3">3n</span> e pós-fecundação (vem da dupla fecundação).</p></div>
+    <div class="card"><span class="tag">Armadilha</span><p>Chamar a pinha de fruto; dizer que o grão de pólen é o gameta masculino; justificar com “tem estróbilos”.</p><p>Pinha = megastróbilo; pólen = <strong>microgametófito</strong>; a justificativa começa no óvulo nu.</p></div>
+    <div class="card"><span class="tag">Se a lâmina mudar</span><p>Araucária no lugar do <em>Pinus</em>, corte de <strong>acícula</strong>, ou o <strong>óvulo em detalhe</strong>.</p><p>Araucária é <strong>dioica</strong>; o resto não muda.</p></div>
   </div>
 
-  <h3 style="margin:30px 0 12px">Questões de gimnospermas</h3>
+  <h3 style="margin:30px 0 12px">Questões desta estação</h3>
   <div data-mount="questoes" data-g="g"></div>
 </section>
 
-<!-- ============ 06 ANGIOSPERMAS ============ -->
+<!-- ============ ESTAÇÃO 4 · HIBISCO ============ -->
 <section id="angiospermas" data-g="a">
   <div class="modhead">
-    <div class="kicker"><span class="no">06</span><span class="taxon">Magnoliophyta · monocotiledôneas e eudicotiledôneas</span></div>
-    <h2>Angiospermas</h2>
-    <p class="thesis">O óvulo entra para dentro do <strong>ovário</strong> — <em>angio</em> = urna, vaso. Disso decorre tudo o mais: a <strong>flor</strong> que recruta animais, a <strong>dupla fecundação</strong> que só investe reserva depois de garantir o embrião, e o <strong>fruto</strong> que protege e dispersa a semente. É o grupo dominante da flora atual, e o mais cobrado da prática.</p>
+    <div class="kicker"><span class="no">06</span><span class="taxon">Estação 4 · Angiosperma · <em>Hibiscus rosa-sinensis</em></span></div>
+    <h2>Hibisco</h2>
+    <p class="thesis">O óvulo entra para dentro do <strong>ovário</strong> — <em>angio</em> = urna. Disso decorre tudo: a <strong>flor</strong> que recruta animais, a <strong>dupla fecundação</strong> que só investe reserva depois de garantir o embrião, e o <strong>fruto</strong>. É a estação mais longa da prática e a que tem mais perguntas empilhadas.</p>
   </div>
 
-  <dl class="idcard">
-    <div class="idcell"><dt>Estrutura reprodutiva</dt><dd>Flor<small>4 verticilos sobre o receptáculo</small></dd></div>
-    <div class="idcell"><dt>Óvulo</dt><dd>Dentro do ovário<small>protegido pelo carpelo</small></dd></div>
-    <div class="idcell"><dt>Fecundação</dt><dd>Dupla<small>exclusiva do grupo</small></dd></div>
-    <div class="idcell"><dt>Endosperma</dt><dd><span class="ploidia n3">3n</span>, pós-fecundação<small>2 núcleos polares + 1 espermático</small></dd></div>
-    <div class="idcell"><dt>Fruto</dt><dd>Presente<small>ovário maduro; pericarpo</small></dd></div>
-    <div class="idcell"><dt>Xilema</dt><dd>Com elementos de vaso<small>condução muito mais eficiente</small></dd></div>
+  <dl class="orient">
+    <div class="ocell"><dt>Na bancada</dt><dd>Uma <strong>flor de <em>Hibiscus</em></strong> fresca. Você remove cálice e corola, separa androceu de gineceu, e corta <strong>antera</strong> e <strong>ovário</strong> em secção <strong>transversal e longitudinal</strong>, tudo no estereoscópico. Depois, a lâmina <strong>nº 44 — polens variados</strong> no óptico.</dd></div>
+    <div class="ocell"><dt>Ele vai pedir</dt><dd><strong>Esquematizar</strong> antera e ovário nos dois cortes. E três perguntas: <em>o que ovário e óvulo originam após a fecundação</em>; <em>se a flor é de Mono ou Eudicotiledônea, e por quê</em>; e <em>qual a síndrome de polinização, comparando com a outra classe</em>.</dd></div>
+    <div class="ocell"><dt>Para responder você precisa</dt><dd><strong>Ovário → fruto</strong> e <strong>óvulo → semente</strong>; a <strong>contagem</strong> dos verticilos (tudo em cinco); e as evidências de <strong>zoofilia</strong> na própria flor, contrastadas com as gramíneas. A comparação vale metade do item.</dd></div>
   </dl>
 
   <div class="topic">
     <div class="head">
-      <h3>A flor: quatro verticilos, e o que cada um faz</h3>
+      <h3>A flor: quatro verticilos, e o que contar em cada um</h3>
       <div class="sum">
-        <p>Sobre o <strong>receptáculo</strong>, na ponta do <strong>pedicelo</strong>, inserem-se quatro verticilos. Dois são <strong>estéreis e protetores</strong>: o <strong>cálice</strong> (sépalas) e a <strong>corola</strong> (pétalas) — juntos formam o <strong>perianto</strong>. Dois são <strong>férteis</strong>: o <strong>androceu</strong> (estames = filete + antera) e o <strong>gineceu</strong> (carpelos = estigma + estilete + ovário).</p>
-        <p>No <em>Hibiscus</em>: há ainda um <strong>epicálice</strong> de brácteas abaixo do cálice; os filetes estão todos fundidos numa <strong>coluna estaminal</strong> (estames <strong>monadelfos</strong>) em volta do estilete; e o ápice do estilete se divide em <strong>cinco estigmas capitados</strong>. O ovário é <strong>súpero</strong> e tem <strong>cinco lóculos</strong>.</p>
+        <p>Sobre o <strong>receptáculo</strong>, na ponta do <strong>pedicelo</strong>, inserem-se quatro verticilos. Dois <strong>estéreis</strong>: <strong>cálice</strong> (sépalas) e <strong>corola</strong> (pétalas) — juntos, o <strong>perianto</strong>, que é o que o enunciado manda remover. Dois <strong>férteis</strong>: <strong>androceu</strong> (estame = filete + antera) e <strong>gineceu</strong> (estigma + estilete + ovário).</p>
+        <p>No <em>Hibiscus</em>: há um <strong>epicálice</strong> de brácteas abaixo do cálice; os filetes estão fundidos numa <strong>coluna estaminal</strong> (estames <strong>monadelfos</strong>) em volta do estilete; o ápice do estilete se divide em <strong>cinco estigmas capitados</strong>; e o ovário é <strong>súpero</strong>, com <strong>cinco lóculos</strong>. <strong>Conte tudo</strong> — a contagem é a evidência que sustenta a classificação.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Por que investir numa flor cara — pétalas coloridas, néctar, pólen pegajoso — se o vento é de graça? Por <strong>precisão</strong>.</p>
+          <p>O vento é cego: solta o grão e torce. Um animal, não — ele visita uma flor, depois outra <strong>da mesma espécie</strong>, porque aprendeu onde tem recompensa. Isso muda dois números de uma vez: a planta pode produzir <strong>muito menos pólen</strong>, e pode viver em <strong>população esparsa</strong>, com indivíduos distantes uns dos outros, em vez de precisar de um bosque denso como o pinheiro.</p>
+          <p>É por isso que a floresta tropical, com centenas de espécies misturadas e poucos indivíduos de cada, é dominada por angiospermas — e a floresta de conífera, homogênea e densa, não. <strong>A flor é o que permite ser raro.</strong></p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — vocabulário floral que o professor pode cobrar</summary><div class="body">
+    <details class="deep"><summary>Aprofundar — vocabulário para descrever a flor no relatório</summary><div class="body">
       <ul>
-        <li><strong>Completa × incompleta:</strong> completa tem os quatro verticilos. <strong>Monoclina</strong> (hermafrodita) tem androceu e gineceu; <strong>diclina</strong> tem só um dos dois.</li>
-        <li><strong>Simetria:</strong> <strong>actinomorfa</strong> (radial, vários planos de simetria — hibisco) ou <strong>zigomorfa</strong> (bilateral, um só plano — feijão, orquídea). A zigomorfia costuma indicar polinizador especializado.</li>
-        <li><strong>Posição do ovário:</strong> <strong>súpero</strong> (acima da inserção dos verticilos — hibisco), <strong>ínfero</strong> (abaixo, com os verticilos no topo — girassol, abacate-do-mato) ou semi-ínfero.</li>
-        <li><strong>Gineceu:</strong> <strong>apocárpico</strong> (carpelos livres) ou <strong>sincárpico</strong> (fundidos — hibisco, com 5 carpelos).</li>
-        <li><strong>Placentação:</strong> <strong>axial</strong> (óvulos no eixo central onde os septos se encontram — hibisco), parietal, central livre, basal ou apical.</li>
-        <li><strong>Androceu:</strong> <strong>monadelfo</strong> (todos os filetes num tubo — Malvaceae), diadelfo (dois grupos — Fabaceae), polidelfo, ou livres.</li>
-        <li><strong>Antese:</strong> o período em que a flor está aberta e funcional. Diurna ou noturna — é um dado da síndrome de polinização.</li>
+        <li><strong>Simetria:</strong> <strong>actinomorfa</strong> (radial, vários planos — o hibisco) ou <strong>zigomorfa</strong> (bilateral, um só plano — feijão, orquídea).</li>
+        <li><strong>Posição do ovário:</strong> <strong>súpero</strong> (acima da inserção dos verticilos — o hibisco), <strong>ínfero</strong> ou semi-ínfero. Vê-se no corte longitudinal.</li>
+        <li><strong>Gineceu:</strong> <strong>sincárpico</strong> (carpelos fundidos — o hibisco, com 5) ou apocárpico (livres).</li>
+        <li><strong>Placentação:</strong> <strong>axial</strong> no hibisco — os óvulos se inserem no eixo central onde os septos se encontram. Vê-se no corte transversal.</li>
+        <li><strong>Androceu:</strong> <strong>monadelfo</strong> (todos os filetes num tubo — assinatura de Malvaceae).</li>
       </ul>
-      <p>Se ele pedir <strong>diagrama floral</strong> (a projeção em corte transversal, com os verticilos em círculos concêntricos) ou <strong>fórmula floral</strong>, o hibisco fica aproximadamente <span class="mono">K5 C5 A∞ G(5)</span> — cálice 5, corola 5, androceu numeroso, gineceu com 5 carpelos fundidos (parênteses = fusão).</p>
+      <p>Se ele pedir <strong>fórmula floral</strong>, o hibisco fica aproximadamente <span class="mono">K5 C5 A∞ G(5)</span> — cálice 5, corola 5, androceu numeroso, gineceu com 5 carpelos fundidos (parênteses indicam fusão).</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>Antera e ovário: onde acontecem as duas meioses</h3>
+      <h3>Antera e ovário: os dois cortes que ele pede</h3>
       <div class="sum">
-        <p><strong>Antera (modelo geral):</strong> quatro <strong>microsporângios</strong> reunidos em duas <strong>tecas</strong>, unidas pelo <strong>conectivo</strong>, que carrega o feixe vascular. A parede de cada saco tem, de fora para dentro: <strong>epiderme</strong>, <strong>endotécio</strong>, camadas médias e <strong>tapete</strong>. Ali as células-mãe <span class="ploidia n2">2n</span> sofrem meiose e formam os grãos de pólen.</p>
-        <p><strong>Ovário:</strong> a <strong>parede ovariana</strong> (futuro pericarpo) delimita os <strong>lóculos</strong>, separados por <strong>septos</strong> que convergem na <strong>placenta</strong>. Dentro de cada óvulo, o nucelo tem a célula-mãe <span class="ploidia n2">2n</span>, cuja meiose produz 4 megásporos — 3 degeneram e o funcional forma o <strong>saco embrionário</strong>, com <strong>8 núcleos em 7 células</strong>.</p>
+        <p><strong>Antera, corte transversal (modelo geral):</strong> quatro <strong>microsporângios</strong> em duas <strong>tecas</strong>, unidas pelo <strong>conectivo</strong> com o feixe vascular. A parede de cada saco, de fora para dentro: <strong>epiderme</strong>, <strong>endotécio</strong>, camadas médias e <strong>tapete</strong>. É onde as células-mãe <span class="ploidia n2">2n</span> sofrem meiose.</p>
+        <p><strong>Ovário, corte transversal:</strong> <strong>parede ovariana</strong> (futuro pericarpo), <strong>cinco lóculos</strong>, <strong>septos</strong> convergindo na <strong>placenta axial</strong>, e os <strong>óvulos</strong> presos por <strong>funículos</strong>. <strong>Corte longitudinal:</strong> confirma o ovário <strong>súpero</strong> e a inserção dos óvulos no eixo central.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Na lâmina nº 44 você vai ver lado a lado dois pólens opostos, e a diferença não é decorativa. O de <strong>gramínea</strong> é pequeno, esférico e <strong>liso</strong>; o de <strong>hibisco</strong> é grande, coberto de <strong>espinhos</strong> e pegajoso.</p>
+          <p>Cada um está otimizado para um veículo. Liso e leve <strong>voa</strong>: qualquer saliência aumentaria o arrasto e derrubaria o grão perto da planta-mãe. Espinhoso e viscoso <strong>gruda</strong>: os espinhos se prendem a pena e pelo, e o <strong>pollenkitt</strong> — o óleo depositado pelo <strong>tapete</strong> da antera — cola o resto. Um grão espinhoso seria péssimo no vento, e um grão liso escorregaria do beija-flor.</p>
+          <p>Por isso a lâmina nº 44 não é enfeite: <strong>o pólen é a prova material da síndrome de polinização</strong>, e é o argumento mais forte que você tem para a terceira pergunta desta estação.</p>
+        </div>
       </div>
     </div>
     <details class="deep"><summary>Aprofundar — o tapete, o endotécio e as sete células do saco</summary><div class="body">
-      <h4>Tapete e endotécio</h4>
-      <p>O <strong>tapete</strong> é a camada mais interna e nutritiva: alimenta os micrósporos e deposita na parede do grão a <strong>esporopolenina</strong> (resistência) e o <strong>pollenkitt</strong> (a substância oleosa que torna o pólen pegajoso). É por isso que <strong>o tapete é uma evidência de zoofilia</strong> — sem ele o grão não gruda em animal nenhum.</p>
-      <p>O <strong>endotécio</strong> tem espessamentos em U que, ao desidratar, contraem e <strong>abrem a antera</strong> por uma fenda longitudinal. Mesma física do ânulo e do peristômio.</p>
-      <h4>O saco embrionário, célula por célula</h4>
-      <ul>
-        <li><strong>1 oosfera</strong> e <strong>2 sinérgides</strong>, na extremidade da micrópila (aparelho oosférico) — as sinérgides orientam quimicamente o tubo polínico;</li>
-        <li><strong>1 célula central</strong> com <strong>2 núcleos polares</strong>, no meio;</li>
-        <li><strong>3 antípodas</strong>, na extremidade da calaza.</li>
-      </ul>
-      <p>Total: 8 núcleos, 7 células. Esse é o gametófito feminino da angiosperma — <strong>sem arquegônio nenhum</strong>.</p>
-      <h4>Detalhe fino de Malvaceae</h4>
-      <p>Em <em>Hibiscus</em> a antera é <strong>monoteca</strong>: uma só teca, com dois microsporângios, abrindo por uma fenda. Cite o modelo geral e depois a exceção — é o tipo de acréscimo que separa uma resposta correta de uma resposta completa.</p>
+      <p>O <strong>tapete</strong> nutre os micrósporos e deposita na parede do grão a <strong>esporopolenina</strong> (resistência) e o <strong>pollenkitt</strong> (viscosidade). O <strong>endotécio</strong> tem espessamentos em U que, ao desidratar, contraem e <strong>abrem a antera</strong> — a mesma física do ânulo da estação 2 e do peristômio da estação 1.</p>
+      <p>Dentro do óvulo, o megásporo funcional forma o <strong>saco embrionário</strong>: <strong>8 núcleos em 7 células</strong> — 1 <strong>oosfera</strong> e 2 <strong>sinérgides</strong> no polo micropilar, 1 célula central com <strong>2 núcleos polares</strong>, e 3 <strong>antípodas</strong> no polo calazal. É o gametófito feminino, <strong>sem nenhum arquegônio</strong>. Há uma lâmina dele aqui embaixo.</p>
+      <p><strong>Detalhe fino de Malvaceae:</strong> em <em>Hibiscus</em> a antera é <strong>monoteca</strong> — uma só teca. Cite o modelo geral e depois a exceção.</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>Dupla fecundação, semente e fruto</h3>
+      <h3>Dupla fecundação: o que ovário e óvulo originam</h3>
       <div class="sum">
-        <p>O pólen germina no estigma e o <strong>tubo polínico</strong> cresce pelo estilete até a micrópila, levando <strong>dois núcleos espermáticos</strong>. <strong>Um</strong> funde-se com a <strong>oosfera</strong> → <strong>zigoto</strong> <span class="ploidia n2">2n</span> → embrião. <strong>O outro</strong> funde-se com os <strong>dois núcleos polares</strong> → <strong>endosperma</strong> <span class="ploidia n3">3n</span>, tecido de reserva.</p>
-        <p>Depois disso: <strong>óvulo → semente</strong> (tegumentos viram a casca); <strong>ovário → fruto</strong> (a parede ovariana vira o <strong>pericarpo</strong>: epicarpo, mesocarpo e endocarpo). Em <em>Hibiscus</em>, o fruto é uma <strong>cápsula loculicida</strong>.</p>
+        <p>O pólen germina no estigma e o <strong>tubo polínico</strong> desce pelo estilete levando <strong>dois núcleos espermáticos</strong>. <strong>Um</strong> funde-se com a <strong>oosfera</strong> → <strong>zigoto</strong> <span class="ploidia n2">2n</span> → embrião. <strong>O outro</strong> funde-se com os <strong>dois núcleos polares</strong> → <strong>endosperma</strong> <span class="ploidia n3">3n</span>.</p>
+        <p>Depois: <strong>óvulo → semente</strong> (tegumentos viram a casca); <strong>ovário → fruto</strong> (a parede ovariana vira o <strong>pericarpo</strong>). Em <em>Hibiscus</em>, o fruto é uma <strong>cápsula loculicida</strong>. Cuidado com a troca clássica: o ovário não “origina o óvulo” — os dois existem ao mesmo tempo e viram coisas diferentes.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>Por que gastar um segundo gameta para fazer tecido de reserva, em vez de já deixar a reserva pronta como faz o pinheiro? Porque assim <strong>a reserva só é produzida se a fecundação aconteceu</strong>.</p>
+          <p>Lembre da estação anterior: a gimnosperma enche o óvulo de megagametófito antes de saber se virá pólen — e perde tudo se não vier. A angiosperma inverte a ordem. O segundo núcleo espermático funciona como um <strong>recibo</strong>: só quando ele chega é que o endosperma começa a se formar.</p>
+          <p>Isso reduz drasticamente o custo de um óvulo não fecundado, e é uma das razões pelas quais uma angiosperma pode produzir muito mais óvulos, muito mais barato — e por que ela ganhou do grupo anterior na maior parte do planeta. <strong>Quando ele pedir para comparar os endospermas, é esta a explicação por trás dos números 3n e n.</strong></p>
+        </div>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — tipos de fruto e o que é pseudofruto</summary><div class="body">
-      <p><strong>Quanto à consistência:</strong> <strong>carnosos</strong> (baga — tomate, uva; drupa — manga, azeitona, com endocarpo pétreo) ou <strong>secos</strong> (cápsula, legume/vagem, aquênio, cariopse, sâmara).</p>
-      <p><strong>Quanto à abertura:</strong> <strong>deiscentes</strong> (abrem sozinhos e soltam a semente — cápsula, vagem) ou <strong>indeiscentes</strong> (não abrem — aquênio, cariopse).</p>
-      <p><strong>Quanto à origem:</strong> <strong>simples</strong> (um só ovário — manga), <strong>agregado</strong> (vários ovários da mesma flor — morango, framboesa) ou <strong>múltiplo/infrutescência</strong> (ovários de várias flores — abacaxi, figo).</p>
-      <p><strong>Pseudofruto:</strong> a parte carnosa vem de outra estrutura, não do ovário. No <strong>caju</strong>, a “fruta” é o pedúnculo engrossado e a castanha é o fruto verdadeiro. No <strong>morango</strong>, a parte vermelha é o receptáculo e os “pontinhos” são os frutos (aquênios). Na <strong>maçã</strong>, é o receptáculo que engrossa.</p>
-      <p>Pergunta armada que aparece muito: <strong>“o milho é fruto ou semente?”</strong> É um <strong>fruto</strong> — cariopse —, em que o pericarpo está fundido ao tegumento da semente.</p>
+    <details class="deep"><summary>Aprofundar — pericarpo, cápsula e pseudofruto</summary><div class="body">
+      <p>O <strong>pericarpo</strong> tem três camadas: <strong>epicarpo</strong> (casca), <strong>mesocarpo</strong> (polpa) e <strong>endocarpo</strong> (o caroço da manga, por exemplo). O fruto do hibisco é uma <strong>cápsula loculicida</strong>: seco e deiscente, abre por fendas nos lóculos.</p>
+      <p><strong>Pseudofruto</strong> é quando a parte carnosa não vem do ovário. No <strong>caju</strong>, a “fruta” é o pedúnculo engrossado e a castanha é o fruto verdadeiro; no <strong>morango</strong>, a parte vermelha é o receptáculo e os pontinhos são os frutos. E uma pegadinha que aparece muito: <strong>o milho é fruto</strong> (cariopse), não semente — o pericarpo está fundido ao tegumento.</p>
     </div></details>
   </div>
 
   <div class="topic">
     <div class="head">
-      <h3>Monocotiledônea × eudicotiledônea, e como provar qual é</h3>
+      <h3>Mono ou eudicot, e a síndrome de polinização</h3>
       <div class="sum">
-        <p><strong>Monocotiledôneas:</strong> 1 cotilédone, verticilos florais <strong>trímeros</strong> (3 ou múltiplos), nervação <strong>paralelinérvea</strong>, feixes vasculares espalhados no caule, raiz fasciculada, pólen <strong>monossulcado</strong> (1 abertura).</p>
-        <p><strong>Eudicotiledôneas:</strong> 2 cotilédones, verticilos <strong>tetrâmeros ou pentâmeros</strong> (4, 5 ou múltiplos), nervação <strong>reticulada</strong>, feixes em anel, crescimento secundário, raiz axial, pólen <strong>tricolpado</strong> (3 aberturas).</p>
-        <p><strong>No <em>Hibiscus</em>:</strong> 5 sépalas, 5 pétalas, 5 estigmas e ovário com <strong>5 lóculos</strong> ⇒ flor pentâmera ⇒ <strong>eudicotiledônea</strong>. A contagem dos lóculos no corte transversal é a evidência mais barata e mais forte que você tem em mãos.</p>
+        <p><strong>Classificação:</strong> 5 sépalas, 5 pétalas, 5 estigmas e ovário com <strong>5 lóculos</strong> ⇒ flor <strong>pentâmera</strong> ⇒ <strong>eudicotiledônea</strong>. Some nervação <strong>reticulada</strong> e crescimento secundário. Nas monocotiledôneas os verticilos são <strong>trímeros</strong> e a nervação é paralelinérvea.</p>
+        <p><strong>Síndrome: zoofilia</strong>, com traços claramente <strong>ornitófilos</strong>. Evidências que estão na sua frente: corola grande e de cor viva; <strong>néctar</strong> na base; <strong>estigma papiloso e pegajoso</strong>; <strong>coluna estaminal exserta</strong>, posicionada para encostar no visitante; antese diurna; e <strong>ausência de odor marcante</strong>.</p>
+        <p><strong>A comparação, que vale metade do item:</strong> nas monocotiledôneas <em>tipicamente anemófilas</em>, como as <strong>gramíneas</strong>, tudo se inverte — flores pequenas em espiguetas, perianto reduzido a glumas, sem cor, sem odor e sem néctar; anteras pêndulas expostas ao vento; <strong>estigma plumoso</strong>; e pólen <strong>pequeno, liso, seco e leve</strong>, em enorme quantidade.</p>
+        <div class="why">
+          <h5>Por que isso é assim</h5>
+          <p>A ausência de cheiro parece um defeito, mas é o contrário — é <strong>informação</strong>. Aves têm visão excelente, inclusive para o vermelho, e <strong>olfato fraco</strong>: gastar energia com perfume para um público que não sente cheiro seria desperdício. Insetos são o oposto — enxergam mal o vermelho, veem bem o ultravioleta e dependem muito de odor.</p>
+          <p>Então uma flor <strong>vermelha, grande, sem cheiro e com muito néctar diluído</strong> está literalmente escolhendo com quem falar: é visível para aves e discreta para insetos. Some a isso o néctar em grande volume e pouco concentrado — perfeito para o metabolismo altíssimo de um beija-flor, e ruim para uma abelha, que quer açúcar concentrado.</p>
+          <p>É por isso que citar “odor” como atrativo do hibisco levou um <span class="pen">e?</span> na margem no ano passado: além de factualmente errado, <strong>inverte o raciocínio</strong>. A falta de odor não é a ausência de um argumento — é um dos argumentos.</p>
+        </div>
+        <p class="note gold" style="margin-top:14px"><span class="h">Feche a brecha</span>Escreva “monocotiledôneas <strong>típicas</strong>, como as gramíneas”. Orquídeas e lírios são monocotiledôneas fortemente zoófilas, e essa generalização é exatamente o tipo de coisa que ele usa para descontar.</p>
       </div>
     </div>
-    <details class="deep"><summary>Aprofundar — síndromes de polinização e a exceção do pólen de Malvaceae</summary><div class="body">
-      <h4>A síndrome do hibisco</h4>
-      <p><strong>Zoofilia</strong>, com traços claramente <strong>ornitófilos</strong>. Evidências que estão na sua frente na bancada: corola grande e de cor viva; <strong>néctar</strong> na base do ovário; <strong>estigma papiloso e pegajoso</strong>; <strong>coluna estaminal exserta</strong>, posicionada para encostar no corpo do visitante; antese diurna; e <strong>ausência de odor marcante</strong> — que é justamente um traço ornitófilo, já que aves têm olfato pouco desenvolvido e visão excelente para o vermelho.</p>
-      <p><strong>Não cite odor como atrativo do hibisco.</strong> Ele praticamente não tem, e citar isso denuncia resposta vinda da memória, não da observação.</p>
-      <h4>A comparação que fecha a resposta</h4>
-      <p>Nas monocotiledôneas <em>tipicamente anemófilas</em>, como as <strong>gramíneas</strong>, tudo se inverte: flores pequenas em espiguetas, perianto reduzido a glumas, sem cor, sem odor e sem néctar; anteras versáteis e pêndulas, expostas ao vento; <strong>estigma plumoso</strong> para interceptar grãos no ar; e pólen <strong>pequeno, liso, seco e leve</strong>, produzido em enorme quantidade.</p>
-      <p>Escreva “monocotiledôneas <strong>típicas</strong>, como as gramíneas”. Orquídeas e lírios são monocotiledôneas fortemente zoófilas — e essa é exatamente a brecha que um professor rígido usa para descontar uma generalização.</p>
-      <h4>A exceção do pólen</h4>
-      <p>A regra “monocot = 1 abertura, eudicot = 3” é boa, mas o pólen de Malvaceae é <strong>pantoporado</strong> (muitos poros) e <strong>equinado</strong> (coberto de espinhos) — uma condição derivada dentro das eudicotiledôneas. Use a regra geral para classificar e mencione a exceção como observação: mostra que você olhou a lâmina em vez de repetir a tabela.</p>
+    <details class="deep"><summary>Aprofundar — a exceção do pólen de Malvaceae</summary><div class="body">
+      <p>A regra “monocot = 1 abertura (monossulcado), eudicot = 3 (tricolpado)” é boa e é o caráter que dá nome ao clado das eudicotiledôneas. Mas o pólen de Malvaceae é <strong>pantoporado</strong> (muitos poros espalhados) e <strong>equinado</strong> — uma condição derivada dentro das eudicots.</p>
+      <p>Use a regra geral para classificar, e mencione a exceção como <em>observação</em>: mostra que você descreveu a lâmina em vez de repetir a tabela. É o tipo de acréscimo que separa uma resposta correta de uma resposta completa.</p>
     </div></details>
   </div>
 
   <h3 style="margin:30px 0 0">Ciclo de vida da angiosperma</h3>
   <div data-mount="ciclo" data-id="angiosperma"></div>
 
-  <h3 style="margin:34px 0 0">Lâminas e material fresco</h3>
+  <h3 style="margin:34px 0 0">A flor, os cortes e a lâmina nº 44</h3>
   <div data-mount="laminas" data-g="a"></div>
 
   <h3 style="margin:34px 0 12px">O que costuma ser cobrado</h3>
   <div class="grid g2">
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“O ovário e o óvulo originam quais estruturas após a fecundação?”</strong></p><p><strong>Ovário → fruto</strong> (parede ovariana → pericarpo); <strong>óvulo → semente</strong> (tegumentos → casca; oosfera fecundada → embrião; núcleos polares fecundados → endosperma 3n).</p></div>
-    <div class="card"><span class="tag">Pergunta típica</span><p><strong>“Mono ou eudicotiledônea? Justifique.”</strong></p><p>Conte: 5 sépalas, 5 pétalas, 5 estigmas, 5 lóculos. Pentâmera ⇒ eudicot. Some nervação reticulada e crescimento secundário.</p></div>
-    <div class="card"><span class="tag">Armadilha</span><p>Dizer que “o ovário origina o óvulo”, ou justificar a zoofilia por “cor e odor”.</p><p>Ovário e óvulo são duas coisas simultâneas, não uma que vira a outra. E hibisco não tem odor.</p></div>
-    <div class="card"><span class="tag">Variação provável</span><p>Trocar o hibisco por uma flor <strong>zigomorfa</strong> (feijão, orquídea) ou de <strong>ovário ínfero</strong>; pedir <strong>diagrama e fórmula floral</strong>; pedir <strong>tipos de fruto</strong>.</p><p>O método não muda: conte os verticilos, veja a posição do ovário, descreva o pólen.</p></div>
+    <div class="card"><span class="tag">Pergunta do ano passado</span><p><strong>“O ovário e o óvulo originam quais estruturas após a fecundação?”</strong></p><p><strong>Ovário → fruto</strong> (parede ovariana → pericarpo); <strong>óvulo → semente</strong> (tegumentos → casca; oosfera fecundada → embrião; núcleos polares fecundados → endosperma 3n).</p></div>
+    <div class="card"><span class="tag">Pergunta do ano passado</span><p><strong>“Mono ou Eudicotiledônea? Por quê? E qual a síndrome de polinização, comparando com a outra classe?”</strong></p><p>Conte cinco em tudo ⇒ eudicot. Zoofilia com evidências observadas ⇒ e a comparação com as gramíneas, que é a metade que ficou faltando ano passado.</p></div>
+    <div class="card"><span class="tag">Armadilha</span><p>“O ovário origina o óvulo”; “zoofilia por cor e odor”; esquecer a comparação.</p><p>Os três apareceram na folha corrigida — os três custaram ponto.</p></div>
+    <div class="card"><span class="tag">Se a lâmina mudar</span><p>Flor <strong>zigomorfa</strong>, ovário <strong>ínfero</strong>, ou pedido de <strong>diagrama e fórmula floral</strong>.</p><p>O método é o mesmo: conte os verticilos, veja a posição do ovário, descreva o pólen.</p></div>
   </div>
 
-  <h3 style="margin:30px 0 12px">Questões de angiospermas</h3>
+  <h3 style="margin:30px 0 12px">Questões desta estação</h3>
   <div data-mount="questoes" data-g="a"></div>
 </section>
 
@@ -971,7 +979,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   <div class="sechead">
     <span class="eyebrow">07 · Fechamento</span>
     <h2>Comparações</h2>
-    <p class="lead">Quando o enunciado diz “compare”, a nota está nas linhas certas. Estas três tabelas cobrem praticamente todo comparativo que uma prática de morfologia vegetal pede.</p>
+    <p class="lead">Ele termina enunciados com “comparando com…”. Estas três tabelas são a consulta rápida para essa hora — as quatro estações lado a lado, mono × eudicot, e as síndromes de polinização.</p>
   </div>
 
   <h3 style="margin-bottom:12px">Os quatro grupos</h3>
@@ -1120,7 +1128,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   <div class="sechead">
     <span class="eyebrow">09 · Fechamento</span>
     <h2>Treino</h2>
-    <p class="lead">Duas formas de verificar se você realmente fecha a prática: identificar estruturas sem os rótulos, e escrever respostas discursivas sob correção.</p>
+    <p class="lead">Duas formas de verificar se você fecha a prática: identificar estruturas sem os rótulos e escrever respostas discursivas sob correção. Se você acerta as 14 lâminas de olhos fechados e tira acima de 80% nos termos-chave das quatro questões do ano passado, está pronto.</p>
   </div>
 
   <h3 style="margin-bottom:6px">Identificação — todas as lâminas</h3>
@@ -1131,7 +1139,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   <p class="lead" style="margin-bottom:4px">As perguntas que atravessam os quatro grupos — as mais prováveis de aparecer como item final.</p>
   <div data-mount="questoes" data-g="sf"></div>
 
-  <div class="note acc" style="margin-top:22px"><span class="h">Ainda faltam as questões de cada grupo</span>Elas ficam dentro dos módulos <a href="#briofitas">03</a>, <a href="#pteridofitas">04</a>, <a href="#gimnospermas">05</a> e <a href="#angiospermas">06</a>, logo depois das lâminas. São 18 no total, e as quatro do ano passado estão marcadas.</div>
+  <div class="note acc" style="margin-top:22px"><span class="h">As demais questões ficam nas estações</span>Cada estação tem as suas, logo depois das lâminas: <a href="#briofitas">musgo</a>, <a href="#pteridofitas">samambaia</a>, <a href="#gimnospermas">pinheiro</a> e <a href="#angiospermas">hibisco</a>. São 18 no total, e as quatro do ano passado estão marcadas em vermelho.</div>
 </section>
 
 <!-- ============ 10 GLOSSÁRIO ============ -->
