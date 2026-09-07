@@ -338,6 +338,75 @@ textarea:focus{border-color:var(--accent);outline:none}
 .check label:hover{background:var(--surface-2)}
 .check input{margin-top:5px;accent-color:var(--accent);width:15px;height:15px;flex:0 0 auto}
 .check input:checked+span{color:var(--ink-3);text-decoration:line-through}
+/* ============ COLA DE BANCADA (folha A4) ============ */
+.folhas{display:flex;flex-direction:column;gap:22px;margin-top:20px}
+.folhawrap{overflow-x:auto}
+.folha{
+  width:188mm;min-width:188mm;background:#fff;color:#14201a;
+  border:1px solid var(--line-2);border-radius:3px;box-shadow:var(--shadow);
+  padding:0 0 6mm;font-family:var(--serif);font-size:8.5pt;line-height:1.32;
+  --ck:#1c7f47;--cp:#0c766e;--cg:#8a5a0b;--ca:#a52f5e;--cr:#b81f26;--cl:#c8d2ca;--cm:#5c6b62;
+}
+.folha *{box-sizing:border-box}
+.folha .fh{display:flex;align-items:baseline;gap:8pt;border-bottom:1.6pt solid #14201a;padding:5mm 6mm 2mm;margin-bottom:3mm}
+.folha .fh h4{font-family:var(--sans);font-size:12pt;font-weight:800;letter-spacing:-.01em;color:#14201a}
+.folha .fh .pg{margin-left:auto;font-family:var(--mono);font-size:7.4pt;color:var(--cm)}
+.folha .fb{padding:0 6mm}
+.folha h5{font-family:var(--mono);font-size:7pt;letter-spacing:.13em;text-transform:uppercase;color:var(--cm);font-weight:500;margin:0 0 1.6mm;border-bottom:.5pt solid var(--cl);padding-bottom:.8mm}
+.folha h6{font-family:var(--sans);font-size:9.4pt;font-weight:800;color:#14201a;margin:0 0 1.2mm}
+.folha p{margin:0}
+.folha p+p{margin-top:1.4mm}
+.folha strong{font-weight:600;color:#000}
+.folha .blk{margin-bottom:3.6mm}
+.folha .cols2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.folha .cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3.4mm}
+.folha table{width:100%;min-width:0;border-collapse:collapse;font-size:7.9pt;line-height:1.28}
+.folha th,.folha td{border:.5pt solid var(--cl);padding:1mm 1.4mm;text-align:left;vertical-align:top;color:#14201a}
+.folha thead th{background:#eef2ee;font-family:var(--sans);font-size:7.4pt;font-weight:700;color:#14201a}
+.folha th[scope="row"]{background:#f6f8f6;font-family:var(--sans);font-size:7.6pt;font-weight:700;white-space:nowrap;color:#14201a}
+.folha .est{border-left:2.4pt solid var(--ck);padding-left:2.6mm;margin-bottom:3mm}
+.folha .est.p{border-color:var(--cp)} .folha .est.g{border-color:var(--cg)} .folha .est.a{border-color:var(--ca)}
+.folha .estt{font-family:var(--sans);font-size:9.6pt;font-weight:800;margin-bottom:1mm}
+.folha .estt span{font-family:var(--mono);font-size:7.2pt;font-weight:500;color:var(--cm);margin-left:3pt}
+.folha .resp{border:.6pt solid #14201a;background:#f7faf6;padding:1.6mm 2mm;margin:1.2mm 0}
+.folha .resp .lb{font-family:var(--mono);font-size:6.6pt;letter-spacing:.12em;text-transform:uppercase;color:var(--cm);display:block;margin-bottom:.8mm}
+.folha .trap{border-left:2pt solid var(--cr);background:#fdf2f2;padding:1.4mm 2mm;margin-top:1.4mm;font-size:8pt}
+.folha .trap b{color:var(--cr)}
+.folha .fluxo{font-family:var(--mono);font-size:7.2pt;line-height:1.5;background:#f2f5f1;border:.5pt solid var(--cl);padding:1.4mm 2mm;margin:1.4mm 0}
+.folha ul{margin:0;padding-left:3.4mm}
+.folha li+li{margin-top:.6mm}
+.folha .minis{display:flex;flex-wrap:wrap;gap:3mm;margin:1.6mm 0}
+.folha .mini{flex:0 0 44mm;width:44mm;min-width:0}
+.folha .minis.q4 .mini{flex:0 0 41mm;width:41mm}
+.folha .minis.wide .mini{flex:0 0 46mm;width:46mm}
+.folha .mini svg{width:100%;height:auto;display:block}
+.folha .mini .cap{font-family:var(--sans);font-size:7.2pt;font-weight:700;margin-bottom:.6mm}
+.folha .mini .leg{font-size:6.5pt;line-height:1.24;color:#2a3a32;margin-top:.7mm}
+.folha .mini .leg b{font-family:var(--mono);font-weight:600;color:#000}
+.folha .pin circle.dot{fill:#16211c;stroke:#fff;stroke-width:1.4}
+.folha .pin text{font-family:var(--mono);font-size:10px;font-weight:600;fill:#fff;text-anchor:middle;dominant-baseline:central}
+.folha .gl{font-size:7.4pt;line-height:1.32}
+.folha td small,.folha em{color:inherit}
+.folha .mono{color:inherit}
+.folha .gl b{font-family:var(--sans);font-weight:700}
+
+@media print{
+  @page{size:A4;margin:10mm}
+  html,body{background:#fff!important}
+  .topbar,.side,.progressbar,footer,.noprint,main>section:not(#cola){display:none!important}
+  .shell{display:block!important;gap:0!important}
+  .wrap{max-width:none!important;padding:0!important}
+  main{padding:0!important}
+  #cola{padding:0!important;border:0!important}
+  #cola>*:not(.folhas){display:none!important}
+  .folhas{gap:0;margin:0}
+  .folhawrap{overflow:visible}
+  .folha{width:auto;min-width:0;border:0;border-radius:0;box-shadow:none;padding:0 0 0;break-after:page;page-break-after:always}
+  .folha:last-child{break-after:auto;page-break-after:auto}
+  .folha .fh{padding:0 0 2mm}
+  .folha .fb{padding:0}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
 footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--ink-3);font-size:.83rem}
 footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:baseline}
 </style>
@@ -388,6 +457,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
       <a href="#padrao"><b>08</b>O padrão do professor</a>
       <a href="#treino"><b>09</b>Treino</a>
       <a href="#glossario"><b>10</b>Glossário</a>
+      <a href="#cola"><b>11</b>Cola de bancada · PDF</a>
     </div>
   </nav>
   <div class="sidecard">
@@ -1154,6 +1224,315 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   <p class="gempty" id="glossEmpty" hidden>Nenhum termo com esse nome. Tente parte da palavra.</p>
 </section>
 
+<!-- ============ 11 COLA DE BANCADA ============ -->
+<section id="cola">
+  <div class="sechead noprint">
+    <span class="eyebrow">11 · Material de consulta</span>
+    <h2>Cola de bancada</h2>
+    <p class="lead">Quatro páginas A4 — <strong>duas folhas, frente e verso</strong>. É o guia inteiro reduzido ao que se consulta com o microscópio ligado: os desenhos rotulados, as respostas modelo prontas para adaptar, e as armadilhas. Nada que você não fosse abrir durante a prática entrou aqui.</p>
+  </div>
+
+  <div class="grid g3 noprint" style="margin-bottom:18px">
+    <div class="card"><span class="tag">Como imprimir</span><p><strong>Botão abaixo</strong> ou <span class="mono">Ctrl+P</span>. A configuração de impressão já está no arquivo: A4, margens de 10&nbsp;mm, uma folha por página. Marque <em>“Gráficos de plano de fundo”</em> para os desenhos saírem completos.</p></div>
+    <div class="card"><span class="tag">Como usar na bancada</span><p>Página 1 fica à vista o tempo todo — é método e comparativo. Vire para a página da estação em que você está. As <strong>respostas modelo</strong> são para <em>adaptar ao que você observou</em>, não para copiar cru.</p></div>
+    <div class="card"><span class="tag">O que ficou de fora</span><p>Os blocos <em>aprofundar</em>, as caixas de “por quê” e o ciclo animado. Isso é para estudar antes — na bancada só atrapalha. Se algo aqui não fizer sentido, a explicação está na estação correspondente.</p></div>
+  </div>
+
+  <div class="noprint" style="display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:6px">
+    <button type="button" class="btn" id="printCola">Imprimir / salvar em PDF</button>
+    <span class="mono" style="font-size:.74rem;color:var(--ink-3)">4 páginas · A4 · pronto para frente e verso</span>
+  </div>
+
+  <div class="folhas">
+
+  <!-- ===== FOLHA 1 ===== -->
+  <div class="folhawrap"><div class="folha">
+    <div class="fh"><h4>Cola de bancada · Morfologia Vegetal</h4><span class="pg">PÁGINA 1 / 4 — MÉTODO E COMPARATIVO</span></div>
+    <div class="fb">
+
+      <div class="blk">
+        <h5>As quatro estações</h5>
+        <table>
+          <thead><tr><th>Estação</th><th>Material e instrumento</th><th>O que desenhar, com legenda</th><th>O que ele pergunta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1 · Musgo</th><td>Fresco, <strong>estereoscópico</strong></td><td>Gametófito ♂ + anterídio; gametófito ♀ + arquegônio; esporófito</td><td>Por que o gametófito ♀ molhado forma esporófito</td></tr>
+            <tr><th scope="row">2 · Samambaia</th><td>Fronde, <strong>estereoscópico</strong></td><td>Soro na face abaxial: esporângios e indúsio</td><td>Que estruturas originam · por qual processo · <strong>qual condição rompe</strong></td></tr>
+            <tr><th scope="row">3 · Pinheiro</th><td>Pinha + lâminas <strong>nº 40</strong> e <strong>nº 41</strong>, óptico, obj. 40× ⇒ anotar <strong>400×</strong></td><td>Microstróbilo e megastróbilo, com as principais estruturas</td><td>Por que é típico de gimnosperma</td></tr>
+            <tr><th scope="row">4 · Hibisco</th><td>Flor fresca (estéreo) + lâmina <strong>nº 44</strong> (óptico)</td><td>Antera e ovário em corte <strong>transversal e longitudinal</strong></td><td>Ovário/óvulo originam o quê · mono ou eudicot · síndrome de polinização <strong>com comparação</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="blk cols2">
+        <div>
+          <h5>Regras do desenho</h5>
+          <ul>
+            <li>Lápis, <strong>traço contínuo e único</strong>. Sem sombreado.</li>
+            <li>Desenhar <strong>só o que se vê</strong>; delimitar o campo circular.</li>
+            <li>Legendas com <strong>linhas retas horizontais</strong>, sem cruzar, terminando fora do desenho.</li>
+            <li>Anotar <strong>aumento total</strong> e <strong>nº da lâmina</strong>.</li>
+            <li>Título com material e corte; nome científico em <em>itálico</em>.</li>
+            <li><strong>Contar</strong> antes de desenhar: lóculos, sépalas, estigmas, sacos aéreos.</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Microscópio</h5>
+          <p><strong>Estereoscópico:</strong> luz incidente, imagem <strong>3D e direita</strong>, 10–80×. Material inteiro e opaco — musgo, soros, flor, cortes da antera e do ovário.</p>
+          <p><strong>Óptico composto:</strong> luz transmitida, imagem <strong>invertida</strong>, exige corte fino. Lâminas nº 40, 41 e 44.</p>
+          <p class="fluxo">AUMENTO TOTAL = OCULAR × OBJETIVA<br>ocular 10× · objetiva 40× ⇒ <strong>400×</strong></p>
+          <p>Focalizar sempre na menor objetiva primeiro; macrométrico só no menor aumento.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h5>Os quatro grupos — só as linhas que caem</h5>
+        <table>
+          <thead><tr><th>Critério</th><th>Musgo</th><th>Samambaia</th><th>Pinheiro</th><th>Hibisco</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Fase duradoura</th><td><strong>Gametófito (n)</strong></td><td>Esporófito (2n)</td><td>Esporófito (2n)</td><td>Esporófito (2n)</td></tr>
+            <tr><th scope="row">Vascular</th><td><strong>Não</strong> — avascular, sem lignina</td><td>Sim — xilema e floema</td><td>Sim — traqueídes</td><td>Sim — elementos de vaso</td></tr>
+            <tr><th scope="row">Órgãos</th><td>Filoide, cauloide, rizoide</td><td>Raiz, rizoma, fronde <strong>verdadeiros</strong></td><td>Raiz, caule, acícula</td><td>Raiz, caule, folha</td></tr>
+            <tr><th scope="row">Gametófito</th><td>A planta verde</td><td><strong>Protalo</strong>, cordiforme</td><td>Pólen e megagametófito</td><td>Pólen (3 núcleos) e saco embrionário (8)</td></tr>
+            <tr><th scope="row">Água na fecundação</th><td><strong>Indispensável</strong></td><td><strong>Indispensável</strong></td><td>Não — tubo polínico</td><td>Não — tubo polínico</td></tr>
+            <tr><th scope="row">Gametângios</th><td>Anterídio e arquegônio</td><td>Anterídio e arquegônio (no protalo)</td><td>Arquegônio reduzido</td><td><strong>Ausentes</strong></td></tr>
+            <tr><th scope="row">Semente</th><td>Ausente</td><td>Ausente</td><td>Presente e <strong>nua</strong></td><td>Presente, <strong>no fruto</strong></td></tr>
+            <tr><th scope="row">Flor / fruto</th><td>Ausentes</td><td>Ausentes</td><td>Ausentes — estróbilos</td><td><strong>Presentes</strong></td></tr>
+            <tr><th scope="row">Fecundação</th><td>Simples</td><td>Simples</td><td>Simples</td><td><strong>Dupla</strong></td></tr>
+            <tr><th scope="row">Endosperma</th><td>—</td><td>—</td><td><strong>n</strong>, antes da fecundação</td><td><strong>3n</strong>, depois da fecundação</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cols2">
+        <div>
+          <h5>Ploidia — decore assim</h5>
+          <p><strong>n:</strong> esporo · gametófito (protonema, protalo, pólen, saco embrionário) · gametângio (anterídio, arquegônio) · gameta (anterozoide, oosfera, núcleo espermático) · <strong>caliptra do musgo</strong> · endosperma da gimnosperma.</p>
+          <p><strong>2n:</strong> zigoto · embrião · esporófito · célula-mãe de esporo · o corpo da samambaia, do pinheiro e do hibisco.</p>
+          <p><strong>3n:</strong> só o endosperma da angiosperma.</p>
+          <p class="fluxo">EM PLANTA A MEIOSE PRODUZ <strong>ESPORO</strong>.<br>O GAMETA VEM DE <strong>MITOSE</strong> NO GAMETÓFITO.</p>
+        </div>
+        <div>
+          <h5>Duas regras que resolvem meia prova</h5>
+          <p><strong>1. Três estruturas, uma única física.</strong> <strong>Peristômio</strong> (musgo), <strong>ânulo</strong> (samambaia) e <strong>endotécio</strong> (antera) abrem todos por <strong>perda de água</strong>. Se a pergunta for “o que provoca a abertura?”, a resposta é <strong>ressecamento</strong>, nunca umidade.</p>
+          <p><strong>2. Respeite as escadas de níveis.</strong></p>
+          <p class="fluxo">SORO → ESPORÂNGIO → ESPORO<br>ESTAME = FILETE + ANTERA<br>GINECEU = ESTIGMA + ESTILETE + OVÁRIO<br>OVÁRIO → FRUTO &nbsp;·&nbsp; ÓVULO → SEMENTE</p>
+          <p>Confundir um degrau por outro é o erro mais barato de cometer e o mais caro de pagar.</p>
+        </div>
+      </div>
+
+    </div>
+  </div></div>
+
+  <!-- ===== FOLHA 2 ===== -->
+  <div class="folhawrap"><div class="folha">
+    <div class="fh"><h4>Estações 1 e 2 · musgo e samambaia</h4><span class="pg">PÁGINA 2 / 4</span></div>
+    <div class="fb">
+
+      <div class="est">
+        <div class="estt">Estação 1 · Musgo <span>BRIÓFITA · ESTEREOSCÓPICO</span></div>
+        <div class="minis">
+          <div class="mini" data-mini="musgo-m"><div class="cap">Gametófito ♂ e anterídio</div></div>
+          <div class="mini" data-mini="musgo-f"><div class="cap">Gametófito ♀ e arquegônio</div></div>
+          <div class="mini" data-mini="musgo-esp"><div class="cap">Esporófito sobre o gametófito</div></div>
+        </div>
+        <p class="fluxo">ESPORO (n) → protonema → GAMETÓFITO ♂ / ♀ (n) → anterídio / arquegônio → anterozoide / oosfera —[💧 FECUNDAÇÃO]→ <strong>ZIGOTO (2n)</strong> → mitoses → ESPORÓFITO (2n, preso ao gametófito) → cápsula: célula-mãe (2n) —[MEIOSE]→ ESPORO (n)</p>
+        <div class="resp"><span class="lb">Resposta modelo — “por que nos gametófitos femininos molhados surgem os esporófitos”</span>
+          A fecundação das briófitas <strong>depende de água líquida</strong>. Com o gametófito molhado, os <strong>anterozoides biflagelados</strong> liberados pelos anterídios nadam pela película de água e, atraídos por <strong>quimiotaxia</strong>, alcançam o colo do <strong>arquegônio</strong> e fecundam a <strong>oosfera</strong>. Forma-se o <strong>zigoto (2n)</strong>, que por <strong>mitoses</strong> origina o <strong>esporófito (2n)</strong>, permanentemente preso e nutrido pelo gametófito feminino. Sem água líquida não há fecundação — logo, não há esporófito.
+        </div>
+        <div class="trap"><b>Não escreva:</b> “folha do musgo” (é filoide) · “o rizoide absorve água” (fixa; a absorção é por toda a superfície) · “o esporófito é independente” (é dependente — matrotrofia) · e <b>não omita o zigoto</b>: foi o que ele anotou na margem.</div>
+      </div>
+
+      <div class="est p">
+        <div class="estt">Estação 2 · Samambaia <span>PTERIDÓFITA · ESTEREOSCÓPICO</span></div>
+        <div class="minis">
+          <div class="mini" data-mini="soro"><div class="cap">Soro em corte transversal da fronde</div></div>
+          <div class="mini" data-mini="protalo"><div class="cap">Protalo — o gametófito</div></div>
+          <div class="mini" style="flex:1 1 0;width:auto;min-width:56mm">
+            <div class="cap">Por que o ar seco abre o esporângio</div>
+            <svg viewBox="0 0 300 86" style="width:100%;height:auto" role="img" aria-label="Três estágios do esporângio: túrgido, ânulo retraído pelo ar seco rompendo o estômio, e o retorno brusco que catapulta os esporos">
+              <defs><marker id="amk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b81f26"></path></marker></defs>
+              <g font-family="IBM Plex Mono,monospace" font-size="6.2" fill="#5c6b62" text-anchor="middle">
+                <text x="42" y="9">1 · TÚRGIDO</text><text x="150" y="9">2 · RETRAÍDO</text><text x="258" y="9">3 · CATAPULTA</text>
+              </g>
+              <path d="M42,22 A22,22 0 1 1 25,62" fill="none" stroke="#0c766e" stroke-width="5" stroke-dasharray="3.6 1.4"></path>
+              <ellipse cx="42" cy="44" rx="15" ry="17" fill="#f9fbf7" stroke="#5c6b62" stroke-width=".9"></ellipse>
+              <g fill="#8a5a0b"><circle cx="37" cy="39" r="2.4"></circle><circle cx="47" cy="42" r="2.4"></circle><circle cx="40" cy="49" r="2.4"></circle></g>
+              <line x1="42" y1="61" x2="42" y2="74" stroke="#5c6b62" stroke-width="1.4"></line>
+              <line x1="72" y1="44" x2="94" y2="44" stroke="#b81f26" stroke-width="1" marker-end="url(#amk)"></line>
+              <text x="83" y="38" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="#b81f26" text-anchor="middle">AR SECO</text>
+              <text x="83" y="55" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="#b81f26" text-anchor="middle">evapora</text>
+              <path d="M168,24 A22,22 0 0 0 132,66" fill="none" stroke="#0c766e" stroke-width="5" stroke-dasharray="2.6 1.8"></path>
+              <path d="M150,28 a15,17 0 0 1 13,20 l-7,5" fill="#f9fbf7" stroke="#5c6b62" stroke-width=".9"></path>
+              <path d="M150,28 a15,17 0 0 0 -12,23 l9,2" fill="#f9fbf7" stroke="#5c6b62" stroke-width=".9"></path>
+              <g fill="#8a5a0b"><circle cx="145" cy="40" r="2.4"></circle><circle cx="155" cy="43" r="2.4"></circle></g>
+              <line x1="150" y1="62" x2="150" y2="74" stroke="#5c6b62" stroke-width="1.4"></line>
+              <text x="150" y="83" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="#b81f26" text-anchor="middle">rompe no estômio</text>
+              <line x1="182" y1="44" x2="204" y2="44" stroke="#b81f26" stroke-width="1" marker-end="url(#amk)"></line>
+              <text x="193" y="38" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="#b81f26" text-anchor="middle">cavitação</text>
+              <path d="M258,22 A22,22 0 1 1 241,62" fill="none" stroke="#0c766e" stroke-width="5" stroke-dasharray="3.6 1.4"></path>
+              <path d="M244,56 a14,16 0 0 1 16,-26" fill="none" stroke="#5c6b62" stroke-width=".9"></path>
+              <line x1="258" y1="61" x2="258" y2="74" stroke="#5c6b62" stroke-width="1.4"></line>
+              <g fill="#8a5a0b"><circle cx="282" cy="30" r="2.2"></circle><circle cx="294" cy="21" r="1.9"></circle><circle cx="288" cy="42" r="1.7"></circle></g>
+              <g stroke="#8a5a0b" stroke-width=".7" opacity=".6"><line x1="272" y1="36" x2="286" y2="26"></line><line x1="275" y1="46" x2="290" y2="40"></line></g>
+            </svg>
+            <div class="leg">A água evapora das células do <b>ânulo</b>; a coesão puxa as paredes, o arco se curva para trás e rompe o esporângio no <b>estômio</b>; com a cavitação ele volta bruscamente e lança os esporos. <b>Umidade alta mantém o esporângio fechado.</b></div>
+          </div>
+        </div>
+        <p class="fluxo">ESPORO (n) → PROTALO (gametófito n, cordiforme, monoico) → anterídio / arquegônio → anterozoide / oosfera —[💧 FECUNDAÇÃO]→ ZIGOTO (2n) → ESPORÓFITO (2n, a samambaia) → soro → esporângio: célula-mãe (2n) —[MEIOSE]→ ESPORO (n)</p>
+        <div class="resp"><span class="lb">Resposta modelo — as três partes do item</span>
+          <strong>(1) Que estruturas originam:</strong> o soro é um <strong>conjunto de esporângios</strong>; dentro de cada esporângio formam-se os <strong>esporos (n)</strong>, que ao germinar originam o <strong>protalo</strong>, o gametófito da samambaia.<br>
+          <strong>(2) Por qual processo:</strong> por <strong>meiose</strong> (esporogênese) — as células-mãe de esporos (2n) do interior do esporângio sofrem meiose.<br>
+          <strong>(3) Condição ambiental da ruptura:</strong> o <strong>ressecamento — ar seco, de baixa umidade</strong>. A água evapora das células do <strong>ânulo</strong>; a coesão puxa as paredes finas, o ânulo curva-se para trás e rompe o esporângio no <strong>estômio</strong>; com a cavitação ele volta bruscamente e <strong>catapulta</strong> os esporos.
+        </div>
+        <div class="trap"><b>Foi aqui que caiu o vermelho no ano passado:</b> responder “umidade”. É o <b>oposto</b> — umidade alta mantém o esporângio fechado. E não confunda soro com esporo, nem chame o protalo de “samambaia jovem”.</div>
+      </div>
+
+    </div>
+  </div></div>
+
+  <!-- ===== FOLHA 3 ===== -->
+  <div class="folhawrap"><div class="folha">
+    <div class="fh"><h4>Estação 3 · pinheiro &nbsp;·&nbsp; Estação 4 · a flor</h4><span class="pg">PÁGINA 3 / 4</span></div>
+    <div class="fb">
+
+      <div class="est g">
+        <div class="estt">Estação 3 · Pinheiro <span>GIMNOSPERMA · LÂMINAS Nº 40 E Nº 41 · 400×</span></div>
+        <div class="minis">
+          <div class="mini" data-mini="micro40"><div class="cap">nº 40 — microstróbilo (♂)</div></div>
+          <div class="mini" data-mini="mega41"><div class="cap">nº 41 — megastróbilo (♀)</div></div>
+        </div>
+        <p class="fluxo">MICROSTRÓBILO: célula-mãe (2n) —[MEIOSE]→ micrósporo (n) → mitoses → GRÃO DE PÓLEN com 2 sacos aéreos &nbsp;|&nbsp; MEGASTRÓBILO: nucelo, célula-mãe (2n) —[MEIOSE]→ 4 megásporos, 3 degeneram → MEGAGAMETÓFITO (n) com arquegônios → oosfera<br>POLINIZAÇÃO pelo vento → gota de polinização na micrópila → TUBO POLÍNICO (sem água) → fecundação simples → zigoto (2n) → <strong>SEMENTE NUA sobre a escama</strong></p>
+        <div class="resp"><span class="lb">Resposta modelo — “por que são típicas de uma gimnosperma”</span>
+          Porque os <strong>óvulos estão nus</strong>: apoiados descobertos sobre a face da <strong>escama ovulífera</strong>, sem ovário nem carpelo fechado ao redor — daí o nome do grupo, <em>gymnos</em> (nu) + <em>sperma</em> (semente). Por isso <strong>não há fruto</strong>: a semente amadurece exposta sobre a escama. Somam-se a isso: planta <strong>monoica</strong> com <strong>estróbilos unissexuados separados</strong>; <strong>heterosporia</strong>, com micrósporos no microstróbilo e megásporos no óvulo; e <strong>grãos de pólen com dois sacos aéreos</strong>, adaptação à <strong>anemofilia</strong>. Não há flor, ovário nem estigma.
+        </div>
+        <div class="trap"><b>O X do ano passado:</b> justificar com “os estróbilos e óvulos são formados em estróbilos distintos” — definição circular. <b>Comece por óvulo nu.</b> E não chame a pinha de fruto (é o megastróbilo; o pinhão é a semente) nem o pólen de gameta (é o microgametófito).</div>
+      </div>
+
+      <div class="est a">
+        <div class="estt">Estação 4 · Hibisco — o que desenhar <span>ANGIOSPERMA · ESTEREOSCÓPICO + LÂMINA Nº 44</span></div>
+        <div class="minis q4">
+          <div class="mini" data-mini="flor"><div class="cap">Flor dissecada</div></div>
+          <div class="mini" data-mini="antera"><div class="cap">Antera — c. transversal</div></div>
+          <div class="mini" data-mini="ovario-t"><div class="cap">Ovário — c. transversal</div></div>
+          <div class="mini" data-mini="ovario-l"><div class="cap">Gineceu — c. longitudinal</div></div>
+        </div>
+        <div class="minis">
+          <div class="mini" data-mini="polen44"><div class="cap">nº 44 — polens variados</div></div>
+          <div class="mini" style="flex:1 1 0;width:auto;min-width:56mm">
+            <p class="fluxo" style="margin-top:0">ANTERA: célula-mãe (2n) —[MEIOSE]→ micrósporo → GRÃO DE PÓLEN (2 núcleos espermáticos)<br>ÓVULO: célula-mãe (2n) —[MEIOSE]→ megásporo → SACO EMBRIONÁRIO (8 núcleos, 7 células: oosfera + 2 sinérgides + 2 polares + 3 antípodas)<br>polinização → TUBO POLÍNICO → <strong>DUPLA FECUNDAÇÃO</strong>: n₁ + oosfera = ZIGOTO (2n) &nbsp;·&nbsp; n₂ + 2 polares = ENDOSPERMA (3n)<br>ÓVULO → SEMENTE &nbsp;·&nbsp; OVÁRIO → FRUTO (parede ovariana → pericarpo)</p>
+            <p style="font-size:7.6pt;margin-top:1.4mm"><strong>Conte na flor:</strong> 5 sépalas · 5 pétalas · 5 estigmas capitados · <strong>5 lóculos</strong> no corte transversal · epicálice · coluna estaminal (estames monadelfos) · ovário súpero · placentação axial.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div></div>
+
+  <!-- ===== FOLHA 4 ===== -->
+  <div class="folhawrap"><div class="folha">
+    <div class="fh"><h4>Estação 4 · hibisco — respostas e consulta rápida</h4><span class="pg">PÁGINA 4 / 4</span></div>
+    <div class="fb">
+
+      <div class="est a">
+
+        <div class="resp"><span class="lb">Resposta modelo — parte 1: o que ovário e óvulo originam</span>
+          O <strong>ovário origina o fruto</strong> — sua parede torna-se o <strong>pericarpo</strong> (em <em>Hibiscus</em>, uma cápsula loculicida). O <strong>óvulo origina a semente</strong>: a oosfera fecundada forma o <strong>embrião</strong>, os dois núcleos polares fecundados formam o <strong>endosperma (3n)</strong>, e os tegumentos formam a <strong>casca</strong>.
+        </div>
+        <div class="resp"><span class="lb">Resposta modelo — parte 2: mono ou eudicotiledônea</span>
+          <strong>Eudicotiledônea.</strong> A flor é <strong>pentâmera</strong> — 5 sépalas, 5 pétalas, 5 estigmas e ovário com <strong>5 lóculos</strong>, contados no corte transversal —, a nervação da folha é <strong>reticulada</strong> e o caule apresenta crescimento secundário. Nas monocotiledôneas os verticilos florais são <strong>trímeros</strong> e a nervação é paralelinérvea.
+        </div>
+        <div class="resp"><span class="lb">Resposta modelo — parte 3: síndrome de polinização, com a comparação</span>
+          <strong>Zoofilia</strong>, com traços claramente <strong>ornitófilos</strong>. Evidências observadas: corola grande e de cor viva; <strong>néctar</strong> na base do ovário; <strong>estigma papiloso e pegajoso</strong>; <strong>coluna estaminal exserta</strong>, que encosta no corpo do visitante; antese diurna; e <strong>ausência de odor marcante</strong> — coerente com aves, que têm visão excelente e olfato fraco. Na lâmina nº 44, o pólen aparece <strong>grande, pantoporado, equinado e pegajoso</strong>: os espinhos e o pollenkitt aderem ao corpo do animal.<br>
+          <strong>Comparando com a outra classe:</strong> nas monocotiledôneas <em>tipicamente anemófilas</em>, como as <strong>gramíneas</strong>, ocorre o oposto — flores pequenas em espiguetas, perianto reduzido a glumas, sem cor, odor ou néctar; anteras versáteis e pêndulas expostas ao vento; <strong>estigma plumoso</strong>; e pólen <strong>pequeno, liso, seco e leve</strong>, produzido em enorme quantidade.
+        </div>
+        <div class="trap"><b>Os três X do ano passado nesta estação:</b> escrever que “o ovário origina o óvulo” (são simultâneos, e viram coisas diferentes) · justificar zoofilia por “cor e <b>odor</b>” (o hibisco quase não tem odor) · <b>esquecer a comparação</b> com a outra classe, que o enunciado exigia. Escreva “monocotiledôneas <b>típicas</b>, como as gramíneas” — orquídeas e lírios são monocots zoófilas.</div>
+      </div>
+
+      <div class="cols2" style="margin-top:3mm">
+        <div>
+          <h5>Mono × eudicotiledônea</h5>
+          <table>
+            <thead><tr><th>Critério</th><th>Mono</th><th>Eudicot</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Verticilos</th><td>Trímeros</td><td><strong>Tetra/pentâmeros</strong></td></tr>
+              <tr><th scope="row">Nervação</th><td>Paralela</td><td><strong>Reticulada</strong></td></tr>
+              <tr><th scope="row">Feixes</th><td>Espalhados</td><td>Em anel</td></tr>
+              <tr><th scope="row">Cresc. secundário</th><td>Ausente</td><td>Presente</td></tr>
+              <tr><th scope="row">Raiz</th><td>Fasciculada</td><td>Axial</td></tr>
+              <tr><th scope="row">Pólen</th><td>Monossulcado (1)</td><td>Tricolpado (3)<br><em>Malvaceae: pantoporado e equinado</em></td></tr>
+              <tr><th scope="row">Cotilédones</th><td>1</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h5>Síndromes de polinização</h5>
+          <table>
+            <thead><tr><th>Síndrome</th><th>Flor</th><th>Pólen</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Anemofilia</th><td>Pequena, sem perianto vistoso, sem néctar nem odor, <strong>estigma plumoso</strong></td><td>Pequeno, liso, seco, abundante</td></tr>
+              <tr><th scope="row">Ornitofilia</th><td><strong>Vermelha</strong>, robusta, <strong>sem odor</strong>, muito néctar diluído, diurna</td><td>Pegajoso</td></tr>
+              <tr><th scope="row">Melitofilia</th><td>Amarela ou azul, odor adocicado, guias de néctar, plataforma de pouso</td><td>Pegajoso, ornamentado</td></tr>
+              <tr><th scope="row">Falenofilia</th><td>Branca, tubo longo, odor forte, <strong>noturna</strong></td><td>Pegajoso</td></tr>
+              <tr><th scope="row">Quiropterofilia</th><td>Grande, esverdeada, odor de fermentação, noturna</td><td>Muito abundante</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="blk" style="margin-top:3mm">
+        <h5>Antes de entregar — checagem de 60 segundos</h5>
+        <div class="cols2">
+          <ul>
+            <li>Todo desenho tem <strong>título</strong>, <strong>aumento</strong> e <strong>nº da lâmina</strong>?</li>
+            <li>As legendas apontam para estruturas <strong>que você viu</strong>, com linhas retas que não se cruzam?</li>
+            <li>Nome científico em <strong>itálico ou sublinhado</strong>?</li>
+            <li>Nas briófitas você escreveu <strong>filoide / cauloide / rizoide</strong> — não folha, caule e raiz?</li>
+          </ul>
+          <ul>
+            <li>Em cada item com <strong>duas ou três perguntas</strong>, você respondeu <strong>todas</strong>? (marque as perguntas no enunciado)</li>
+            <li>Onde ele pediu <strong>“comparando com…”</strong>, a comparação está escrita?</li>
+            <li>Toda classificação tem <strong>justificativa com o que foi observado</strong> (contagem, forma, cor)?</li>
+            <li>Você usou a palavra <strong>zigoto</strong> na cadeia do musgo e <strong>óvulo nu</strong> na do pinheiro?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:3mm">
+        <h5>Glossário-relâmpago</h5>
+        <div class="cols3 gl">
+          <div>
+            <p><b>Filoide / cauloide / rizoide</b> — análogos de folha, caule e raiz sem tecido vascular.</p>
+            <p><b>Anterídio</b> — gametângio ♂. <b>Arquegônio</b> — gametângio ♀, em garrafa: colo + ventre.</p>
+            <p><b>Caliptra</b> — capuz haploide (resto do arquegônio) sobre a cápsula.</p>
+            <p><b>Peristômio</b> — dentes higroscópicos da cápsula; abrem no seco.</p>
+            <p><b>Protonema</b> — filamento que germina do esporo do musgo.</p>
+            <p><b>Matrotrofia</b> — esporófito nutrido pelo gametófito.</p>
+          </div>
+          <div>
+            <p><b>Soro</b> — conjunto de esporângios. <b>Indúsio</b> — membrana que o cobre.</p>
+            <p><b>Ânulo</b> — arco de células que abre o esporângio ao desidratar. <b>Estômio</b> — ponto de ruptura.</p>
+            <p><b>Protalo</b> — gametófito cordiforme da samambaia.</p>
+            <p><b>Escama ovulífera</b> — porta os óvulos nus no megastróbilo.</p>
+            <p><b>Nucelo</b> — megasporângio do óvulo. <b>Micrópila</b> — abertura por onde entra o tubo polínico.</p>
+            <p><b>Sifonogamia</b> — fecundação por tubo polínico, sem água.</p>
+          </div>
+          <div>
+            <p><b>Endotécio</b> — camada da antera que a abre ao desidratar. <b>Tapete</b> — nutre o pólen e deposita o pollenkitt.</p>
+            <p><b>Pollenkitt</b> — óleo que torna o pólen pegajoso; marca de zoofilia.</p>
+            <p><b>Equinado</b> — pólen com espinhos. <b>Colpo</b> — sulco; <b>poro</b> — abertura redonda.</p>
+            <p><b>Monadelfo</b> — filetes fundidos em coluna (Malvaceae).</p>
+            <p><b>Placentação axial</b> — óvulos no eixo onde os septos se encontram.</p>
+            <p><b>Pericarpo</b> — parede do ovário no fruto: epi, meso e endocarpo.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div></div>
+
+  </div>
+</section>
+
 </main>
 </div></div>
 
@@ -1300,9 +1679,9 @@ var SLIDES=[
   {x:152,y:168,n:"Seta (haste)",d:"Eixo alongado que ergue a cápsula acima dos filoides, expondo-a ao vento para a dispersão dos esporos.",say:"Função: elevar a cápsula para melhorar a dispersão."},
   {x:158,y:106,n:"Cápsula (esporângio)",d:"Onde ficam as células-mãe de esporos (2n) que sofrem MEIOSE e originam os esporos (n).",say:"Local exato da meiose no ciclo do musgo. Célula-mãe 2n → meiose → esporos n."},
   {x:150,y:118,n:"Esporos",d:"Células haploides resistentes, produzidas por meiose e liberadas pelo ar seco. Germinam formando o protonema, filamento que dá origem ao novo gametófito.",say:"Esporo (n) → protonema → gametófito. Esporo não é gameta."},
-  {x:166,y:74,n:"Opérculo",d:"Tampa da cápsula. Destaca-se quando o esporângio amadurece, abrindo a saída dos esporos.",say:"Junto com o peristômio, controla a saída dos esporos."},
-  {x:150,y:76,n:"Peristômio",d:"Anel de dentes higroscópicos na boca da cápsula. Abrem-se com ar seco e fecham-se com umidade, dosando a liberação dos esporos.",say:"Mesma lógica do ânulo da samambaia: o AR SECO é que abre."},
-  {x:172,y:52,n:"Caliptra",d:"Capuz que recobre a cápsula jovem. É o resto do arquegônio, dilatado pelo crescimento do esporófito — ou seja, tecido do gametófito (n) cobrindo o esporófito (2n).",say:"Detalhe fino que rende ponto: a caliptra é tecido HAPLOIDE sobre o esporófito diploide."}
+  {x:150,y:58,n:"Opérculo",d:"Tampa da cápsula. Destaca-se quando o esporângio amadurece, abrindo a saída dos esporos.",say:"Junto com o peristômio, controla a saída dos esporos."},
+  {x:138,y:80,n:"Peristômio",d:"Anel de dentes higroscópicos na boca da cápsula. Abrem-se com ar seco e fecham-se com umidade, dosando a liberação dos esporos.",say:"Mesma lógica do ânulo da samambaia: o AR SECO é que abre."},
+  {x:126,y:54,n:"Caliptra",d:"Capuz que recobre a cápsula jovem. É o resto do arquegônio, dilatado pelo crescimento do esporófito — ou seja, tecido do gametófito (n) cobrindo o esporófito (2n).",say:"Detalhe fino que rende ponto: a caliptra é tecido HAPLOIDE sobre o esporófito diploide."}
  ]
 },
 /* ---------- 4 ---------- */
@@ -1334,16 +1713,16 @@ var SLIDES=[
    +'<text x="150" y="252" font-family="IBM Plex Mono,monospace" font-size="9" fill="'+K.soft+'" text-anchor="middle">FACE ABAXIAL — voltada para baixo</text>'
  ,"Corte transversal da fronde mostrando um soro: esporângios com ânulo, protegidos pelo indúsio, na face abaxial"),
  pts:[
-  {x:150,y:100,n:"Epiderme",d:"Camada externa de proteção da fronde. A face abaxial (de baixo) concentra os estômatos e é onde nascem os soros.",say:"Diga “face ABAXIAL” — é o termo técnico para a face inferior da folha."},
-  {x:100,y:113,n:"Mesofilo",d:"Parênquima clorofiliano entre as duas epidermes, onde ocorre a fotossíntese.",say:"A fronde é uma folha VERDADEIRA — a samambaia é vascular."},
+  {x:110,y:102,n:"Epiderme",d:"Camada externa de proteção da fronde. A face abaxial (de baixo) concentra os estômatos e é onde nascem os soros.",say:"Diga “face ABAXIAL” — é o termo técnico para a face inferior da folha."},
+  {x:76,y:116,n:"Mesofilo",d:"Parênquima clorofiliano entre as duas epidermes, onde ocorre a fotossíntese.",say:"A fronde é uma folha VERDADEIRA — a samambaia é vascular."},
   {x:150,y:110,n:"Feixe vascular",d:"Xilema e floema da nervura. É o caráter que separa pteridófita de briófita.",say:"“Primeira linhagem vascular”: por isso a samambaia atinge porte muito maior que o musgo."},
   {x:150,y:132,n:"Indúsio",d:"Membrana em forma de guarda-chuva que recobre e protege o soro jovem. Retrai-se quando o soro amadurece.",say:"Nem toda samambaia tem indúsio — em algumas o soro é nu. Se na sua lâmina houver, nomeie."},
   {x:150,y:172,n:"Soro",d:"Conjunto (aglomerado) de esporângios na face abaxial da fronde fértil. O que se vê a olho nu como pontinhos escuros.",say:"CUIDADO: soro NÃO é esporo. Soro → esporângios → esporos. Três níveis, nesta ordem."},
   {x:150,y:206,n:"Esporângio",d:"Cápsula em forma de lente sobre um pedicelo. Dentro, as células-mãe de esporos (2n) sofrem meiose e produzem os esporos (n).",say:"Aqui ocorre a MEIOSE. Processo = esporogênese por meiose."},
-  {x:136,y:196,n:"Ânulo",d:"Fileira em arco de células com paredes desigualmente espessadas — finas por fora, muito grossas por dentro. É o motor mecânico da abertura.",say:"É a peça-chave da pergunta sobre a ruptura do esporângio: o ânulo é a catapulta."},
-  {x:164,y:212,n:"Estômio",d:"Região de células de parede fina onde o esporângio se rompe quando o ânulo se retrai.",say:"“Rompe no estômio” — nomear o ponto de ruptura mostra que você entendeu o mecanismo, não decorou."},
+  {x:128,y:196,n:"Ânulo",d:"Fileira em arco de células com paredes desigualmente espessadas — finas por fora, muito grossas por dentro. É o motor mecânico da abertura.",say:"É a peça-chave da pergunta sobre a ruptura do esporângio: o ânulo é a catapulta."},
+  {x:172,y:214,n:"Estômio",d:"Região de células de parede fina onde o esporângio se rompe quando o ânulo se retrai.",say:"“Rompe no estômio” — nomear o ponto de ruptura mostra que você entendeu o mecanismo, não decorou."},
   {x:126,y:172,n:"Pedicelo",d:"Haste que prende cada esporângio à epiderme da fronde.",say:"Detalhe pequeno, mas costuma constar na legenda pedida."},
-  {x:158,y:200,n:"Esporos",d:"Células haploides produzidas por meiose. Ao germinar formam o PROTALO, o gametófito da samambaia.",say:"Esporo (n) → protalo (gametófito n) → gametas. O protalo é o que quase todo mundo esquece."}
+  {x:150,y:228,n:"Esporos",d:"Células haploides produzidas por meiose. Ao germinar formam o PROTALO, o gametófito da samambaia.",say:"Esporo (n) → protalo (gametófito n) → gametas. O protalo é o que quase todo mundo esquece."}
  ]
 },
 /* ---------- 5 ---------- */
@@ -1466,9 +1845,9 @@ var SLIDES=[
    +'<text x="150" y="246" font-family="IBM Plex Mono,monospace" font-size="8.6" fill="'+K.soft+'" text-anchor="middle">4 MICROSPORÂNGIOS · 2 TECAS · MODELO GERAL</text>'
  ,"Corte transversal de antera mostrando quatro microsporângios, conectivo central e grãos de pólen"),
  pts:[
-  {x:98,y:76,n:"Epiderme",d:"Camada mais externa da parede da antera, protetora.",say:"A parede do microsporângio tem quatro camadas: epiderme, endotécio, camadas médias e tapete."},
-  {x:98,y:82,n:"Endotécio",d:"Camada logo abaixo da epiderme, com espessamentos em U nas paredes celulares. Ao perder água, esses espessamentos contraem e abrem a antera.",say:"Mesmo princípio do ânulo da samambaia: a DESIDRATAÇÃO é que abre. Bela ponte entre a samambaia e a angiosperma."},
-  {x:98,y:88,n:"Tapete",d:"Camada mais interna, nutritiva. Alimenta os micrósporos em desenvolvimento e deposita a esporopolenina e o pollenkitt na parede do grão.",say:"O pollenkitt depositado pelo tapete é o que torna o pólen PEGAJOSO — evidência direta de zoofilia."},
+  {x:71,y:85,n:"Epiderme",d:"Camada mais externa da parede da antera, protetora.",say:"A parede do microsporângio tem quatro camadas: epiderme, endotécio, camadas médias e tapete."},
+  {x:98,y:79,n:"Endotécio",d:"Camada logo abaixo da epiderme, com espessamentos em U nas paredes celulares. Ao perder água, esses espessamentos contraem e abrem a antera.",say:"Mesmo princípio do ânulo da samambaia: a DESIDRATAÇÃO é que abre. Bela ponte entre a samambaia e a angiosperma."},
+  {x:117,y:93,n:"Tapete",d:"Camada mais interna, nutritiva. Alimenta os micrósporos em desenvolvimento e deposita a esporopolenina e o pollenkitt na parede do grão.",say:"O pollenkitt depositado pelo tapete é o que torna o pólen PEGAJOSO — evidência direta de zoofilia."},
   {x:98,y:112,n:"Microsporângio (lóculo)",d:"Cavidade onde as células-mãe de micrósporos (2n) sofrem meiose e onde os grãos de pólen amadurecem. Também chamado saco polínico.",say:"Modelo geral: 4 microsporângios reunidos em 2 tecas — antera tetrasporangiada e ditecal."},
   {x:150,y:214,n:"Conectivo",d:"Tecido central que une as tecas e prolonga o filete até a antera.",say:"Estame = filete + antera; o conectivo é a ponte entre eles."},
   {x:150,y:150,n:"Feixe vascular",d:"Vaso condutor que atravessa o conectivo, vindo do filete, e nutre a antera.",say:"Aparece como um pontinho central no corte transversal — não confunda com pólen."},
@@ -1630,15 +2009,15 @@ var SLIDES=[
    +'<g stroke="'+K.a+'" stroke-width="1.2" fill="none"><path d="M150,44 L128,40 M150,44 L139,34 M150,44 L161,34 M150,44 L172,40"/></g>'
  ,"Flor de Hibiscus em vista lateral: cálice, corola, coluna estaminal com anteras e cinco estigmas capitados"),
  pts:[
-  {x:150,y:280,n:"Pedicelo",d:"Haste que sustenta a flor e a liga ao ramo.",say:"Flor pedicelada. Se não houver pedicelo, a flor é séssil."},
-  {x:120,y:266,n:"Epicálice",d:"Verticilo extra de brácteas estreitas, logo abaixo do cálice. É um caráter marcante de Malvaceae.",say:"Poucos alunos nomeiam o epicálice. Nomear rende — e identifica a família na hora."},
-  {x:150,y:250,n:"Cálice (sépalas)",d:"Conjunto de 5 sépalas verdes, fundidas na base. Verticilo estéril e protetor.",say:"São CINCO — a primeira evidência de pentameria. Foi o verticilo que o enunciado mandou remover."},
+  {x:150,y:282,n:"Pedicelo",d:"Haste que sustenta a flor e a liga ao ramo.",say:"Flor pedicelada. Se não houver pedicelo, a flor é séssil."},
+  {x:110,y:266,n:"Epicálice",d:"Verticilo extra de brácteas estreitas, logo abaixo do cálice. É um caráter marcante de Malvaceae.",say:"Poucos alunos nomeiam o epicálice. Nomear rende — e identifica a família na hora."},
+  {x:128,y:252,n:"Cálice (sépalas)",d:"Conjunto de 5 sépalas verdes, fundidas na base. Verticilo estéril e protetor.",say:"São CINCO — a primeira evidência de pentameria. Foi o verticilo que o enunciado mandou remover."},
   {x:100,y:214,n:"Corola (pétalas)",d:"Conjunto de 5 pétalas grandes e vistosas. Verticilo estéril e atrativo.",say:"CINCO pétalas grandes e coloridas: pentameria + sinal de zoofilia, dois pontos de uma vez."},
   {x:150,y:150,n:"Coluna estaminal",d:"Androceu com todos os filetes fundidos num tubo em volta do estilete — estames MONADELFOS. É a assinatura de Malvaceae.",say:"Diga “estames monadelfos formando uma coluna estaminal”. Ela também é evidência de zoofilia: fica exposta e encosta no visitante."},
   {x:178,y:86,n:"Antera",d:"Porção fértil do estame, onde se formam os grãos de pólen. Em <em>Hibiscus</em> são numerosas e ficam livres ao longo da coluna.",say:"Estame = filete + antera. Aqui os filetes estão fundidos, mas as anteras seguem livres."},
   {x:150,y:52,n:"Estilete",d:"Prolonga-se para além da coluna estaminal e se divide em cinco ramos no ápice.",say:"O estilete emerge por dentro da coluna — observe isso na dissecação e descreva."},
   {x:150,y:26,n:"Estigma capitado",d:"Cinco estigmas arredondados e papilosos, cobertos por secreção pegajosa que retém o pólen.",say:"CINCO estigmas ⇒ 5 carpelos ⇒ os 5 lóculos que você contou no corte transversal. Amarre as três observações."},
-  {x:150,y:232,n:"Ovário súpero",d:"Fica dentro do cálice, na base da flor, acima da inserção dos verticilos. Pentalocular.",say:"Ovário súpero e pentalocular — os dois adjetivos juntos valem mais que qualquer desenho bonito."}
+  {x:168,y:238,n:"Ovário súpero",d:"Fica dentro do cálice, na base da flor, acima da inserção dos verticilos. Pentalocular.",say:"Ovário súpero e pentalocular — os dois adjetivos juntos valem mais que qualquer desenho bonito."}
  ]
 },
 /* ---------- 12 · protalo ---------- */
@@ -2346,6 +2725,22 @@ $$("[data-mount]").forEach(function(host){
   }
 });
 paintScores();
+
+/* ---------- cola de bancada: desenhos com pinos + legenda numerada ---------- */
+var byId={}; SLIDES.forEach(function(s){ byId[s.id]=s });
+$$("[data-mini]").forEach(function(host){
+  var s=byId[host.getAttribute("data-mini")]; if(!s) return;
+  var pins=s.pts.map(function(p,j){
+    return '<g class="pin"><circle class="dot" cx="'+p.x+'" cy="'+p.y+'" r="11"></circle><text x="'+p.x+'" y="'+p.y+'">'+(j+1)+'</text></g>';
+  }).join("");
+  var box=document.createElement("div");
+  box.innerHTML=s.svg.replace("</svg>",pins+"</svg>");
+  host.appendChild(box.firstChild);
+  var leg=document.createElement("div"); leg.className="leg";
+  leg.innerHTML=s.pts.map(function(p,j){ return '<b>'+(j+1)+'</b> '+p.n.replace(/<\/?em>/g,"") }).join(" · ");
+  host.appendChild(leg);
+});
+var pc=$("#printCola"); if(pc) pc.addEventListener("click",function(){ window.print() });
 
 /* ---------- glossário ---------- */
 var glossEl=$("#glossList");

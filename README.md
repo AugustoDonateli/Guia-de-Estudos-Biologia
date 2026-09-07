@@ -8,7 +8,8 @@ e funciona offline depois de carregado.
 
 | Arquivo | Tema |
 |---|---|
-| [`index.html`](index.html) | **Morfologia vegetal** — briófitas, pteridófitas, gimnospermas e angiospermas |
+| [`index.html`](index.html) | **Morfologia vegetal** — guia completo da prática |
+| [`cola-de-bancada.pdf`](cola-de-bancada.pdf) | Material de consulta para levar à prática — 4 páginas A4 |
 
 ### `index.html` — Bancada de Morfologia Vegetal
 
@@ -26,6 +27,7 @@ calibragem do estilo de cobrança.
 8. O padrão do professor — a prática do ano anterior e as trocas mais prováveis
 9. Treino — identificação com todas as lâminas e discursivas de síntese
 10. Glossário com busca
+11. Cola de bancada — as 4 páginas A4 de consulta, com CSS de impressão
 
 **Recursos**
 
@@ -33,6 +35,14 @@ calibragem do estilo de cobrança.
 - 4 ciclos de vida passo a passo, com ploidia e destaque de meiose e fecundação
 - 18 questões discursivas com corretor de palavras-chave e gabarito modelo
 - Tema claro/escuro e progresso salvos no navegador (`localStorage`)
+- Cola de bancada em 4 páginas A4, com `@media print` que imprime só ela
+
+### `cola-de-bancada.pdf`
+
+Gerado a partir da seção 11 do guia (`.folha` × 4), em A4 com margens de 10 mm.
+Para regerar após alterar o conteúdo, renderize `index.html` em mídia `print`.
+Página 1 método e comparativo · 2 musgo e samambaia · 3 pinheiro e a flor ·
+4 respostas modelo, tabelas e glossário.
 
 ## Convenções
 
