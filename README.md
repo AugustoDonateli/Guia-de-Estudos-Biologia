@@ -19,19 +19,22 @@ calibragem do estilo de cobrança.
 
 **Estrutura**
 
-1. Fundamentos — a lógica das plantas terrestres, alternância de gerações, ploidia
-2. Bancada e microscopia — instrumentos, regras de desenho, checklist
-3. a 6. Um módulo por grupo: resumo + `aprofundar` expansível, ciclo de vida
+1. Célula — o que significam n e 2n, mitose e meiose, com comparador
+   passo a passo, e por que em planta a meiose faz esporo e a mitose faz gameta
+2. A lógica das plantas terrestres — a sequência das inovações
+3. Bancada e microscopia — instrumentos, regras de desenho, checklist
+4. a 7. Uma seção por estação da prática: resumo + `aprofundar` expansível, ciclo de vida
    navegável, lâminas interativas do grupo, o que costuma ser cobrado, questões
-7. Comparações — os quatro grupos, mono × eudicot, síndromes de polinização
-8. O padrão do professor — a prática do ano anterior e as trocas mais prováveis
-9. Treino — identificação com todas as lâminas e discursivas de síntese
-10. Glossário com busca
-11. Cola de bancada — as 4 páginas A4 de consulta, com CSS de impressão
+8. Comparações — os quatro grupos, mono × eudicot, síndromes de polinização
+9. O padrão do professor — a prática do ano anterior e as trocas mais prováveis
+10. Treino — identificação com todas as lâminas e discursivas de síntese
+11. Glossário com busca
+12. Cola de bancada — as 4 páginas A4 de consulta, com CSS de impressão
 
 **Recursos**
 
 - 14 lâminas em SVG com pinos clicáveis e modo prova (quiz com placar e recorde)
+- Comparador de mitose × meiose em 5 e 8 passos, com contador de ploidia
 - 4 ciclos de vida passo a passo, com ploidia e destaque de meiose e fecundação
 - 18 questões discursivas com corretor de palavras-chave e gabarito modelo
 - Tema claro/escuro e progresso salvos no navegador (`localStorage`)

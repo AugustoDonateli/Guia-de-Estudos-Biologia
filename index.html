@@ -283,6 +283,22 @@ td small{display:block;color:var(--ink-3);font-size:.82em;margin-top:2px}
 .dots{display:flex;gap:5px;margin-left:auto}
 .dots i{width:7px;height:7px;border-radius:50%;background:var(--line-2);display:block}
 .dots i.on{background:var(--accent)}
+/* comparador mitose x meiose */
+.cel{fill:var(--surface);stroke:var(--line-2);stroke-width:1.4}
+.placa{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:4 4;opacity:.7}
+.crP{fill:var(--pter)} .crM{fill:var(--gimno)}
+.cen{fill:var(--surface);stroke-width:1.5}
+.cen.p{stroke:var(--pter)} .cen.m{stroke:var(--gimno)}
+.mmlab{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+.mmlab.b{fill:var(--ink);font-weight:600}
+.mmarr{stroke:var(--ink-3);stroke-width:1.3;fill:none;opacity:.65}
+.mmarrh{fill:var(--ink-3);opacity:.65}
+.plobar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-bottom:9px}
+.plotag{border:1px solid currentColor;border-radius:100px;padding:2px 10px;font-weight:600}
+.plotag.dip{color:var(--gimno)} .plotag.hap{color:var(--brio)}
+.mmtabs{display:flex;gap:6px;padding:12px;border-bottom:1px solid var(--line)}
+.mmtab{flex:0 0 auto;background:transparent;border:1px solid var(--line);border-radius:100px;padding:6px 15px;font-family:var(--sans);font-size:.86rem;color:var(--ink-2);font-weight:600}
+.mmtab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .cnode rect{fill:var(--surface);stroke:var(--line-2);stroke-width:1.2}
 .cnode text{font-family:var(--sans);font-size:10.5px;fill:var(--ink-2)}
 .cnode .pl{font-family:var(--mono);font-size:9px}
@@ -344,7 +360,7 @@ textarea:focus{border-color:var(--accent);outline:none}
 .folha{
   width:188mm;min-width:188mm;background:#fff;color:#14201a;
   border:1px solid var(--line-2);border-radius:3px;box-shadow:var(--shadow);
-  padding:0 0 6mm;font-family:var(--serif);font-size:8.5pt;line-height:1.32;
+  padding:0 0 6mm;font-family:var(--serif);font-size:8.2pt;line-height:1.3;
   --ck:#1c7f47;--cp:#0c766e;--cg:#8a5a0b;--ca:#a52f5e;--cr:#b81f26;--cl:#c8d2ca;--cm:#5c6b62;
 }
 .folha *{box-sizing:border-box}
@@ -360,7 +376,7 @@ textarea:focus{border-color:var(--accent);outline:none}
 .folha .blk{margin-bottom:3.6mm}
 .folha .cols2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
 .folha .cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3.4mm}
-.folha table{width:100%;min-width:0;border-collapse:collapse;font-size:7.9pt;line-height:1.28}
+.folha table{width:100%;min-width:0;border-collapse:collapse;font-size:7.6pt;line-height:1.26}
 .folha th,.folha td{border:.5pt solid var(--cl);padding:1mm 1.4mm;text-align:left;vertical-align:top;color:#14201a}
 .folha thead th{background:#eef2ee;font-family:var(--sans);font-size:7.4pt;font-weight:700;color:#14201a}
 .folha th[scope="row"]{background:#f6f8f6;font-family:var(--sans);font-size:7.6pt;font-weight:700;white-space:nowrap;color:#14201a}
@@ -376,8 +392,8 @@ textarea:focus{border-color:var(--accent);outline:none}
 .folha ul{margin:0;padding-left:3.4mm}
 .folha li+li{margin-top:.6mm}
 .folha .minis{display:flex;flex-wrap:wrap;gap:3mm;margin:1.6mm 0}
-.folha .mini{flex:0 0 44mm;width:44mm;min-width:0}
-.folha .minis.q4 .mini{flex:0 0 41mm;width:41mm}
+.folha .mini{flex:0 0 42mm;width:42mm;min-width:0}
+.folha .minis.q4 .mini{flex:0 0 40mm;width:40mm}
 .folha .minis.wide .mini{flex:0 0 46mm;width:46mm}
 .folha .mini svg{width:100%;height:auto;display:block}
 .folha .mini .cap{font-family:var(--sans);font-size:7.2pt;font-weight:700;margin-bottom:.6mm}
@@ -441,23 +457,24 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   <nav id="nav">
     <div class="navgroup">Antes de começar</div>
     <div class="nav">
-      <a href="#logica"><b>01</b>A lógica das plantas terrestres</a>
-      <a href="#bancada"><b>02</b>Bancada e microscopia</a>
+      <a href="#celula"><b>01</b>Célula: n, 2n, mitose e meiose</a>
+      <a href="#logica"><b>02</b>A lógica das plantas terrestres</a>
+      <a href="#bancada"><b>03</b>Bancada e microscopia</a>
     </div>
     <div class="navgroup">A prática, estação por estação</div>
     <div class="nav">
-      <a href="#briofitas" data-g="b"><b>03</b>Estação 1 · Musgo</a>
-      <a href="#pteridofitas" data-g="p"><b>04</b>Estação 2 · Samambaia</a>
-      <a href="#gimnospermas" data-g="g"><b>05</b>Estação 3 · Pinheiro</a>
-      <a href="#angiospermas" data-g="a"><b>06</b>Estação 4 · Hibisco</a>
+      <a href="#briofitas" data-g="b"><b>04</b>Estação 1 · Musgo</a>
+      <a href="#pteridofitas" data-g="p"><b>05</b>Estação 2 · Samambaia</a>
+      <a href="#gimnospermas" data-g="g"><b>06</b>Estação 3 · Pinheiro</a>
+      <a href="#angiospermas" data-g="a"><b>07</b>Estação 4 · Hibisco</a>
     </div>
     <div class="navgroup">Fechamento</div>
     <div class="nav">
-      <a href="#comparar"><b>07</b>Comparações</a>
-      <a href="#padrao"><b>08</b>O padrão do professor</a>
-      <a href="#treino"><b>09</b>Treino</a>
-      <a href="#glossario"><b>10</b>Glossário</a>
-      <a href="#cola"><b>11</b>Cola de bancada · PDF</a>
+      <a href="#comparar"><b>08</b>Comparações</a>
+      <a href="#padrao"><b>09</b>O padrão do professor</a>
+      <a href="#treino"><b>10</b>Treino</a>
+      <a href="#glossario"><b>11</b>Glossário</a>
+      <a href="#cola"><b>12</b>Cola de bancada · PDF</a>
     </div>
   </nav>
   <div class="sidecard">
@@ -481,14 +498,123 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
     <span class="chip">14 lâminas</span><span class="chip">4 ciclos</span><span class="chip">18 questões</span>
   </div>
   <div class="note" style="margin-top:24px;max-width:var(--measure)">
-    <b>Como usar.</b> As seções <strong>03 a 06</strong> são as quatro estações da prática, na ordem em que você vai encontrá-las na bancada. Cada uma abre dizendo <em>o que estará na sua frente</em>, <em>o que ele vai pedir</em> e <em>o que você precisa saber para responder</em> — e só depois entra na teoria. Feche uma estação antes de ir para a próxima. As seções <strong>07</strong> a <strong>09</strong> são revisão e treino.
+    <b>Como usar.</b> As seções <strong>04 a 07</strong> são as quatro estações da prática, na ordem em que você vai encontrá-las na bancada. Cada uma abre dizendo <em>o que estará na sua frente</em>, <em>o que ele vai pedir</em> e <em>o que você precisa saber para responder</em> — e só depois entra na teoria. Feche uma estação antes de ir para a próxima. As seções <strong>08</strong> a <strong>10</strong> são revisão e treino. E se <strong>n</strong>, <strong>2n</strong>, mitose e meiose estiverem enferrujados, comece pela <strong>01</strong> — todo o resto depende dela.
   </div>
 </section>
 
-<!-- ============ 01 LÓGICA ============ -->
-<section id="logica">
+<!-- ============ 01 CÉLULA ============ -->
+<section id="celula">
   <div class="sechead">
     <span class="eyebrow">01 · Fundamentos</span>
+    <h2>Célula: n, 2n, mitose e meiose</h2>
+    <p class="lead">Todo o ciclo das plantas é contabilidade de cromossomos. Se <strong>n</strong> e <strong>2n</strong> não estiverem firmes, nada nas quatro estações vai fechar — e se estiverem, metade das respostas se deduz sozinha. Esta seção reconstrói isso do zero, em quinze minutos.</p>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>O que “n” quer dizer — e o que ele não quer dizer</h3>
+      <div class="sum">
+        <p>Um <strong>cromossomo</strong> é uma molécula de DNA enrolada, carregando genes. Cada espécie tem um número característico deles.</p>
+        <p><strong>n não é um número fixo</strong> — é o tamanho de <em>um conjunto completo</em> de cromossomos daquela espécie. No ser humano n = 23; no milho, n = 10. Dizer que uma célula é <strong>2n</strong> não diz quantos cromossomos ela tem: diz que ela tem <strong>duas coleções completas</strong>, uma vinda de cada genitor.</p>
+        <p>Os dois exemplares de cada tipo são os <strong>cromossomos homólogos</strong>: mesmo tamanho, mesmos genes, nas mesmas posições — mas podendo carregar <strong>versões diferentes</strong> (alelos) desses genes. Um veio do pai, o outro da mãe.</p>
+        <div class="why">
+          <h5>A analogia que resolve</h5>
+          <p>Pense num <strong>baralho</strong>. Um conjunto completo — uma carta de cada — é <strong>n</strong>. Dois baralhos misturados, com duas de cada carta, é <strong>2n</strong>. Três, <strong>3n</strong> (é o caso do endosperma da angiosperma).</p>
+          <p>Repare no que a analogia deixa claro: <strong>2n não é “o dobro de cromossomos”</strong> no sentido de ter cromossomos diferentes — é ter <em>duas cópias do mesmo conjunto</em>. E “o 2 de damas do baralho A” e “o 2 de damas do baralho B” são os <strong>homólogos</strong>: a mesma carta, possivelmente com o verso de outra cor.</p>
+        </div>
+        <div class="why">
+          <h5>Por que ter duas cópias</h5>
+          <p>Duas razões. <strong>Redundância:</strong> se um gene tiver uma mutação ruim numa cópia, a outra pode compensar. <strong>Variabilidade:</strong> só existindo dois homólogos é possível que eles <strong>troquem pedaços</strong> na meiose, embaralhando combinações.</p>
+          <p>Isso tem consequência direta na prática: o <strong>gametófito é haploide</strong>. Ele vive com uma cópia só, exposto — qualquer defeito genético aparece. É um dos motivos pelos quais, ao longo da evolução, o gametófito foi ficando cada vez menor e mais protegido dentro do esporófito, como você vai ver da estação 1 para a 4.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>Mitose e meiose lado a lado</h3>
+      <div class="sum">
+        <p>Avance passo a passo e acompanhe o contador de ploidia. A mesma célula inicial — <span class="ploidia n2">2n</span> com quatro cromossomos, dois pares de homólogos — passa pelos dois processos.</p>
+      </div>
+    </div>
+    <div data-mount="mm"></div>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>As diferenças que caem em prova</h3>
+      <div class="sum">
+        <div class="tablewrap" style="margin:4px 0 12px">
+          <table>
+            <thead><tr><th scope="col">Critério</th><th scope="col">Mitose</th><th scope="col">Meiose</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Divisões</th><td>Uma</td><td><strong>Duas</strong> (I e II), com <strong>uma só</strong> duplicação do DNA</td></tr>
+              <tr><th scope="row">Células-filhas</th><td>2</td><td><strong>4</strong></td></tr>
+              <tr><th scope="row">Ploidia</th><td><strong>Não muda</strong>: 2n→2n ou n→n</td><td><strong>Reduz pela metade</strong>: 2n→n</td></tr>
+              <tr><th scope="row">O que se separa</th><td>Cromátides-irmãs</td><td>Na anáfase I, <strong>homólogos</strong>; na anáfase II, cromátides-irmãs</td></tr>
+              <tr><th scope="row">Pareamento e crossing-over</th><td>Não ocorre</td><td><strong>Ocorre na prófase I</strong> — é a origem da variabilidade</td></tr>
+              <tr><th scope="row">Filhas entre si</th><td><strong>Idênticas</strong> à mãe e entre si</td><td><strong>Diferentes</strong> entre si e da mãe</td></tr>
+              <tr><th scope="row">Para que serve</th><td>Crescer, repor tecido, formar o corpo — e, na planta, <strong>produzir os gametas</strong></td><td>Formar esporos (planta) ou gametas (animal)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="why">
+          <h5>Por que a meiose precisa existir</h5>
+          <p>Porque a <strong>fecundação soma</strong>. Se dois gametas <span class="ploidia n2">2n</span> se fundissem, o zigoto seria 4n; na geração seguinte, 8n; depois 16n. Em poucas gerações a célula não caberia em si mesma.</p>
+          <p>A meiose é o <strong>contrapeso exato</strong> da fecundação: ela divide por dois o que a fecundação vai multiplicar por dois. É por isso que <strong>todo ciclo sexuado tem obrigatoriamente uma meiose e uma fecundação</strong> — o que muda entre os grupos é <em>onde</em> cada uma acontece.</p>
+        </div>
+        <div class="why">
+          <h5>Por que a meiose I é a que reduz</h5>
+          <p>Repare no detalhe que quase todo mundo troca. Na <strong>anáfase I</strong> separam-se os <strong>homólogos</strong> — o exemplar paterno vai para um polo, o materno para o outro. Cada célula-filha fica com <em>uma coleção só</em>: já é <span class="ploidia n1">n</span>, ainda que cada cromossomo continue com duas cromátides.</p>
+          <p>Na <strong>anáfase II</strong> separam-se as <strong>cromátides-irmãs</strong> — exatamente como numa mitose. Ela não reduz nada: apenas termina de repartir. Por isso se diz que a meiose II “é uma mitose em células haploides”.</p>
+          <p>Some-se a isso a <strong>segregação independente</strong>: qual homólogo de cada par vai para qual polo é sorteado par a par. Com dois pares há 4 combinações; com os 23 pares humanos, mais de 8 milhões — antes mesmo de contar o crossing-over.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic">
+    <div class="head">
+      <h3>A virada: em planta, a meiose não faz gameta</h3>
+      <div class="sum">
+        <p>Aqui está o ponto que faz o resto do guia fazer sentido. <strong>No animal</strong>, a meiose acontece na gônada e o produto <em>já é o gameta</em> — é a <strong>meiose gamética</strong>. Não existe fase haploide pluricelular: o espermatozoide é uma célula solta.</p>
+        <p><strong>Na planta</strong>, a meiose acontece no <strong>esporângio</strong> e o produto é o <strong>esporo</strong> — é a <strong>meiose espórica</strong>. E o esporo faz algo que o gameta jamais faz: <strong>germina e se divide por mitose</strong>, construindo um organismo haploide inteiro, o <strong>gametófito</strong>. Só então esse gametófito produz gametas — <strong>por mitose</strong>, porque ele já é n e não há mais o que reduzir.</p>
+        <div class="why">
+          <h5>A frase que fecha tudo</h5>
+          <p style="font-family:var(--mono);font-size:1.02rem;color:var(--ink)"><strong>Em planta: meiose faz esporo. Mitose faz gameta.</strong></p>
+          <p>Se o professor perguntar “onde ocorre a meiose neste ciclo?”, a resposta nunca é “no gametângio”. É sempre no esporângio — cápsula do musgo, esporângio do soro, microsporângio e nucelo do pinheiro, antera e óvulo do hibisco.</p>
+          <p>E se perguntar “como o gametófito produz gametas se ele já é haploide?”, a resposta é: <strong>por mitose</strong>. Reduzir de novo daria meio conjunto de cromossomos, o que não existe.</p>
+        </div>
+      </div>
+    </div>
+    <details class="deep"><summary>Aprofundar — onde ficam a meiose e os gametas nas quatro estações</summary><div class="body">
+      <div class="tablewrap" style="margin-bottom:11px">
+        <table>
+          <thead><tr><th scope="col">Estação</th><th scope="col">Onde ocorre a MEIOSE</th><th scope="col">Quem faz o gameta, por MITOSE</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" class="tb-b">1 · Musgo</th><td>Cápsula do esporófito</td><td>Anterídio e arquegônio, no gametófito</td></tr>
+            <tr><th scope="row" class="tb-p">2 · Samambaia</th><td>Esporângio, dentro do soro</td><td>Anterídio e arquegônio, no protalo</td></tr>
+            <tr><th scope="row" class="tb-g">3 · Pinheiro</th><td>Microsporângio (♂) e nucelo do óvulo (♀)</td><td>Grão de pólen e megagametófito</td></tr>
+            <tr><th scope="row" class="tb-a">4 · Hibisco</th><td>Antera (♂) e óvulo (♀)</td><td>Grão de pólen e saco embrionário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Repare no padrão: da estação 1 para a 4, o <strong>lugar da meiose</strong> praticamente não muda de natureza — é sempre um esporângio. O que muda é <strong>quem faz o gameta</strong>: de um gametófito que é a planta inteira, para um punhado de células dentro do pólen e do óvulo.</p>
+      <h4>Três nomes que confundem por serem parecidos</h4>
+      <ul>
+        <li><strong>Esporângio × gametângio.</strong> Esporângio produz <em>esporos</em>, por meiose, e é órgão do <strong>esporófito</strong>. Gametângio produz <em>gametas</em>, por mitose, e é órgão do <strong>gametófito</strong>.</li>
+        <li><strong>Esporófito × esporângio.</strong> O primeiro é o indivíduo 2n inteiro; o segundo é um órgão dele.</li>
+        <li><strong>Célula-mãe de esporo.</strong> É a célula <span class="ploidia n2">2n</span> que <em>vai</em> entrar em meiose. Ela ainda não é esporo — o esporo é o produto.</li>
+      </ul>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ 02 LÓGICA ============ -->
+<section id="logica">
+  <div class="sechead">
+    <span class="eyebrow">02 · Fundamentos</span>
     <h2>A lógica das plantas terrestres</h2>
     <p class="lead">Sair da água exigiu resolver três problemas: <strong>não secar</strong>, <strong>ficar de pé e conduzir água</strong> e <strong>reproduzir-se sem que o gameta precise nadar</strong>. Cada grupo da prática é o estado da arte depois de resolver mais um deles. Se você guardar essa sequência, praticamente todas as diferenças entre os grupos se deduzem.</p>
   </div>
@@ -604,7 +730,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 02 BANCADA ============ -->
 <section id="bancada">
   <div class="sechead">
-    <span class="eyebrow">02 · Fundamentos</span>
+    <span class="eyebrow">03 · Fundamentos</span>
     <h2>Bancada e microscopia</h2>
     <p class="lead">Numa prática, boa parte dos pontos perdidos não é conteúdo: é desenho sem legenda, aumento não anotado e nome de estrutura trocado. Resolva isso antes de a prova começar.</p>
   </div>
@@ -647,7 +773,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ ESTAÇÃO 1 · MUSGO ============ -->
 <section id="briofitas" data-g="b">
   <div class="modhead">
-    <div class="kicker"><span class="no">03</span><span class="taxon">Estação 1 · Briófita · Bryophyta</span></div>
+    <div class="kicker"><span class="no">04</span><span class="taxon">Estação 1 · Briófita · Bryophyta</span></div>
     <h2>Musgo</h2>
     <p class="thesis">A única estação em que a planta que você vê no estereoscópico é o <strong>gametófito</strong> — a fase haploide. Sem vasos, sem lignina e com um gameta que ainda precisa nadar, o musgo ficou pequeno e preso ao lugar úmido. Todas as perguntas desta bancada saem dessas três limitações.</p>
   </div>
@@ -748,7 +874,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ ESTAÇÃO 2 · SAMAMBAIA ============ -->
 <section id="pteridofitas" data-g="p">
   <div class="modhead">
-    <div class="kicker"><span class="no">04</span><span class="taxon">Estação 2 · Pteridófita · Polypodiopsida</span></div>
+    <div class="kicker"><span class="no">05</span><span class="taxon">Estação 2 · Pteridófita · Polypodiopsida</span></div>
     <h2>Samambaia</h2>
     <p class="thesis">Aqui a planta ganha <strong>xilema, floema e lignina</strong>, fica de pé e cresce metros — e o esporófito assume o papel principal. Mas a fecundação <strong>ainda depende de água</strong>, num gametófito de poucos milímetros que quase ninguém lembra que existe. Essa contradição é o que a prova explora.</p>
   </div>
@@ -838,7 +964,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ ESTAÇÃO 3 · PINHEIRO ============ -->
 <section id="gimnospermas" data-g="g">
   <div class="modhead">
-    <div class="kicker"><span class="no">05</span><span class="taxon">Estação 3 · Gimnosperma · <em>Pinus</em></span></div>
+    <div class="kicker"><span class="no">06</span><span class="taxon">Estação 3 · Gimnosperma · <em>Pinus</em></span></div>
     <h2>Pinheiro</h2>
     <p class="thesis">A estação em que a planta se solta da água: o gameta masculino deixa de nadar e passa a ser <strong>entregue</strong> pelo tubo polínico. Surge a <strong>semente</strong> — mas ela amadurece <strong>nua</strong>, sobre a escama, porque ainda não existe ovário. <em>Gymnos</em> = nu, <em>sperma</em> = semente: o nome do grupo <strong>é</strong> a resposta da pergunta desta bancada.</p>
   </div>
@@ -926,7 +1052,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ ESTAÇÃO 4 · HIBISCO ============ -->
 <section id="angiospermas" data-g="a">
   <div class="modhead">
-    <div class="kicker"><span class="no">06</span><span class="taxon">Estação 4 · Angiosperma · <em>Hibiscus rosa-sinensis</em></span></div>
+    <div class="kicker"><span class="no">07</span><span class="taxon">Estação 4 · Angiosperma · <em>Hibiscus rosa-sinensis</em></span></div>
     <h2>Hibisco</h2>
     <p class="thesis">O óvulo entra para dentro do <strong>ovário</strong> — <em>angio</em> = urna. Disso decorre tudo: a <strong>flor</strong> que recruta animais, a <strong>dupla fecundação</strong> que só investe reserva depois de garantir o embrião, e o <strong>fruto</strong>. É a estação mais longa da prática e a que tem mais perguntas empilhadas.</p>
   </div>
@@ -1047,7 +1173,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 07 COMPARAÇÕES ============ -->
 <section id="comparar">
   <div class="sechead">
-    <span class="eyebrow">07 · Fechamento</span>
+    <span class="eyebrow">08 · Fechamento</span>
     <h2>Comparações</h2>
     <p class="lead">Ele termina enunciados com “comparando com…”. Estas três tabelas são a consulta rápida para essa hora — as quatro estações lado a lado, mono × eudicot, e as síndromes de polinização.</p>
   </div>
@@ -1117,7 +1243,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 08 PADRÃO DO PROFESSOR ============ -->
 <section id="padrao">
   <div class="sechead">
-    <span class="eyebrow">08 · Fechamento</span>
+    <span class="eyebrow">09 · Fechamento</span>
     <h2>O padrão do professor</h2>
     <p class="lead">Uma folha corrigida da prática do ano passado, obtida de um aluno que já cursou a disciplina. Ela não é gabarito nem garantia — ele costuma trocar lâminas e reformular enunciados. O que ela entrega é outra coisa, mais útil: <strong>como ele pergunta e onde ele desconta</strong>.</p>
   </div>
@@ -1196,7 +1322,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 09 TREINO ============ -->
 <section id="treino">
   <div class="sechead">
-    <span class="eyebrow">09 · Fechamento</span>
+    <span class="eyebrow">10 · Fechamento</span>
     <h2>Treino</h2>
     <p class="lead">Duas formas de verificar se você fecha a prática: identificar estruturas sem os rótulos e escrever respostas discursivas sob correção. Se você acerta as 14 lâminas de olhos fechados e tira acima de 80% nos termos-chave das quatro questões do ano passado, está pronto.</p>
   </div>
@@ -1215,7 +1341,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 10 GLOSSÁRIO ============ -->
 <section id="glossario">
   <div class="sechead">
-    <span class="eyebrow">10 · Fechamento</span>
+    <span class="eyebrow">11 · Fechamento</span>
     <h2>Glossário</h2>
     <p class="lead">Os termos que precisam sair na hora, escritos do jeito que valem ponto.</p>
   </div>
@@ -1227,7 +1353,7 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
 <!-- ============ 11 COLA DE BANCADA ============ -->
 <section id="cola">
   <div class="sechead noprint">
-    <span class="eyebrow">11 · Material de consulta</span>
+    <span class="eyebrow">12 · Material de consulta</span>
     <h2>Cola de bancada</h2>
     <p class="lead">Quatro páginas A4 — <strong>duas folhas, frente e verso</strong>. É o guia inteiro reduzido ao que se consulta com o microscópio ligado: os desenhos rotulados, as respostas modelo prontas para adaptar, e as armadilhas. Nada que você não fosse abrir durante a prática entrou aqui.</p>
   </div>
@@ -1278,9 +1404,8 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
         <div>
           <h5>Microscópio</h5>
           <p><strong>Estereoscópico:</strong> luz incidente, imagem <strong>3D e direita</strong>, 10–80×. Material inteiro e opaco — musgo, soros, flor, cortes da antera e do ovário.</p>
-          <p><strong>Óptico composto:</strong> luz transmitida, imagem <strong>invertida</strong>, exige corte fino. Lâminas nº 40, 41 e 44.</p>
+          <p><strong>Óptico composto:</strong> luz transmitida, imagem <strong>invertida</strong>, exige corte fino. Lâminas nº 40, 41 e 44. Focalizar sempre na menor objetiva primeiro.</p>
           <p class="fluxo">AUMENTO TOTAL = OCULAR × OBJETIVA<br>ocular 10× · objetiva 40× ⇒ <strong>400×</strong></p>
-          <p>Focalizar sempre na menor objetiva primeiro; macrométrico só no menor aumento.</p>
         </div>
       </div>
 
@@ -1312,13 +1437,31 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
           <p class="fluxo">EM PLANTA A MEIOSE PRODUZ <strong>ESPORO</strong>.<br>O GAMETA VEM DE <strong>MITOSE</strong> NO GAMETÓFITO.</p>
         </div>
         <div>
-          <h5>Duas regras que resolvem meia prova</h5>
-          <p><strong>1. Três estruturas, uma única física.</strong> <strong>Peristômio</strong> (musgo), <strong>ânulo</strong> (samambaia) e <strong>endotécio</strong> (antera) abrem todos por <strong>perda de água</strong>. Se a pergunta for “o que provoca a abertura?”, a resposta é <strong>ressecamento</strong>, nunca umidade.</p>
-          <p><strong>2. Respeite as escadas de níveis.</strong></p>
-          <p class="fluxo">SORO → ESPORÂNGIO → ESPORO<br>ESTAME = FILETE + ANTERA<br>GINECEU = ESTIGMA + ESTILETE + OVÁRIO<br>OVÁRIO → FRUTO &nbsp;·&nbsp; ÓVULO → SEMENTE</p>
-          <p>Confundir um degrau por outro é o erro mais barato de cometer e o mais caro de pagar.</p>
+          <h5>Mitose × meiose</h5>
+          <p><strong>MITOSE</strong> — uma divisão · 2 filhas <strong>idênticas</strong> · <strong>a ploidia não muda</strong> (2n→2n, n→n) · separa <strong>cromátides-irmãs</strong> · sem crossing-over.<br>Na planta: faz o corpo crescer e <strong>produz os gametas</strong>, no gametófito.</p>
+          <p><strong>MEIOSE</strong> — duas divisões com <strong>uma só duplicação</strong> · 4 filhas <strong>diferentes</strong> · <strong>2n → n</strong> · a queda é na <strong>anáfase I</strong>, que separa os <strong>homólogos</strong>; a anáfase II separa cromátides e não reduz nada · <strong>crossing-over na prófase I</strong>.<br>Na planta: <strong>produz os esporos</strong>, no esporângio.</p>
+          <p class="fluxo">EM PLANTA: <strong>MEIOSE FAZ ESPORO · MITOSE FAZ GAMETA</strong><br>meiose ocorre em — musgo: cápsula | samambaia: esporângio do soro<br>pinheiro: microsporângio e nucelo | hibisco: antera e óvulo</p>
         </div>
       </div>
+
+      <div class="blk" style="margin-top:3.6mm">
+        <h5>Antes de entregar — checagem de 60 segundos</h5>
+        <div class="cols2">
+          <ul>
+            <li>Todo desenho tem <strong>título</strong>, <strong>aumento</strong> e <strong>nº da lâmina</strong>?</li>
+            <li>As legendas apontam para estruturas <strong>que você viu</strong>, com linhas retas que não se cruzam?</li>
+            <li>Nome científico em <strong>itálico ou sublinhado</strong>?</li>
+            <li>Nas briófitas você escreveu <strong>filoide / cauloide / rizoide</strong> — não folha, caule e raiz?</li>
+          </ul>
+          <ul>
+            <li>Em cada item com <strong>duas ou três perguntas</strong>, você respondeu <strong>todas</strong>? (marque as perguntas no enunciado)</li>
+            <li>Onde ele pediu <strong>“comparando com…”</strong>, a comparação está escrita?</li>
+            <li>Toda classificação tem <strong>justificativa com o que foi observado</strong> (contagem, forma, cor)?</li>
+            <li>Você usou a palavra <strong>zigoto</strong> na cadeia do musgo e <strong>óvulo nu</strong> na do pinheiro?</li>
+          </ul>
+        </div>
+      </div>
+
 
     </div>
   </div></div>
@@ -1479,23 +1622,17 @@ footer .fin{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
         </div>
       </div>
 
-      <div class="blk" style="margin-top:3mm">
-        <h5>Antes de entregar — checagem de 60 segundos</h5>
+<div class="blk" style="margin-top:3.4mm">
+        <h5>Duas regras que resolvem meia prova</h5>
         <div class="cols2">
-          <ul>
-            <li>Todo desenho tem <strong>título</strong>, <strong>aumento</strong> e <strong>nº da lâmina</strong>?</li>
-            <li>As legendas apontam para estruturas <strong>que você viu</strong>, com linhas retas que não se cruzam?</li>
-            <li>Nome científico em <strong>itálico ou sublinhado</strong>?</li>
-            <li>Nas briófitas você escreveu <strong>filoide / cauloide / rizoide</strong> — não folha, caule e raiz?</li>
-          </ul>
-          <ul>
-            <li>Em cada item com <strong>duas ou três perguntas</strong>, você respondeu <strong>todas</strong>? (marque as perguntas no enunciado)</li>
-            <li>Onde ele pediu <strong>“comparando com…”</strong>, a comparação está escrita?</li>
-            <li>Toda classificação tem <strong>justificativa com o que foi observado</strong> (contagem, forma, cor)?</li>
-            <li>Você usou a palavra <strong>zigoto</strong> na cadeia do musgo e <strong>óvulo nu</strong> na do pinheiro?</li>
-          </ul>
+          <p><strong>1. Três estruturas, uma única física.</strong> <strong>Peristômio</strong> (musgo), <strong>ânulo</strong> (samambaia) e <strong>endotécio</strong> (antera) abrem todos por <strong>perda de água</strong>. Se a pergunta for “o que provoca a abertura?”, a resposta é <strong>ressecamento</strong>, nunca umidade.</p>
+          <div><p style="margin-bottom:1mm"><strong>2. Respeite as escadas de níveis</strong> — confundir um degrau é o erro mais barato de cometer e o mais caro de pagar.</p>
+          <p class="fluxo" style="margin:0">SORO → ESPORÂNGIO → ESPORO<br>ESTAME = FILETE + ANTERA &nbsp;·&nbsp; GINECEU = ESTIGMA + ESTILETE + OVÁRIO<br>OVÁRIO → FRUTO &nbsp;·&nbsp; ÓVULO → SEMENTE</p></div>
         </div>
       </div>
+
+
+
 
       <div style="margin-top:3mm">
         <h5>Glossário-relâmpago</h5>
@@ -2661,6 +2798,138 @@ function mountCiclo(host,c){
 }
 
 /* ============================================================
+   MITOSE × MEIOSE — comparador passo a passo
+   ============================================================ */
+function crm(x,y,h,c,dup,tip){
+  var cls = c==="p" ? "crP" : "crM";
+  var tcls = tip==="p" ? "crP" : "crM";
+  var t = h*0.34, o="";
+  if(!dup){
+    o+='<rect class="'+cls+'" x="'+(x-3.5)+'" y="'+(y-h/2)+'" width="7" height="'+h+'" rx="3.5"></rect>';
+    if(tip) o+='<rect class="'+tcls+'" x="'+(x-3.5)+'" y="'+(y-h/2)+'" width="7" height="'+t+'" rx="3.5"></rect>';
+    o+='<circle class="cen '+c+'" cx="'+x+'" cy="'+y+'" r="2.8"></circle>';
+  }else{
+    o+='<rect class="'+cls+'" x="'+(x-5.8)+'" y="'+(y-h/2)+'" width="4.8" height="'+h+'" rx="2.4"></rect>';
+    o+='<rect class="'+cls+'" x="'+(x+1)+'" y="'+(y-h/2)+'" width="4.8" height="'+h+'" rx="2.4"></rect>';
+    if(tip) o+='<rect class="'+tcls+'" x="'+(x+1)+'" y="'+(y-h/2)+'" width="4.8" height="'+t+'" rx="2.4"></rect>';
+    o+='<circle class="cen '+c+'" cx="'+x+'" cy="'+y+'" r="3.2"></circle>';
+  }
+  return o;
+}
+function mmSVG(st){
+  var s='<svg viewBox="0 0 470 200" role="img" aria-label="'+(st.t||"")+'">';
+  (st.cells||[]).forEach(function(c){ s+='<ellipse class="cel" cx="'+c[0]+'" cy="'+c[1]+'" rx="'+c[2]+'" ry="'+c[3]+'"></ellipse>' });
+  if(st.placa) s+='<line class="placa" x1="'+st.placa+'" y1="22" x2="'+st.placa+'" y2="178"></line>';
+  (st.setas||[]).forEach(function(a){
+    var ang=Math.atan2(a[3]-a[1],a[2]-a[0]);
+    s+='<line class="mmarr" x1="'+a[0]+'" y1="'+a[1]+'" x2="'+(a[2]-5*Math.cos(ang))+'" y2="'+(a[3]-5*Math.sin(ang))+'"></line>';
+    s+='<polygon class="mmarrh" points="'+a[2]+','+a[3]+' '+(a[2]-8*Math.cos(ang-0.4))+','+(a[3]-8*Math.sin(ang-0.4))+' '+(a[2]-8*Math.cos(ang+0.4))+','+(a[3]-8*Math.sin(ang+0.4))+'"></polygon>';
+  });
+  (st.cr||[]).forEach(function(c){ s+=crm(c[0],c[1],c[2],c[3],c[4],c[5]) });
+  (st.lab||[]).forEach(function(l){ s+='<text class="mmlab'+(l[3]?" b":"")+'" x="'+l[0]+'" y="'+l[1]+'" text-anchor="middle">'+l[2]+'</text>' });
+  return s+'</svg>';
+}
+var CEL=[235,100,138,80], CELL=[120,100,98,74], CELR=[350,100,98,74];
+var MM=[
+{id:"mitose", nome:"Mitose", steps:[
+ {t:"A célula de partida", plo:"2n", nc:"4 cromossomos · 2 pares de homólogos",
+  x:"Dois pares de <strong>homólogos</strong>: um par longo e um par curto. Em cada par, um exemplar veio do pai (verde) e outro da mãe (âmbar). Ter os dois exemplares de cada tipo é o que significa ser <span class='ploidia n2'>2n</span>.",
+  cells:[CEL], cr:[[185,72,46,"p",0],[285,72,46,"m",0],[195,138,30,"p",0],[280,138,30,"m",0]],
+  lab:[[235,186,"cada cor = origem paterna ou materna"]]},
+ {t:"Duplicação do DNA (interfase)", plo:"2n", nc:"ainda 4 cromossomos · agora 8 cromátides",
+  x:"Antes de qualquer divisão, cada cromossomo é copiado e passa a ter <strong>duas cromátides-irmãs</strong> idênticas, unidas pelo <strong>centrômero</strong>. <strong>A ploidia não mudou</strong>: continuam sendo 4 cromossomos, cada um agora com duas cópias grudadas.",
+  cells:[CEL], cr:[[185,72,46,"p",1],[285,72,46,"m",1],[195,138,30,"p",1],[280,138,30,"m",1]],
+  lab:[[235,186,"cromátides-irmãs unidas pelo centrômero"]]},
+ {t:"Metáfase — todos na fila", plo:"2n", nc:"4 cromossomos na placa",
+  x:"Os cromossomos se alinham <strong>individualmente</strong> na placa equatorial, um atrás do outro. Guarde esta imagem: é aqui que a mitose se distingue da meiose I, onde quem se alinha são os <em>pares</em>.",
+  cells:[CEL], placa:235, cr:[[235,50,44,"p",1],[235,90,44,"m",1],[235,130,28,"p",1],[235,162,28,"m",1]]},
+ {t:"Anáfase — separam-se as cromátides-irmãs", plo:"2n → 2n", nc:"4 para cada polo",
+  x:"O centrômero se divide e <strong>cada cromátide vai para um polo</strong>. Como as cromátides-irmãs eram cópias idênticas, os dois polos recebem exatamente o mesmo conteúdo genético.",
+  cells:[CEL], cr:[[140,64,44,"p",0],[172,64,44,"m",0],[140,140,28,"p",0],[172,140,28,"m",0],
+                   [298,64,44,"p",0],[330,64,44,"m",0],[298,140,28,"p",0],[330,140,28,"m",0]],
+  setas:[[214,100,182,100],[256,100,288,100]]},
+ {t:"Duas células idênticas", plo:"2n", nc:"4 cromossomos em cada",
+  x:"Resultado: <strong>duas células 2n</strong>, geneticamente <strong>idênticas</strong> entre si e à célula-mãe. É assim que um corpo cresce e repõe tecidos — e é assim que, na planta, <strong>o gametófito produz seus gametas</strong> e o zigoto vira embrião.",
+  cells:[CELL,CELR], cr:[[85,72,44,"p",0],[152,72,44,"m",0],[92,140,28,"p",0],[148,140,28,"m",0],
+                          [315,72,44,"p",0],[382,72,44,"m",0],[322,140,28,"p",0],[378,140,28,"m",0]],
+  lab:[[120,190,"2n — idêntica",1],[350,190,"2n — idêntica",1]]}
+]},
+{id:"meiose", nome:"Meiose", steps:[
+ {t:"A mesma célula de partida", plo:"2n", nc:"4 cromossomos · 2 pares de homólogos",
+  x:"Exatamente a mesma célula da mitose: <span class='ploidia n2'>2n</span>, com dois pares de homólogos. Nas plantas, esta é a <strong>célula-mãe de esporo</strong> — dentro da cápsula do musgo, do esporângio da samambaia, da antera ou do óvulo.",
+  cells:[CEL], cr:[[185,72,46,"p",0],[285,72,46,"m",0],[195,138,30,"p",0],[280,138,30,"m",0]]},
+ {t:"Duplicação do DNA — e só esta", plo:"2n", nc:"4 cromossomos · 8 cromátides",
+  x:"Mesma duplicação da mitose. <strong>Guarde:</strong> a meiose tem <strong>duas divisões</strong>, mas <strong>uma única duplicação</strong>. É essa assimetria que faz o número de cromossomos cair pela metade no fim.",
+  cells:[CEL], cr:[[185,72,46,"p",1],[285,72,46,"m",1],[195,138,30,"p",1],[280,138,30,"m",1]]},
+ {t:"Prófase I — pareamento e crossing-over", plo:"2n", nc:"2 bivalentes",
+  x:"Aqui acontece o que <strong>não existe na mitose</strong>: os homólogos se <strong>encontram e pareiam</strong>, formando <strong>bivalentes</strong>. Encostados, trocam pedaços equivalentes — o <strong>crossing-over</strong> (permutação). Repare nas pontas trocadas de cor: os cromossomos deixaram de ser puramente paternos ou maternos.",
+  cells:[CEL], cr:[[168,72,46,"p",1,"m"],[192,72,46,"m",1,"p"],[288,138,30,"p",1,"m"],[312,138,30,"m",1,"p"]],
+  lab:[[180,36,"bivalente 1"],[300,102,"bivalente 2"],[235,186,"pontas trocadas = crossing-over",1]]},
+ {t:"Metáfase I — os PARES na placa", plo:"2n", nc:"bivalentes alinhados",
+  x:"Diferença decisiva em relação à mitose: quem se alinha na placa são os <strong>pares</strong>, lado a lado, e não os cromossomos individuais. Qual homólogo de cada par fica de que lado é <strong>sorteado par a par</strong> — a <strong>segregação independente</strong>.",
+  cells:[CEL], placa:235, cr:[[222,68,46,"p",1,"m"],[248,68,46,"m",1,"p"],[222,140,30,"m",1,"p"],[248,140,30,"p",1,"m"]],
+  lab:[[235,186,"cada par se orienta ao acaso",1]]},
+ {t:"Anáfase I — separam-se os HOMÓLOGOS", plo:"2n → n", nc:"2 cromossomos para cada polo",
+  x:"<strong>É aqui que a ploidia cai.</strong> Não são as cromátides que se separam — são os <strong>homólogos inteiros</strong>. Cada polo recebe <strong>uma coleção completa</strong>: um cromossomo longo e um curto. Já é <span class='ploidia n1'>n</span>, mesmo que cada um ainda tenha duas cromátides.",
+  cells:[CEL], cr:[[152,72,46,"p",1,"m"],[152,140,30,"m",1,"p"],[318,72,46,"m",1,"p"],[318,140,30,"p",1,"m"]],
+  setas:[[210,105,178,105],[260,105,292,105]],
+  lab:[[235,186,"2n → n · e note: cada polo levou uma mistura diferente",1]]},
+ {t:"Duas células n, com cromossomos duplicados", plo:"n", nc:"2 cromossomos em cada",
+  x:"As duas células-filhas já são <strong>haploides</strong>. Cada cromossomo, porém, continua com duas cromátides — falta reparti-las. Por isso vem a segunda divisão.",
+  cells:[CELL,CELR], cr:[[100,74,46,"p",1,"m"],[145,140,30,"m",1,"p"],[330,74,46,"m",1,"p"],[375,140,30,"p",1,"m"]],
+  lab:[[120,190,"n",1],[350,190,"n",1]]},
+ {t:"Anáfase II — separam-se as cromátides", plo:"n → n", nc:"como uma mitose",
+  x:"A meiose II é, na prática, <strong>uma mitose em células haploides</strong>: separa cromátides-irmãs e <strong>não reduz nada</strong>. Ela apenas termina de repartir o que a meiose I já havia dividido pela metade.",
+  cells:[CELL,CELR], cr:[[82,74,46,"p",0,"m"],[82,140,30,"m",0,"p"],[158,74,46,"p",0,"m"],[158,140,30,"m",0,"p"],
+                          [312,74,46,"m",0,"p"],[312,140,30,"p",0,"m"],[388,74,46,"m",0,"p"],[388,140,30,"p",0,"m"]],
+  setas:[[112,106,94,106],[128,106,146,106],[342,106,324,106],[358,106,376,106]]},
+ {t:"Quatro células n, diferentes entre si", plo:"n", nc:"4 células · 2 cromossomos em cada",
+  x:"Resultado: <strong>quatro células haploides</strong>, e — por causa do crossing-over e da segregação independente — <strong>diferentes umas das outras</strong>. Num animal, estas já seriam os gametas. <strong>Numa planta, são os ESPOROS</strong>: cada um vai germinar e construir um gametófito inteiro.",
+  cells:[[59,100,54,68],[176,100,54,68],[294,100,54,68],[411,100,54,68]],
+  cr:[[44,74,44,"p",0,"m"],[74,138,28,"m",0],
+      [161,74,44,"p",0],[191,138,28,"m",0,"p"],
+      [279,74,44,"m",0,"p"],[309,138,28,"p",0],
+      [396,74,44,"m",0],[426,138,28,"p",0,"m"]],
+  lab:[[235,190,"quatro esporos (n) — nenhum igual ao outro",1]]}
+]}
+];
+function mountMM(host){
+  var el=document.createElement("div"); el.className="cyc";
+  el.innerHTML='<div class="mmtabs" role="tablist"></div><div class="cycbody">'
+    +'<div class="cycfig"><div class="mhost"></div></div>'
+    +'<div class="cycside"><span class="stepnum"></span>'
+    +'<div class="plobar"><span>ploidia</span><span class="plotag dip m-plo">2n</span><span class="m-nc"></span></div>'
+    +'<div class="steptxt"></div>'
+    +'<div class="stepnav"><button type="button" class="btn ghost sm m-prev">← Anterior</button>'
+    +'<button type="button" class="btn sm m-next">Próximo →</button><span class="dots"></span></div></div></div>';
+  host.appendChild(el);
+  var ti=0, si=0;
+  MM.forEach(function(m,i){
+    var b=document.createElement("button");
+    b.type="button"; b.className="mmtab"; b.setAttribute("role","tab"); b.textContent=m.nome;
+    b.addEventListener("click",function(){ ti=i; si=0; render() });
+    $(".mmtabs",el).appendChild(b);
+  });
+  function render(){
+    var m=MM[ti], st=m.steps[si];
+    $$(".mmtab",el).forEach(function(b,j){ b.setAttribute("aria-selected", j===ti?"true":"false") });
+    $(".mhost",el).innerHTML=mmSVG(st);
+    $(".stepnum",el).textContent=m.nome+" · passo "+(si+1)+" de "+m.steps.length+" — "+st.t;
+    var pt=$(".m-plo",el); pt.textContent=st.plo;
+    pt.className="plotag m-plo "+(st.plo.indexOf("2n")===0?"dip":"hap");
+    $(".m-nc",el).textContent=st.nc;
+    $(".steptxt",el).innerHTML="<h4>"+st.t+"</h4><p>"+st.x+"</p>";
+    var d=$(".dots",el); d.innerHTML="";
+    m.steps.forEach(function(_,j){ var i=document.createElement("i"); if(j===si)i.className="on"; d.appendChild(i) });
+    $(".m-prev",el).disabled=si===0;
+    $(".m-next",el).textContent = si===m.steps.length-1 ? "Recomeçar" : "Próximo →";
+  }
+  $(".m-prev",el).addEventListener("click",function(){ if(si>0){si--;render()} });
+  $(".m-next",el).addEventListener("click",function(){ si = si===MM[ti].steps.length-1?0:si+1; render() });
+  render();
+}
+
+/* ============================================================
    QUESTÕES
    ============================================================ */
 function norm(s){ return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ") }
@@ -2718,6 +2987,8 @@ $$("[data-mount]").forEach(function(host){
   }else if(kind==="laminas"){
     var list = g==="*" ? SLIDES : SLIDES.filter(function(s){return s.grupo===g});
     if(list.length) mountLaminas(host,list);
+  }else if(kind==="mm"){
+    mountMM(host);
   }else if(kind==="questoes"){
     var items=[];
     QS.forEach(function(q,i){ if(g.indexOf(q.g)>=0) items.push([i,q]) });
